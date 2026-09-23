@@ -1,1 +1,298 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Projektterv - Virtuális növénygondozó alkalmazás</title>
+</head>
 
+<body>
+
+
+
+<header>
+    <h1>Projektterv</h1>
+    <p>Virtuális növénygondozó és fejlődésszimulációs alkalmazás</p>
+</header>
+
+<main>
+
+    <section>
+        <h2>A projekt célja</h2>
+
+        <p>
+            A projekt célja egy olyan virtuális növénygondozó és
+            fejlődésszimulációs alkalmazás megtervezése, amelyben a felhasználó
+            egy vagy több virtuális növényt gondozhat.
+        </p>
+
+        <p>
+            A növények állapota a felhasználó tevékenységei, valamint a
+            környezeti hatások alapján változik. A felhasználó öntözheti,
+            táplálhatja és megfelelő helyre helyezheti a növényeket.
+        </p>
+
+        <div class="highlight">
+            A projekt elsősorban az alkalmazás rendszertervére, működésére,
+            adatkezelésére, tesztelésére és bemutatására koncentrál.
+            <div class="highlight_warning">
+                Ez például fölösleges szerintem
+            </div>
+        </div>
+    </section>
+
+    <section>
+        <h2>1. Csoport tagjai és struktúrája</h2>
+        
+        <div class="team-member">
+            <h3>Márk – Projektvezető és rendszertervező</h3>
+            
+            <p>A csapat megfelelő koordinálásért és összehangolásáért felelős. Beosztja a projektben résztvevők szerepeit,
+                 rendszeres megbeszélést szervez. Projekt dokumentációt ellenőriz és továbbá
+                  az alkalmazás teljes szerkezetének megtervezeséért, Különálló egységek, modulok összehangoltatásért és munkamenet kezelő modulért felel.</p>
+        </div>
+
+        <div class="team-member">
+            <h3>István – Multiplayer integráció felelős</h3>
+            
+            <p>Kezeli a csoportok létrehozását, eltörlését, csoport tagságot.
+                 Az ő szerepkörébe tartozik még a jogosultságok, szerepek megfelelő működése. Szerveroldali tevékenységnapló megtervezése
+                  és ennek megfelelő működésének szolgáltatása. Biztosítja a csoport tagok növényeinek szerveroldali működését. </p>
+        </div>
+
+        <div class="team-member">
+            <h3>Kata – Szimulációs fejlesztő</h3>
+            
+            <p>Felelős a belső szimulációs logika fejlesztéséért, mint például a növény fejlődése, annak állapotai és állapotváltozásnak szabályai.
+                 Különböző adatok ( víz, fény... ) hatását számító funkciókért és a különböző eseményekért.
+                  Hatáskörébe esik még a növényt leíró adatok és a növény osztályainak megtervezése.</p>
+        </div>
+
+        <div class="team-member">
+            <h3>Kinga – Felhasználói felület és megjelenítés felelőse</h3>
+            
+            <p>Feladatai közé esik a menük, képernyők és egyéb grafikai felhasználói felületek (GUI) megtervezése és implementálása,
+                 ezen felületek interakciós (gombok) és nem interakciós elemeinek megtervezése,
+                  vizuális effektek elkészítése és letisztult felhasználói élmény biztosítása </p>
+        </div>
+
+        <div class="team-member">
+            <h3>Klaudia – Tesztelési és adatkezelési felelős</h3>
+            
+            <p>Felelős az alkalmazás adatainak tárolásáért és kezeléséért. Megtervezi és létrehozza az adatbázis szerkezetét,
+                 kialakítja a szükséges táblákat és azok kapcsolatait, valamint meghatározza az adatok mentésének és betöltésének módját.
+                   Elkészíti az adatbázishoz kapcsolódó lekérdezéseket és adatkezelési funkciókat, biztosítja az adatok helyes frissítését.</p>
+        </div>
+    </section>
+
+    <section>
+        <h2>2. Fejlesztési terv, mérföldkövek és eredmények</h2>
+        
+        <table>
+            <thead>
+                <tr>
+                    <th>Időszak</th>
+                    <th>Elvárt eredmény</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>1-2. hét</td>
+                    <td>
+                        Projektterv elkészítése. Összegyűjtjük a legszükségesebb funkciókat, meghatározzuk a projekt célját.
+                        Megtervezzük a feladatköröket, szétosztjuk őket csapattagok közt.
+                         A kiválasztjuk a használandó technológiákat és részletesen meghatározzuk a fejlesztés mérföldköveit.
+                    </td>
+                </tr>
+
+                <tr>
+                    <td>3. hét</td>
+                    <td>
+                        Projektterv véglegesítése. Véglegesítjük a dokumentumot, javítjuk a hibákat, hiányosságokat.
+                    </td>
+                </tr>
+
+                <tr>
+                    <td>4. hét</td>
+                    <td>
+                        Meghatározzuk a rendszer különféle funkcionális és nem funkcionális követelményeit,
+                         megszorításokat legyen szó hardveres korlátokról vagy egyéb másról.
+                    </td>
+                </tr>
+
+                <tr>
+                    <td>5. hét</td>
+                    <td>
+                        Víziódokumentumot elkezdjük elkészíteni. Összeírjuk, hogy ki az alkalmazás célcsoportja, mik a felhasználó számára nyújtott értékek.
+                         Meghatározzuk milyen módon teszi élvezetessé és szemléletessé a növény gondozását a termék.
+                          Dokumentálásra kerül benne a szoftver által kínált üzleti lehetőségek.
+                    </td>
+                </tr>
+
+                <tr>
+                    <td>6.. hét</td>
+                    <td>
+                        Víziódokumentumot véglegesítjük. A benne lévő elképzeléseknek megfelelően kidolgozzuk termékünk felhasználói felületét
+                    </td>
+                </tr>
+
+                <tr>
+                    <td>7. hét</td>
+                    <td>
+                        Megtervezzük a szimulációs modellt, hogyan történik a növények gondozása fejlődése.
+                         Kidolgozásra kerül az öntözés mechanika, a fény és egyéb attribútumok hatásai a növényre nézve. Megtervezzük a növény növekedési fázisait.
+                    </td>
+                </tr>
+
+                <tr>
+                    <td>8. hét</td>
+                    <td>
+                        Véglegesítjük a SRS dokumentumot, biztosítva annak kíváló kidolgozottságát. Alkalmazás adatmodelleinek mentését és betöltését kidolgozzuk.
+                        A szoftverhez szükséges adatbázist megtervezzük.
+                    </td>
+                </tr>
+                <tr>
+                    <td>9-10. hét</td>
+                    <td>
+                        Objektum orientált szemlélettel UML-diagramokat használva megtervezzük a szükséges osztályokat és kapcsolatokat,
+                         tehát a projekt osztályszintű felépítését és a köztük lévő hierarchiát. Ezek és az SRS dokumentum alapján elkészítjük az analízismodellt.
+                    </td>
+                </tr>
+                <tr>
+                    <td>11. hét</td>
+                    <td>
+                        Megtervezzük a tesztelési követelményeket. A szoftver különböző tervezett modulljait összekapcsoljuk.
+                    </td>
+                </tr>
+                <tr>
+                    <td>12. hét</td>
+                    <td>
+                        Feltételeknek megfelelően végső teszteket végzünk el, ezzel garantálva a termék tökéletes működését.
+                    </td>
+                </tr>
+                <tr>
+                    <td>13. hét</td>
+                    <td>
+                        Elkészítjük az esetleges hibákat javító végleges állapotát a szoftvernek. Összeállítjuk a projekt teljes dokumentációját és véglegesítjük.
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </section>
+
+    <section>
+        <h2>3. Programozási nyelvek és fejlesztőeszközök</h2>
+
+        <h3>Tervezett programozási nyelvek</h3>
+            <p>
+                A mobilalkalmazást Android és iOS rendszerekre is elérhetővé fogjuk tenni, ezért fontos volt olyan technológiát választani, amivel mindkét platformra tudunk fejleszteni anélkül, hogy két különálló projektet is vezetnénk. Az alkalmazás fejlesztéséhez ezért a <b>Dart</b> programozási nyelvet és a <b>Flutter</b> keretrendszert használjuk. Mivel a Flutter alapja a Dart így mind a logikát, mind a felhasználói felület elemeit is elkészíthetjük egy nyelven, ezzel gördülékenyebbé téve a fejlesztést.
+                
+            </p>
+
+        <h3>Fejlesztőeszközök</h3>
+            <p>
+                Fejlesztői környezetnek ajánlott a <b>Visual Studio Code</b> használata a "Flutter" és "Dart" bővítményekkel együtt. A Flutter SDK biztosítja az alkalmazás fejlesztéséhez szükséges eszközöket és könyvtárakat.
+                <br><br>
+                A kódolás megkezdése előtt elkészített látványterveket <b>Figma</b> segítségével készítjük el, ami lehetővé teszi több csapattag egyidejű munkáját illetve a többi fejlesztő és esetleges felhasználók megjegyzéseinek hozzáfűzését.
+                <br><br>
+                Az alkalmazás helyes működésének tesztelésére használható az <b>Android Studio</b> emulátora, vagy bármilyen más erre alkalmas emulátor, esetleg fizikai hardver.
+                <br><br>
+                Mivel az alkalmazásban a felhasználók csoportokhoz tartoznak, nem elegendő a saját növények adatait az eszközeiken tárolni. Az adatok tárolására <b>Cloud Firestore</b> adatbázist használunk. Ebben tároljuk a felhasználók, csoportok, csoporttagok, növények és azok aktuális állapotának adatait. A Firestore valós idejű adatfrissítési lehetősége miatt, a csoport többi tagjai is látják a felhasználó növényének aktuális állapotát anélkül, hogy újra kellene indítani az alkalmazást.
+                <br><br>
+                A felhasználók kezeléséhez a <b>Firebase Authentication</b> szolgáltatást használjuk, mely a felhasználók azonosítását és saját fiókkal rendelkezését biztosítja. A hozzáférési jogosultságokat <b>Firestore Security Rules</b> valósítja meg.
+                <br><br>
+                A forráskód kezelésére és a közös munkára <b>Git</b> verziókezelő rendszert és <b>GitHub</b>-ot használunk, lehetővé téve a fejlesztés során végzett módosítások követését és a korábbi verziók megőrzését/visszaállítását.
+                <br><br>
+                A felhasználók, a csoportok, a növények kapcsolata, valamint az alkalmazás fontosabb működési folyamatainak megtervezéséhez UML-diagramokat készítünk <b>draw.io</b> segítségével. 
+            </p>
+    </section>
+
+<section>
+        <h2>4. Használni tervezett eszközök és technikák</h2>
+
+        <p>
+            A tervezés során az órákon tanult <b>objektumorientált szemléletet és az iteratív fejlesztési modellt</b> követjük. A munkát a használati esetek feltárásával indítjuk, és modulárisan építkezünk, hogy a szimuláció logikáját és a rendszer felépítését lépésről lépésre tudjuk finomítani és bővíteni.
+            <br><br>
+            A működés és a rendszer megtervezéséhez <b>UML-diagramokat</b> rajzolunk. Használatieset- és folyamatábrákkal vázoljuk fel, hogyan tudja a felhasználó vagy a tanár kezelni az alkalmazást. A növények állapotait és az életciklusokat (például mag, kifejlett növény, kiszáradt állapot) állapotdiagramokkal ábrázoljuk, az adatok felépítéséhez és a belső működéshez pedig osztálydiagramokat készítünk.
+            <br><br>
+            A forrásfájlok és a szöveges anyagok szerkesztésére a <b>Visual Studio Code</b>-ot használjuk, mert a beépülő bővítményeivel kényelmes és gyors benne dolgozni mindenkinek.
+            <br><br>
+            A fájlok, tervek és vázlatok megosztására a csapaton belül a <b>Microsoft OneDrive</b>-ot használjuk, mivel ezt egyetemi fiókkal mind elérjük.
+            <br><br>
+            Az alkalmazás arculatát, a színeket, az ikonokat és a menük kinézetét <b>Figma</b> segítségével alakítjuk ki. Ezzel a fejlesztés előtt meg tudjuk nézni, hogyan néz majd ki a felület a telefonon, így egy átlátható, modern és a gyerekek számára is barátságos megjelenést tudunk összehozni.
+            <br><br>
+            A minőségbiztosításnál és tesztelésnél kiemelten figyelünk a határértékekre. Megvizsgáljuk, hogyan viselkedik a program, ha a felhasználó túl sokat öntöz, vagy ha teljesen elhanyagolja a növényt, és biztosítjuk, hogy a mentett adatok még a váratlanabb műveletek során se sérüljenek vagy vesszenek el.
+        </p>
+    </section>
+
+    <section>
+        <h2>5. A leendő produktumok és létrejöttük ideje</h2>
+
+        <p>
+            A 3. hétre elkészül a <b>Projektterv</b>, amely a csoport felépítését, a fejlesztési ütemtervet, a választott programozási nyelvet és fejlesztőeszközöket, a tesztelés leírását, valamint a program bemutatásának módját foglalja össze.
+            <br><br>
+            A 6. hétre elkészül a <b>Vízió</b> dokumentum, melynek célja a rendszer általános és könnyen érthető leírása. Megfogalmazzuk a megoldandó problémát, az általunk kínált megoldást és azt, hogy miben különbözik a mi megoldásunk a mások által kínált megoldásoktól. Azonosítjuk az érintett felhasználókat és összefoglaljuk a szoftver legfontosabb funkcióit és korlátozásait. Felmérjük a lehetséges kockázatokat, megfogalmazzuk a minőségi elvárásokat és megbecsüljük a projekt költségeit.
+            <br><br>
+            A 8. hétre elkészül az <b>SRS</b> dokumentum. Ennek a dokumentumnak a célja az előző fázisban elkezdett terv részletes kidolgozása ami a rendszer tervezéséhez szükséges mélységben írja le, hogy pontosan milyen funkciókat kell tudnia az alkalmazásnak. Ide tartozik többek közt a csoportok és felhasználók kezelése, a növény állapotának megjelenítése és frissítése, valamint a jogosultságok kezelése is. Az SRS dokumentum tartalmazza továbbá a nem funkcionális követelményeket is mint például a felhasználói felület kezelhetőségével szembeni elvárásokat vagy a várható betanulási időt az alkalmazás hatékony használatához. Felmérjük a rendszertől elvárt teljesítményt és az üzembe helyezés után szükséges karbantartási feladatok megkönnyítésére szolgáló követelményeket is.
+            <br><br>
+            A 10. hétre elkészül az <b>Analízis modell</b> ami az SRS-ben megfogalmazott követelmények alapján leírja a rendszer kezdeti osztálydiagramját, amely megmutatja a legfontosabb osztályokat és a köztük lévő kapcsolatokat, valamint az alkalmazás alrendszerekre bontását és ezek részletesebb modelljét. A dokumentum minden osztályhoz rövid leírást ad annak kapcsolatairól, attribútumairól és funkcionalitásáról.
+            <br>
+            Elkészül a <b>Rendszertervezés</b> dokumentum is, ami konkrétan a megvalósításhoz szükséges terveket tartalmazza. Ide kerül a felhasználói felület részletes terve, valamint az adatmodell kidolgozása is. Tartalmazza az adatbázis-kezelő kiválasztásának indoklását, szemantikai és relációs modelljét. A megvalósításhoz szükséges további terveket, osztálydiagramokat és fontosabb algoritmusok és adatszerkezet leírását is tartalmazza.
+        </p>
+
+    </section>
+
+    <section>
+        <h2>6. Tesztelési követelmények</h2>
+        <p> 
+            A fejlesztés során odafigyelünk arra, hogy az alkalmazást alaposan leteszteljük, és ezzel minden funkció megbízhatóan és megfelelően működjön. Megnézzük, hogy a felhasználó tud-e új növényeket létrehozni, megtekinteni a növények adatait, és elvégezni a gondozásukhoz szükséges feladatokat, például öntözés. 
+            Ellenőrizzük azt is, hogy a növények fejlődése a megadott szabályok szerint történik-e, és hogy a különböző környezeti hatások, például a megfelelő vagy nem megfelelő fényviszonyok hogyan befolyásolhatják az állapotukat.
+            <br><br>
+            Nyomon követjük, hogy a növények adatai helyesen menthetőek legyenek és később visszatölthetőek is. Emiatt az is fontos, hogy az alkalmazás ne veszítsen adatokat használat közben. A rendszernek kezelnie kell a hibás vagy hiányos adatok megadását is, ilyen esetekben egyértelmű hibaüzenetet kell majd megjelenítenie a felhasználó számára.
+            <br><br>
+            <b>Célunk</b>, az alkalmazás egyszerű használata, átláthatósága és könnyű kezelése. A tesztelés eredményeként egy megbízható, felhasználóbarát és oktató jellegű alkalmazást szeretnénk létrehozni, amely megfelelően támogatja a virtuális növények gondozását és azok fejlődésének nyomon követését.
+        </p>
+        
+    </section>
+
+   <section>
+        <h2>7. Bemutatás és szállítás módja, ideje</h2>
+
+        <h3>A bemutatás és szállítás módja</h3>
+        <p>
+            A projekt bemutatása és átadása az elkészült, teljes rendszertervezési dokumentáció segítségével valósul meg. A rendszer célját, a működési logikát, az adatbázis szerkezetét, a képernyőterveket és a tesztelési szempontokat maga az egységes HTML dokumentum foglalja össze és szemlélteti.
+            <br><br>
+            A szállítás digitális formában történik: a félév során kidolgozott, véglegesített HTML fájlt juttatjuk el az oktató számára, amely magában foglalja az összes kidolgozott fejezetet, a beágyazott UML-diagramokat és a felületi terveket is.
+        </p>
+
+        <h3>Leadási idő</h3>
+        <p>
+            A fejlesztési tervben meghatározott ütemezéshez igazodva a projektterv és a későbbi teljes dokumentáció végleges leadása a <b>13. hét végére</b> esedékes.
+        </p>
+    </section>
+
+    <section>
+        <h2>8. Információforrások</h2>
+
+        <p> 
+            A projekt elkészítése során többféle forrást használunk fel.
+            <br>
+            <b>Az alkalmazás fejlesztéséhez:</b>
+            <ul>
+            <li><a href=https://api.flutter.dev>Flutter dokumentáció</a></li>
+            <li><a href=https://dart.dev/learn>Dart dokumentáció</a></li>
+            <li><a href=https://firebase.google.com/docs/auth>Firebase Authentication dokumentáció</a></li>
+            </ul>
+            A rendszer felépítésének megtervezéséhez szoftvertervezési anyagokat és UML-leírásokat használunk.
+            <br>
+            A <b>felhasználói felület kialakításához</b> a Figma útmutatói és mobilalkalmazások tervezésével kapcsolatos anyagok állnak rendelkezésünkre.
+            <br>
+            A <b>növények fejlődésének modellezéséhez</b> növénygondozással kapcsolatos szakmai források haszálata.
+        </p>
+
+    </section>
+
+</main>
+
+</body>
+</html>
