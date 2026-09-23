@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Palánták</title>
+
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background-color: #eef7ee;
+            color: #234d20;
+        }
+
+        header {
+            background-color: #4caf50;
+            color: white;
+            text-align: center;
+            padding: 30px;
+        }
+
+        h1 {
+            margin: 0;
+            font-size: 42px;
+        }
+
+        .menu-container {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            flex-wrap: wrap;
+            padding: 30px;
+        }
+
+        select {
+            width: 180px;
+            padding: 12px;
+            border: 2px solid #4caf50;
+            border-radius: 8px;
+            background-color: white;
+            color: #234d20;
+            font-size: 16px;
+            cursor: pointer;
+        }
+
+        select:hover {
+            background-color: #e8f5e9;
+        }
+
+        main {
+            text-align: center;
+            padding: 20px;
+        }
+
+        footer {
+            margin-top: 40px;
+            padding: 15px;
+            text-align: center;
+            background-color: #2e7d32;
+            color: white;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>Palánták</h1>
+    </header>
+
+    <main>
+        <div class="menu-container">
+
+            <select>
+                <option selected disabled>Válassz növényt</option>
+                <option>Paradicsom</option>
+                <option>Paprika</option>
+                <option>Uborka</option>
+                <option>Saláta</option>
+            </select>
+
+            <select>
+                <option selected disabled>Válassz méretet</option>
+                <option>Kicsi</option>
+                <option>Közepes</option>
+                <option>Nagy</option>
+            </select>
+
+            <select>
+                <option selected disabled>Válassz színt</option>
+                <option>Zöld</option>
+                <option>Piros</option>
+                <option>Sárga</option>
+                <option>Lila</option>
+            </select>
+
+            <select>
+                <option selected disabled>Válassz helyet</option>
+                <option>Balkon</option>
+                <option>Kert</option>
+                <option>Üvegház</option>
+                <option>Beltér</option>
+            </select>
+
+            <select>
+                <option selected disabled>Válassz gondozást</option>
+                <option>Kevés öntözés</option>
+                <option>Rendszeres öntözés</option>
+                <option>Sok napfény</option>
+                <option>Félárnyék</option>
+            </select>
+
+        </div>
+    </main>
+
+    <footer>
+        &copy; 2026 Palánták oldala
+    </footer>
+
+</body>
+</html>
+
