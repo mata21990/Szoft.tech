@@ -43,6 +43,27 @@
         padding-left: 0;
     }
 
+    .tartalomj  {
+        margin: 10px 20px 10px 20px;
+    }
+
+    .tartalomj h3 {
+        font-weight: 300;
+        font-size: 30px;
+    }
+
+    .tartalomj a {
+        text-decoration:none;
+        font-size: 20px;
+        color: black;
+        transition: 0.2s;
+    }
+
+    .tartalomj a:hover {
+        text-decoration:underline;
+        color: darkolivegreen
+    }
+
 
 </style>
 
@@ -90,6 +111,20 @@
 
 <main>
 
+    <div class="tartalomj">
+        <h3>Tartalom jegyzék:</h3>
+        <ol>
+            <li><a href="#one">Csoport tagjai, struktúrja</a></li>
+            <li><a href="#two">Fejlesztési terv</a></li>
+            <li><a href="#three">Programozási nyelv</a></li>
+            <li><a href="#four">Használni tervezett eszközök</a></li>
+            <li><a href="#five">Leendő produktumok</a></li>
+            <li><a href="#six">Tesztelési követlemények</a></li>
+            <li><a href="#seven">Bemutatés, szállítás</a></li>
+            <li><a href="#eight">Információ források</a></li>
+        </ol>
+    </div>
+
     <section>
         <h2>A projekt célja</h2>
 
@@ -105,16 +140,9 @@
             táplálhatja és megfelelő helyre helyezheti a növényeket.
         </p>
 
-        <div class="highlight">
-            A projekt elsősorban az alkalmazás rendszertervére, működésére,
-            adatkezelésére, tesztelésére és bemutatására koncentrál.
-            <div class="highlight_warning">
-                Ez például fölösleges szerintem
-            </div>
-        </div>
     </section>
 
-    <section>
+    <section id="one">
         <h2>1. Csoport tagjai és struktúrája</h2>
         
         <div class="team-member">
@@ -158,7 +186,7 @@
         </div>
     </section>
 
-    <section>
+    <section id="two">
         <h2>2. Fejlesztési terv, mérföldkövek és eredmények</h2>
         
         <table class="beosztas">
@@ -253,7 +281,7 @@
         </table>
     </section>
 
-    <section>
+    <section id="three">
         <h2>3. Programozási nyelvek és fejlesztőeszközök</h2>
 
         <h3>Tervezett programozási nyelvek</h3>
@@ -280,7 +308,7 @@
             </p>
     </section>
 
-<section>
+<section id="four">
         <h2>4. Használni tervezett eszközök és technikák</h2>
 
         <p>
@@ -298,7 +326,7 @@
         </p>
     </section>
 
-    <section>
+    <section id="five">
         <h2>5. A leendő produktumok és létrejöttük ideje</h2>
 
         <p>
@@ -315,7 +343,7 @@
 
     </section>
 
-    <section>
+    <section id="six">
         <h2>6. Tesztelési követelmények</h2>
         <p> 
             A fejlesztés során odafigyelünk arra, hogy az alkalmazást alaposan leteszteljük, és ezzel minden funkció megbízhatóan és megfelelően működjön. Megnézzük, hogy a felhasználó tud-e új növényeket létrehozni, megtekinteni a növények adatait, és elvégezni a gondozásukhoz szükséges feladatokat, például öntözés. 
@@ -328,7 +356,7 @@
         
     </section>
 
-   <section>
+   <section id="seven">
         <h2>7. Bemutatás és szállítás módja, ideje</h2>
 
         <h3>A bemutatás és szállítás módja</h3>
@@ -344,7 +372,7 @@
         </p>
     </section>
 
-    <section>
+    <section id="eight">
         <h2>8. Információforrások</h2>
 
         <p> 
