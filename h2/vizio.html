@@ -1,0 +1,901 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Vízió dokumentum</title>
+  <link rel="stylesheet" href="../stilusok/cimlap.css">
+  <link rel="stylesheet" href="../stilusok/alap.css">
+  <style>
+
+    table {
+      width: 90%;
+      margin: 0 auto;
+      border-collapse: collapse;
+    }
+
+    th, td {
+      padding: 9px 11px;
+      border: 1px solid #777;
+      font-size: 18px;
+      text-align: left;
+      vertical-align: top;
+    }
+
+    th {
+      background-color: #beb9b9;
+    }
+
+    .document-info {
+      margin: 0 auto;
+      padding: 12px 16px;
+    }
+
+    .document-info p {
+      margin: 4px 0;
+    }
+
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1>Csoport neve: Palánták</h1>
+    <h1>Feladat sorszáma: 2</h1>
+    <h1>Feladat címe: Víziódokumentum</h1>
+    <div class="title">
+        <h1>Projektterv</h1>
+        <h3>Gyakorlatvezető:</h3>
+        <h3>Dr. Árvai László</h3>
+    </div>
+    <h1>Csoporttagok:</h1>
+    <table class="team">
+        <tr>
+            <td>Mata Márk</td>
+            <td>K8DGVI</td>
+            <td>mark.mata@student.uni-miskolc.hu</td>
+        </tr>
+        <tr>
+            <td>Suba Kinga</td>
+            <td>LI5C7L</td>
+            <td>kinga.suba@student.uni-miskolc.hu</td>
+        </tr>
+        <tr>
+            <td>Zsólyomi Klaudia Vanda</td>
+            <td>CHZQ7Z</td>
+            <td>klaudia.vanda.zsolyomi@student.uni-miskolc.hu</td>
+        </tr>
+        <tr>
+            <td>Zsák István</td>
+            <td>SIE9FL</td>
+            <td>istvan.zsak@student.uni-miskolc.hu</td>
+        </tr>
+        <tr>
+            <td>Baranyovszki Kata</td>
+            <td>W9JKTC</td>
+            <td>kata.baranyovszki@student.uni-miskolc.hu</td>
+        </tr>
+    </table>
+    <h2>Beadás dátuma: 2026. 10. 18.</h2>
+</header>
+
+  <div class="document-info">
+    <table>
+        <thead>
+            <tr>
+                <th><strong>Dátum</strong></th>
+                <th><strong>Verzió</strong></th>
+                <th><strong>Leírás</strong></th>
+                <th><strong>Szerző</strong></th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>2026. 10. 13.</td>
+                <td>0.8</td>
+                <td>Kezdetleges verzió</td>
+                <td>Mata Márk</td>
+            </tr>
+            <tr>
+                <td>2026. 10. 18.</td>
+                <td>1.0</td>
+                <td>Teljes verzió</td>
+                <td>Suba Kinga, Zsólyomi Klaudia Vanda, Baranyovszki Kata, Zsák István, Mata Márk</td>
+            </tr>
+        </tbody>
+    </table>
+  </div>
+
+  <nav class="tartalomj">
+    <h3>Tartalomjegyzék</h3>
+    <ol>
+      <li><a href="#bevezetes">Bevezetés</a></li>
+      <li><a href="#pozicionalas">Pozicionálás</a></li>
+      <li><a href="#erintettek">Érintettek és felhasználók</a></li>
+      <li><a href="#attekintes">A végtermék áttekintése</a></li>
+      <li><a href="#funkciok">A termék jellemzői és funkciói</a></li>
+      <li><a href="#korlatozasok">Korlátozások és feltételezések</a></li>
+      <li><a href="#minoseg">Minőségi követelmények</a></li>
+      <li><a href="#dokumentacio">Dokumentációs követelmények</a></li>
+      <li><a href="#kovetelmenyek">Egyéb követelmények</a></li>
+      <li><a href="#szotar">Szótár</a></li>
+    </ol>
+  </nav>
+
+  <main>
+    <section id="bevezetes">
+      <h2>1. Bevezetés</h2>
+
+      <h3>1.1. A dokumentum célja</h3>
+      <p>
+        A dokumentum célja a Növénynevelő alkalmazás víziójának és a hozzá kapcsolódó
+        követelményeknek, megszorításoknak az összefoglalása. Meghatározza, hogy milyen problémára ad
+        választ a rendszer, kik fogják használni, kik segítik a projekt készülését és létrejöttét.
+        Továbbá a dokumentum alapot ad a rendszer tervezéséhez és annak megvalósításához.
+      </p>
+
+      <h3>1.2. A projekt célja</h3>
+      <p>
+        A projekt célja egy főként edukációs célú növénygondozó és
+        fejlődésszimulációs alkalmazás létrehozása. A felhasználó egy vagy több
+        virtuális növényt gondozhat, és megfigyelheti, hogyan befolyásolják a
+        növények állapotát a gondozási műveletek és a környezeti tényezők. Az
+        alkalmazás a szimuláción keresztül segít megismerni a növénygondozás
+        alapjait, például az öntözés, a megfelelő fényviszonyok és a növények
+        fejlődési szakaszainak szerepét. 
+      </p>
+      <p>
+        A cél egy könnyen használható, szemléletes
+        tanulási környezetet biztosítása, ahol akár együtt csoportosan, felügyelet mellett is gondozhatnak növényeket.
+        Rendszeres használatának célja, hogy segítsen elsajátítani általánosan a növény mint előlény igényeit 
+        és annak megfelelő szolgáltatását. Emellett szándékunk az alkalmazással kis és
+         nagy iskolásoknak is egyaránt megalapozni,
+        és megerősíteni a környezet tudatosságot bennük.
+      </p>
+    </section>
+
+    <section id="pozicionalas">
+      <h2>2. Pozicionálás</h2>
+
+      <h3>2.1. Probléma</h3>
+      <p>
+        A gyerekek egyre több időt töltenet a telefonjukkal, és ott is főleg olyan pörgős, rövid tartalmat kínáló közösségi platformokon telik, ahol a rengeteg inger folyamatosan rombolja a koncentrációs képességeiket. Elvenni viszont lehet tőlük, hiszen a mai világban egyre több, a mindennapi élethez elengedhetetlen funkciókkal is szolgálnak, mint a tömegközlekedéshez szükséges jegyek és bérletek, vagy a tanulás bármilyen formája.
+      </p>
+      <p>
+        Gondot jelent az is, hogy a diákok sokszor félnek a hibázástól, esetleg attól hogy hülyének tarják őket. Van aki magától a hibázástól fél, sok tanuló pedig attól, hogy osztálytársaik kinevetik őket miattuk. Ezért van az is, hogy a tanulók többsége nem mer óra közben kérdezni a tanártól. A tanuláshoz és a fejlődéshez viszont nagyon sokat hozzájárul a kudarcélmény. A kudarcélmény hiánya, és a sokkal lassabb fejlődés ahoz vezet, hogy a lemaradásuk miatt még kevesebbet értenek, és még kevesebb esély van arra, hogy kérdeznek.
+      </p>
+      <p>
+        A diákok tanulásra ösztönzéséhez és a természet iránti érdeklődésük és tudásuk bővítéséhez egy barátságos megoldás lehetne hogy kapjanak egy növényt féléves-éves házi feladatnak amit fel kell nevelniük és dokumentálniuk a fejlődésüket. De az iskolában a növények nevelésénél probélmát okoz a hely és az idő hiánya, az intézmények hozzáférése különböző növényekhez, a zsúfolt tanterem, a pedagógusok leterheltsége, és az is, hogy nem tudnak folyamatosan odafigyelni a növényekre a diákok sem. Nyáron nincs aki gondozza őket, hacsak nem járnak be a tanulók - ami nem valószínű. Ha pedig más figyel rá ilyenkor akkor mi lesz ha a nevelt növény elpusztul? Kinek a hibája? Miért történt? Nem biztos hogy kiderül; Ezzel csak feszültséget keltenénk a diákokban. A növények gondozása türelmet, rendszerességet és a következmények vállalását is igényli akkor is, ha az eredmény nem azonnal látszik. Az isolában az ilyen hosszú távú feladatok nehezen szervezhetőek. Otthoni feladatnak sem megfelelő, hiszen a diákok mind más körülmények között élnek, és nem biztos hogy megengedhetik maguknak számtalan különböző ok miatt.
+      </p>
+      <p>
+        A tanárok szempontjából a legfőbb probléma az, hogy minden diák munkájának követése és esetleges segítése rengeteg időt igényel. Egy osztályban átlagosan 25-30 tanuló van, és ha mindenki külön növényt nevel egyszerűen képtelen annyi segítséget és odafigyelést nyújtani a diákjainak amennyi szükséges lenne. Különösen akkor, ha azt nem az órán vagy szünetekben, hanem otthon végzik a diákok saját idejükben.
+      </p>
+      <p>
+        A problémát elsősorban a diákok és a tanárok érzik. A diákoknak nincs biztos lehetőségük hibázni és újrakezdeni a feladatot, a tanároknak pedig nincs elég rálátásuk az otthoni munkára, hogy megfelelő segítséget tudjanak nyújtani. Ha a probléma megoldatlan marad, a diákok természetről szerzett tudásuk felszínes marad, a növénygondozás pedig csak pár lelkes tanár ügye marad. Ezeneknek a tanárok ez rengeteg plusz munkát jelent.
+      </p>
+      <p>
+        Egy olyan megoldásra van szükség amit a diákok is szivesebben használnak, tanáruk által könnyen követhető és könnyen tudnak segítséget nyújtani, amennyiben az szükséges, és az iskolai költségvetésbe is könnyebben belefér, mint a mindenféle, a diákok által kicsit izgalmasabbnak tartott növény, mint a megszokott fű.
+      </p>
+      <p>
+        Olyan mobilalkalmazást kínálunk a magyar intézményeknek, amiben a diákok egy virtuális növényt gondozhatnak, és fejlődésük minden pontjáról valós információt kapjanak. Ugyanúgy gondozni kell, figyelni kell rá folyamatosan mint a valóságban, de ezt egy könnyebben befogadható játékosabb formában tehetnék. Ez valószínűleg izgalmasabb számukra, hiszen bármilyen növényt választhatnak és nem kell tartaniuk a következményektől ha esetleg elpusztulna. Az alkalmazásban csoportokat is létre lehet hozni, ahol a tanár egy könnyű és átlátható rendszerben láthatja mindenki növényének jelenlegi állapotát ezzel jelenetősen megkönnyítve az ő dolgát is.
+      </p>
+      
+      <h3>2.2. A termék pozicionálása</h3>
+      <p>
+        Az alkalmazás egy edukációs célú, mobilos növénygondozó és fejlődésszimulációs alkalmazás, amely Android és iOS rendszerre is elérhető. A növények fejlődése egyszerűsített modell szerint zajlik, ezért az alkalmazás nem a valóságot másolja pontosan, hanem a gondozás alapelveit mutatja meg. Célunk egy olyan könnyen használható és szemléletes tanulási környezet, amely kellő realitással tanítja a felhasználókat, miközben egy könnyen átláható felülettel segíti a használatot. Legfőbb haszna, hogy a növénygondozás alapjait gyakorlati tapasztalaton kereszült, kockázat nélkül tanítja meg, hiszen a diák nem csak olvas a növények igényeiről, hanem a saját döntései és cselekedetei hatását látja a saját növényén. 
+      </p>
+      <p>
+        A termék elsősorban az általános és középiskolák, valamint az ott tanuló diákok és tanárok számára készül. A diákok mindennapi használók, akik gondozzák a növényeiket és visszajelzést kapnak, a tanárok pedig csoportokat hoznak létre, követik a diákok munkáját és pontozással, vagy tancsokkal segítik őket. Az alkalmazás az iskolai kereteken kívül, például otthon és szabadidőben is használható.
+      </p>
+      <p>
+        A problémára a mi alkalmazásunkon kívűl más megoldások is léteznek, de mindegyiknek megvannak a maga hátrányai. A valódi növény gondozása az osztályteremben vagy az iskolában belül valódi tapasztalatod ad, viszont számos nehézségei is vannak. Az általános virtuális ilyen-olyan gondozó játékok szórakoztatóak és könnyen elérhetőek, de ezek csak könnyed szórakozást nyújtanak és nem lehet belőlük kellő szinten tanulni. Ezekben a játékokban gyakoriak a reklámok is, valamint a játékon belüli vásárlások is amit mi semmiképpen nem helyezünk el az alkalmazásunkban, így sokkal jobban alkalmazkodik egy iskolai környezetbe. Az általános tanulóplatformokon a tanár követni tudja a diákok munkáját, de ott feladatsorokat és teszteket kell kitölteni, és nincs lehetőség hosszabb ideig tartó projektfeladat levezetésére, valamint a tanároknak kell külön időt rászánnia és megcsinálnia a feladatokat. A könyvek és a videók habár rengeteg információval szolgálnak, passzívak és nyersek, ami miatt hamar elvesztik az érdeklődésüket a tanulók. Alkalmazásunk abban tér el ezektől, hogy a tanár felügyeletet és a hosszabb ideig tartó, saját felelősségű gondozást egyszerre kínálja, és közben a hibázás nem jár valódi veszteséggel. 
+      </p>
+
+      <h3>2.3. Üzleti lehetőség</h3>
+      <p>
+        Az okostelefonok ma már a legtöbb ember mindennapjainak részévé váltak. Ez a tanulás szempontjából egyszerre jelenet kihívást és lehetőséget is. Kihívást jelent, hiszen a telefonokon a figyelemért folyamatosan versenyeznek többek között a játékok és a különféle közösségi oldalak is, ami folyamatasan a felhasználók figyelméért küzd. Lehetőséget pedig azért nyújt, mert ugyanez az eszkösz arra is használható, hogy a gyerekek valami hasznosat tanuljanak vele. Ehhez pedig azt kell elérni, hogy az alkalmazás elég érdekes legyen ahhoz, hogy szívesen használják.
+      </p>
+      <p>
+        Az oktatási célú alkalmazások iránti igény folyamatosan nő, hiszen az iskolák és a pedagógusok egyre nyitottabbak arra, hogy a hagyományos tanítás mellett digitális eszközöket is bevonjanak az órákba és az azokon kívüli feladatok lebonyolításába. Ez különösen igaz azokra a témákra, ahol a tapasztalat sokat számít és a puszta olvasás kevés, hiszen sok esetben az intérmények nem tudják biztosítani a lehetőséget ennek lebonyolítására. A növénygondozás pontosan ilyen téma, mert ott ahol ilyen feladatot adnak, gyakran csak olcsó, kevésbé izgalmas növényeket tudnak adni. A diákok figyelmét fel kell hívni, el kell érni hogy használni akarják. Sok intézmény nem teheti meg az egzotikusabb növényeket költségvetés szempontjából sem, főleg annak fényében hogy az a növény valószínűleg el fog pusztulni. De digitális formában nincs ilyen probléma. 
+      </p>
+      <p>
+        Az alkalmazásunk erre a lehetőségre épít; a tanulók a tanárukkal közös csoportokba szerveződnek, mindenki választ és felnevel egy számára érdekes virtuális növényt, melynek a fejlődését a csoport többi tagja és a tanár is figyelemmel kísérheti, értékelheti és tanácsokkal segítheti munkájukat. A növény kiválasztása a diák döntése, és ha a növény elpusztul annak nincs valódi következménye, ezért a diákoknak több kedve lesz nekikezdeni, vagy akár több különféle növényt is kipróbálni, akár olyat is, amit az iskola nem tudna beszerezni. Az alkalmazáson belül viszont látszik a hiba következménye, így a diák biztonságos környezetben tapasztalja meg a kudarcot. A növény nevelése pedig csak akkor lesz sikeres, ha gazdája rendszeresen és helyesen gondozza, így a diák megtapasztalja, hogy a döntéseinek következménye van. Az iskolafeladatai közé tartozik, hogy a diákokat a természet tiszteletre, a környezet védelmére és az egyéni felelősségvállalásra nevelje, amihez alkalmazásunk egy könnyen használható eszközt kínál.
+      </p>
+      <p>
+        Az alkalmazás üzleti lehetősége abban is rejlik, hogy többféle felhasználói csoportnak nyújt értéket egyszerre. Az iskolának egy olyan eszközt kínál, amely nem igényel jelentős beruházást, hiszen a diákok és a tanárok többsége már rendelkezik okostelefonnal és egy csopoprt létrehozása után gyakorlatilag azonnal elkezdhetik a munkát. A tanárok rengeteg időt takarítanak meg, mert nem kell külön nyilvántartást vezetniük arról, hogy ki mennyit foglalkozott a feladattal, a diákoknak pedig egy olyan élményt ad, amely közelebb áll a megszokott telefonos játékokhoz, mint a hagyományos iskolai feladatokhoz, ezért nagyobb eséllyel használják szivesen és rendszeresen. A szülők számára pedig megnyugtató lehet, hogy a gyerekük a telefon töltött idejének egy részét valami áthlátható és felügyelt formában teszi amivel tanul is.
+      </p>
+      <p>
+        További előnye az is, hogy könnyen és jól lehet bővíteni a rendszert új növényfajtákkal, gondozási feladatokkal vagy más tantárgyakhoz kapcsolódó tartalmakkal is. A csoportos felépítés lehetővé teszi, hogy ne csak egy osztály, hanem akár egy egész évfolyam, iskola, vagy több iskola közösen használja valamilyen nagyobb, közös projekthez anélkül, hogy az alapelvek megváltoznának. 
+      </p>
+      <p>
+        Az alkalmazásunk így indulhat egy kisebb és jól körülhatárolt alkalmazásként, és van lehetőségünk továbbfejleszteni az iskolák igénye szerint. Könnyebben és gyorsabban el tudjuk így indítani, és az iskolák javaslatának és igényeinek meghallhatásával egy olyan felhasználnóbázist építhetünk fel, ami sokkal valószínűbb, hogy nem vált át mást rendszerre, hiszen egy személyreszabotabb, és rendszeresen bővülő és támogatott rendszert kapnak.
+      </p>
+      <p>
+        Elsődleges célpiacunkat a magyar általános és középiskolák jelentik. Célunk egy olyan digitális oktatási eszközt kínáljunk az intézményeknek, amely interaktív módon segíti a diákok növénygondozással kapcsolatos ismereteinek bővítését, miközben fejleszti a türelmüket, rendszerességüket és felelősségérzetüket.
+      </p>
+      <p>
+        Az alkalmazás előnye, hogy használatához nincs szükség valódi növények beszerzésére, gondozására, vagy tárolására, így olyan iskolákban is lehetőséget biztosít a gyakorlati jellegű tanulásra, ahol a helyhiány, a költségvetés vagy a pedagógusok leterheltsége ezt megnehezítené. A tanárok csoportokat hozhatnak létre, nyomon követhetik a diákok növényeinek fejlődését, valamint a visszajelzésekkel és tanácsokkal segíthetik a munkájukat. Ez hosszabb távú projektfeladatok szervezését és a diákok fejlődésének követését is egyszerűbbé teheti.
+      </p>
+      <p>
+        Értékesítés során elsősorban az intézmények vezetőit és a természettudományos tantárgyakat oktató pedagógusokat szólítjuk meg. Az alkalmazás mobiltelefonon használható, reklámok és alkalmazáson belüli plusz vásárlások nélkül biztosít tanulási lehetőséget, így jól illeszkedik az iskolai környezethez. A későbbiekben a pedagógusok és az intézmények visszajelzései alapján további növényfajtákkal, gondozási lehetőségekkel és új oktatási tartalmakkal bővíthetjük a rendszert. Hosszútávú célunk, hogy az alkalmazás minél több magyar iskolában tegye elérhetővé a szemléletes, élményalapú és felelősségteljes tanulást.
+      </p>
+    </section>
+
+    <section id="erintettek">
+      <h2>3. Érintettek és felhasználók</h2>
+
+      <h3>3.1. Érintettek</h3>
+      <table>
+        <thead>
+          <tr>
+            <th>Érintett</th>
+            <th>Szerep</th>
+            <th>Megjegyzés/problémák</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Felhasználók (főleg diákok)</td>
+            <td>
+              <ul>
+                <li>
+                  Az alkalmazás aktív használata, például növények gondozása mely magába foglalja az öntözést
+                  és egyéb műveleteket. 
+                </li>
+                <li>
+                  Csoportok létrehozása, kezelése. Alkalmazás multiplayer funkcióinak használata.
+                </li>
+              </ul>
+            </td>
+            <td>Elvárják, hogy a felület könnyen kezelhető, stabil legyen és hibamentesen működjön.</td>
+          </tr>
+          <tr>
+            <td>Fejlesztő csapat</td>
+            <td>
+              <ul>
+                <li>
+                  Az alkalmazás megtervezése, fejlesztése és tervezett funkciók implementálása Dart és Flutter használatával.
+                  Kész termék tesztelése, esetlegesen adódó hibák javítása.
+                </li>
+                <li>
+                  Szerveroldali architektúra és adatbázis megtervezése és karbantartása.
+                </li>
+              </ul>
+            </td>
+            <td>Szükség lehet sürgős frissítésekre, valamilyen komolyabb bug esetén. </td>
+          </tr>
+          <tr>
+            <td>Ügyfélszolgálat</td>
+            <td>Felhasználói kérdések, belépési/regisztrációs problémák kezelése, megválaszolása
+            </td>
+            <td>Probléma lehet a lassú válaszidő, különösen valamilyen technikai probléma jelentése esetén</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <h3>3.2. Fejlesztő csapat leírása</h3>
+      <table>
+        <thead>
+          <tr>
+            <th>Szerepkör</th>
+            <th>Leírás</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Projektvezető</td>
+            <td>Irányítja, kordinálja a fejlesztőcsapat munkáját. Felügyeli a csapattagokat, megbeszéléseket hív össze.</td>
+          </tr>
+          <tr>
+            <td>Konzulens</td>
+            <td>Értékeli a kész projektet, ellenőrzi a mérföldköveket. Tanácsot nyújt felmerülő kérdésekben, legyen szó elmélet
+              vagy technikairól.
+            </td>
+          </tr>
+          <tr>
+            <td>Multiplayer integráció felelős(Backend/szerveroldal)</td>
+            <td>Kezeli a csoportok létrehozását, törlését, a csoporttagok jogosultságait. Ő tervezi a 
+              szerveroldali tevékenységnaplót és biztosítja a növények szerveroldali, 
+              közös működését (Firebase Authentication, Firestore Security Rules integrálása). 
+            </td>
+          </tr>
+          <tr>
+            <td>Szimulációs fejlesztő</td>
+            <td>
+              A növények fejlődésének szabályait fejleszti (állapotváltozások). Ő tervezi 
+              meg a növényt leíró adatokat, osztályokat és a víz, fény és egyéb hatásokat számító funkciókat. 
+            </td>
+          </tr>
+          <tr>
+            <td>Felhasználói felület és megjelenítés felelőse</td>
+            <td>
+              Kialakítja a megjelenést (színek, ikonok sajátosságát) és megtervezi a 
+              grafikus felületeket (GUI) Figma segítségével. Ő implementálja a képernyőket, menüket, interakciós 
+              gombokat és vizuális effekteket, biztosítva a letisztult felületet. 
+            </td>
+          </tr>
+          <tr>
+            <td>Tesztkezelési és adatkezelési felelős</td>
+            <td>
+              Megtervezi az adatbázis szerkezetét (Cloud Firestore), a táblákat és kapcsolataikat, kialakítja az 
+              adatmentés/betöltés módját. Ő felel a szoftver alapos teszteléséért, az adatok struktúrájáért, az alkalmazás 
+              minőségbiztosításáért és ellenőrzi a helyes működést és az esetleges hibákat javítja.
+            </td>
+          </tr>
+          <tr>
+            <td>Dokumentáció felelős</td>
+            <td>Dokumentálja a fejlesztők és felhasználók számára egyaránt a terméket. Útmutatók, leírások, magyarázatok.</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <h3>3.3 Felhasználói környezet</h3>
+
+      <p>
+        A virtuális növénygondozó alkalmazás megszólítani kívánt köre lehet: a gyerekektől kezdve, 
+        akik játékos formában tanulhatnának a felelősségről, de akár egészen a felnőttekig, akik egy pihentető, 
+        szimulációs élményt keresnek. A letisztult, modern és barátságos megjelenés biztosítja, 
+        hogy a különböző korosztályok egyaránt könnyen kezeljék a felületet.
+      </p>
+
+      <p>
+        A folyamat nem igényel rendszeres aktív jelenlétet (mint egy akciójáték), a felhasználók jellemzően 
+        rövidebb, de rendszeres időközönként (pl. napi pár perc) lépnek be öntözni, táplálni és ellenőrizni a növényeiket. 
+        A multiplayer funkció lehetőséget adhat a közösségi élményre, így a felhasználók egymás növényeit is láthatják.
+      </p>
+
+      <p>
+        További  tervünk, hogy kis és nagy létszámú csoportok esetén egy vagy több oktató/személy felügyelhesse a 
+        növény gondozási folyamatát.
+      </p>
+
+      <p>
+        <strong>Egyedi hardver eszközök:</strong>
+        Egyedi hardware eszközök: Az alkalmazás használatához nem szükségesek speciális, egyedi hardvereszközök. 
+        Egy átlagos okostelefon érintőképernyője elegendő az interakciókhoz (pl. "gombok" megnyomása öntözéshez). 
+        A grafikai felületet (GUI) úgy kell kialakítani, hogy alkalmazkodjon a különböző képernyőméretekhez és felbontásokhoz. 
+      </p>
+      
+      <p>
+        <strong>Mobil kliensek és platformok:</strong>
+        Az alkalmazás mobilplatformokon (Android és iOS) fog futni. A kódbázis mindkét rendszert kiszolgálja. 
+        Rövid távon nem várható platformváltás, de a Flutter tulajdonságai miatt később bővíthető akár webes 
+        vagy asztali környezetre is.
+      </p>
+
+      <p>
+        <strong>Használati idő:</strong>
+        A munkamenetek kifejezetten rövidek lesznek. A felhasználó belép, elvégzi az öntözést, táplálást vagy egyéb 
+        interakcióit, majd kilép. A hossza nem különösebben változó, viszont a használat gyakorisága 
+        (pl.: napi többszöri belépés) magas lesz, ami a szimulációs szabályoktól (pl.: a növények vízigényétől) függ.
+      </p>
+
+      <p>
+        <strong>Felhőalapú szolgáltatások és adatkezelés:</strong>
+         Mivel a felhasználók saját növényeik adatait, állapotát, valamint a csoportos funkciókhoz 
+         szükséges információkat tárolják, az adatok helyi (eszközön történő) tárolása nem elegendő. 
+         A rendszer a Firebase Cloud Firestore valós idejű adatbázisát használja. Ez a felhőalapú szolgáltatás biztosítja
+         a növények állapotának szinkronizálását több eszköz között. Ennek több előnye is van például:
+         ha a felhasználó telefont cserél nem vész el a növénye. 
+      </p>
+      <p>
+        Ennek köszönhetően bizotsított továbbá a csoportok tagjai közötti valós idejű frissítés, ez azért is hasznos, mivel 
+        közös növény nevelés vagy akár felügyelés esetén amint módosítás történik az a másik fél azonnal látja. Mindemellett a
+        Firebase Authentication szolgáltatás biztosítja a felhasználói fiókok kezelését és a jogosultságokat.
+      </p>
+
+      <p>
+        <strong>Multiplatform játékmenet / Hálózati követelmények:</strong>
+        Bár a Flutter lehetővé teszi, hogy az alkalmazás Androidon és iOS-en is fusson, a valós idejű adatbázis 
+        (Cloud Firestore) és a multiplayer funkciók miatt az alkalmazás teljes körű használatához (mentés, szinkronizáció) 
+        aktív internetkapcsolat (Wi-Fi vagy mobilnet) szükséges. Tervezési szempont lehet, hogy az alkalmazás offline 
+        állapotban hogyan viselkedik. Tárolja-e helyben az öntözés megtörténtét, vagy hibaüzenetet dob-e 
+        a megszakadt kapcsolat esetén. Ideális esetben tárolnia kéne, mely internet hozzáférés esetén azonnal mentődik az 
+        adatbázisba, azonban ehhez szükséges lenne egy másodlagos helyi mentésre a felhasználó adott munkamenetéről, hisz internet
+        elérés nélkül ezt sem tudja betölteni az app.
+      </p>
+
+    </section>
+
+    <section id="attekintes">
+      <h2>4. A végtermék áttekintése</h2>
+
+      <h3>4.1. A termék kapcsolatai</h3>
+      <p>
+        Az alkalmazás két fő részből áll: a telefonon futó mobilalkalmazásból és a háttérben működő felhőből, ahol a
+        felhasználók, csoportok és növények adatai tárolódnak. A kettő között folyamatos az adatforgalom, ezért
+        a mobilalkalmazás nem működik teljes értékűen internet nélkül.
+      </p>
+      <p>
+        A felhő szerepét a Google Firebase tölti be. A bejelentkezést és a fiókokat a Firebase Authentication kezeli,
+        a növények állapotát, a csoportok adatait és a gondozási naplót pedig a Cloud Firestore tárolja.
+        Az értesítések a telefon saját értesítési rendszerén keresztül érkeznek.
+      </p>
+      <p>
+        A terméknek vannak olyan külső kapcsolatai is, amelyek nem technikaiak:
+      </p>
+      <ul>
+        <li>Diákok és tanárok: ők használják a programot, ezért az ő véleményük a legfontosabb. A diákok
+        mondják meg, mennyire élvezetes (pl. az XP-rendszer), a tanárok pedig azt, hogy a csoportkezelés és a
+        követés használható-e a gyakorlatban.</li>
+        <li>Iskolák és fenntartók: ha az iskola vezetése támogatja, az alkalmazás szakköri vagy
+        órai feladatként is bevonható az oktatásba.</li>
+        <li>Alkalmazásboltok: a Google Play és az App Store szabályai és jóváhagyása határozza meg, mikor és hogyan jelenhet meg az alkalmazás.</li>
+        <li>A fejlesztő csapat: a modulok (felület, szimuláció, adatbázis, csoportkezelés) csak úgy
+        állnak össze működő egésszé, ha a tagok folyamatosan egyeztetnek egymással.</li>
+      </ul>
+
+
+      <h3>4.2. A termék használatának előnyei</h3>
+        <table>
+        <thead>
+          <tr>
+            <th>A megrendelő haszna (előnyei)</th>
+            <th>Támogató funkciók</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Nem kell valódi növényt tartani, mégis megvalósítható a hosszú távú gondozási feladat</td>
+            <td>A növény virtuális, telefonról bárhol gondozható, nyáron és hétvégén is.</td>
+          </tr>
+          <tr>
+            <td>A tanár egy helyen látja, hogyan halad a csoport</td>
+            <td>
+              1. A tanár csoportot hoz létre, a diákok kóddal vagy linkkel csatlakoznak.<br>
+              2. A csoport minden tagjának növénye látszik, az állapot valós időben frissül.<br>
+              3. A gondozási napló mutatja, ki mit csinált.
+            </td>
+          </tr>
+          <tr>
+            <td>A diák hibázhat és újrakezdheti a feladatot</td>
+            <td>Ha a növény elpusztul, nincs valódi veszteség, de az alkalmazás megmutatja, mi okozta (pl. kevés víz, rossz fényviszony).</td>
+          </tr>
+          <tr>
+            <td>A diák megtanulja, hogy a döntéseinek következménye van</td>
+            <td>
+              1. A szimuláció a víz, a fény és a tápanyag alapján változtatja a növény állapotát.<br>
+              2. A hatás látható is: hervad, kiszárad vagy fejlődik a növény.<br>
+              3. A szimuláció sebessége csoportonként 1 és 6 között állítható.
+            </td>
+          </tr>
+          <tr>
+            <td>A diákok szívesebben és rendszeresebben használják</td>
+            <td>
+              1. XP-rendszer: a helyes gondozásért pont jár, a pontokkal új növények nyithatók meg.<br>
+              2. Értesítések emlékeztetnek a gondozásra, a gyakoriságuk állítható.
+            </td>
+          </tr>
+          <tr>
+            <td>Nincs plusz költség és nincs zavaró tartalom</td>
+            <td>Az alkalmazás ingyenes, nincs benne reklám és alkalmazáson belüli vásárlás.</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <br>
+
+      <table>
+        <thead>
+          <tr>
+            <th>További előnyök</th>
+            <th>Támogató funkciók</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Közben tanulnak is a növényekről</td>
+            <td>Minden növényhez adatlap tartozik (honnan származik, milyen családba tartozik, mire van szüksége).</td>
+          </tr>
+          <tr>
+            <td>Közös gondozás a csoporttal</td>
+            <td>Több felhasználó is gondozhatja ugyanazt a növényt, a jogosultságokat a csoport tulajdonosa állítja.</td>
+          </tr>
+          <tr>
+            <td>Telefoncserénél sem vész el a növény</td>
+            <td>A fiók és a növények adatai a felhőben vannak mentve, Androidon és iOS-en egyaránt.</td>
+          </tr>
+          <tr>
+            <td>Később bővíthető</td>
+            <td>Új növényfajták és gondozási műveletek utólag is hozzáadhatók.</td>
+          </tr>
+        </tbody>
+      </table>
+     
+
+      <h3>4.3. Feltételezések és függőségek</h3>
+         <p>
+        A fejlesztés során az alábbi körülmények meglétét feltételezzük. Ezek teljesülését folyamatosan figyelni kell,
+        és megváltozásuk esetén a hatásukat figyelembe kell venni a tervezésben.
+      </p>
+      <ul>
+        <li>Technológia: Feltételezzük, hogy a választott Flutter keretrendszer és Dart nyelv a csapat tagjai számára elsajátítható a határidőn belül, és a szükséges funkciók (értesítések, valós idejű szinkronizáció) megvalósíthatók vele. Ha ez nem teljesül, a bonyolultabb funkciók (pl. animációk) egyszerűsítésre kerülnek.</li>
+        <li>Firebase szolgáltatások: Feltételezzük, hogy a Firebase (Authentication, Cloud Firestore) elérhető, és az ingyenes keret vagy a várható költségű használat elegendő az adatok tárolásához és az olvasási/írási műveletekhez. Ha a keret nem elég, költségoptimalizálásra (kevesebb írás, gyorsítótárazás) vagy fizetős csomagra lesz szükség.</li>
+        <li>Internetkapcsolat: A mentéshez, szinkronizációhoz és a csoportos funkciókhoz aktív internetkapcsolat szükséges (Wi-Fi vagy mobilnet). Az offline viselkedést a tervezés során még pontosítani kell.</li>
+        <li>Hardver és operációs rendszer: Feltételezzük, hogy a felhasználók okostelefonja legalább Android 6.0 vagy iOS 13 rendszert futtat, és legalább 2 GB RAM-mal rendelkezik. Az alkalmazás tárhelyigénye várhatóan 100 MB alatt marad.</li>
+        <li>Áruházi szabályok: Feltételezzük, hogy az alkalmazás megfelel a Google Play és az Apple App Store szabályainak (különösen a gyerekeket érintő adatkezelési előírásoknak), és a jóváhagyás nem késlelteti a leadást.</li>
+        <li>Csapat: Feltételezzük, hogy mind az öt csapattag a teljes projekt ideje alatt rendelkezésre áll, és a feladatok a tervezett ütemben haladnak.</li>
+      </ul>
+      <p>
+        Platformfüggőség: A termék kizárólag Android és iOS rendszerre készül.
+        Célközönség: elsősorban az általános és középiskolák diákjai és pedagógusai, de az alkalmazás az iskolán kívül is használható.
+      </p>
+
+      <h3>4.4. Költségbecslés</h3>
+      <p>
+        A fejlesztés és az üzembe állítás becsült költségei az alábbiak. Az értékek tájékoztató jellegű becslések.
+      </p>
+      <table>
+        <thead>
+          <tr>
+            <th>Költségtényező</th>
+            <th>Becsült költség</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Munkaerő (5 fő, kb. 13 hét)</td>
+            <td>~ 5 000 000 Ft</td>
+          </tr>
+          <tr>
+            <td>Grafika és dizájn (növénygrafikák, animációk, felület)</td>
+            <td>~ 800 000 Ft</td>
+          </tr>
+          <tr>
+            <td>Tartalom (növényadatlapok, szakmai ellenőrzés)</td>
+            <td>~ 500 000 Ft</td>
+          </tr>
+          <tr>
+            <td>Tesztelés (régebbi Android- és iOS-tesztkészülék, felhasználói tesztelés)</td>
+            <td>~ 700 000 Ft</td>
+          </tr>
+          <tr>
+            <td>Jogi és adatvédelmi dokumentumok (ÁSZF, adatvédelmi tájékoztató)</td>
+            <td>~ 400 000 Ft</td>
+          </tr>
+          <tr>
+            <td>Bevezetés és marketing (iskolák megszólítása)</td>
+            <td>~ 500 000 Ft</td>
+          </tr>
+          <tr>
+            <td>Feltöltés az áruházakba</td>
+            <td>~ 10 000 Ft (Google Play, egyszeri) + ~ 35 000 Ft (Apple Developer Program, első év)</td>
+          </tr>
+          <tr>
+            <td>Fejlesztőeszközök (VS Code, Flutter, Git/GitHub, Figma, draw.io)</td>
+            <td>0 Ft (ingyenes verziók)</td>
+          </tr>
+          <tr>
+            <td>Összesen (egyszeri költség)</td>
+            <td>~ 7 945 000 Ft</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <p>
+        A megjelenés után is vannak folyamatos költségek:
+      </p>
+      <table>
+        <thead>
+          <tr>
+            <th>Költségtényező</th>
+            <th>Becsült költség</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Üzemeltetés (Firebase szerverköltség)</td>
+            <td>~ 0–10 000 Ft/hó a használat függvényében</td>
+          </tr>
+          <tr>
+            <td>Apple Developer Program megújítása</td>
+            <td>~ 35 000 Ft/év</td>
+          </tr>
+          <tr>
+            <td>Karbantartás (hibajavítás, áruházi elvárásoknak megfelelő frissítések)</td>
+            <td>~ 150 000 Ft/év</td>
+          </tr>
+          <tr>
+            <td>Összesen (évente)</td>
+            <td>~ 300 000 Ft/év</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <h3>4.5 Installáció</h3>
+      <p>
+        A felhasználók számára: Az alkalmazás a Google Play Áruházból és az Apple App Store-ból
+        ingyenesen letölthető és telepíthető. Ehhez internetkapcsolat, valamint az operációs rendszertől függően Google-fiók
+        vagy Apple ID szükséges. Az első indításkor a felhasználónak regisztrálnia kell egy saját fiókot, amely lehetővé teszi
+        a növények elmentését, a más eszközön történő folytatást és a csoportos játékot.
+      </p>
+      <p>
+         Az üzemeltetéshez szükséges lépések: Az alkalmazás működéséhez a Firebase háttérrendszert (bejelentkezés, adatbázis,
+         jogosultsági szabályok) előre be kell állítani. Az áruházi megjelenéshez fejlesztői fiók (Google Play Console, Apple 
+         Developer Program), áruházi leírás, képernyőképek, valamint adatvédelmi tájékoztató és ÁSZF szükséges.
+      </p>
+      <p>
+        Betanítás: A pedagógusok számára rövid bevezető útmutató (csoport létrehozása, tagok meghívása,
+        jogosultságok beállítása) készül, amely az alkalmazáson belüli súgóban is elérhető. A diákoknak külön betanításra
+        nincs szükség, mert a felület tanulás nélkül kezelhető.
+      </p>
+    </section>
+
+    <section id="funkciok">
+      <h2>5. Végtermék jellemzői, biztosított szolgáltatásai</h2>
+      <p>
+        A végtermék egy edukációs céllal készült, interaktív növénygondozó és fejlődésszimulációs alkalmazás,
+        amely a növények gondozását és fejlődését egy könnyen áttekinthető virtuális környezetben mutatja be.
+        A felhasználó gondozásba vehet akár több specifikus növényfajt is, a gondozás folyamata során nem csak információkat olvas,
+        hanem saját döntésein, cselekedetein keresztül is megtapasztalja azok hatásait.
+        Az alkalmazás visszajelzéseket ad a növény állapotáról és a gondozási műveletek hatásáról. 
+        Ezek a visszajelzések nem csupán szöveges, hanem vizuális formában is megjelennek. 
+        Növény elhervadása, levelek száradása, gyökerek elrohadása.
+        A felületen igényszerint oktató jellegű információk jeleníthetők meg a növények igényeiről és fejlődéséről és magáról a hátteréről, hogy
+        honnan származik, milyen családba tartozik stb. 
+        A tartalom és a funkciók célja a növénygondozás alapjainak szemléltetése, nem pedig egy valódi növény 
+        gondozásának teljes körű helyettesítése.
+      </p>
+      <p>
+        Az alkalmazásban jelen lévő szimuláció révén kiemelt fontosságú tulajdonság az idő múlásának jelentősége.
+        Egy adott csoport létrehozása esetén, hogy a szimuláció rugalmas de mégis valósághű lehessen,
+        ennek sebessége állítható 1 és 6 értékek között, ahol az 1 a valóságot takarja le, míg a 6 ennek a hatszorosa. Tehát 
+        a szimulációban eltelt minden 6-odik perc felel meg a valóságban eltelt 1 percnek.
+      </p>
+      <p>
+        A multiplayer, vagy csoportos gondozás implementációja miatt kiemelet szerepű jellemző a gondozásinapló. 
+        E napló működését tekintve nagyon hasonló a már korábban is használt és jól bevált módszerekéhez, 
+        melyet többek közt a jól ismert Discord alkalmazás is használ. Ebben kerül eltárolásra az adott csoport 
+        tagjainak a növényen végzett műveletei, így több felhasználó esetén is egyértelmű és átlátható hogy mi az amit még esetleg tenni
+        kell az adott nap a növény jóléte érdekében.
+      </p>
+      <p>
+        Push notification szerepe is jelentős, hisz egy mobil alkalmazásról beszélünk. Javíthatja, 
+        elősegítheti a jobb felhasználói élményt, ha néha emlékeztetőt küld a telefonra, hogy ne felejtse el, hogy a növénynek vannak igényei.
+        Szemelőtt kell azonban tartani, hogy ezen értesítések, hogy milyen időközönként vannak küldve, nehogy a ló túloldalára átessünk.
+        Túl gyakran küldött üzenet, zaklathatja, zavarhatja a felhasználót. Továbbá nem csak a tehert veheti le a válláról, 
+        hanem teljesen a felelősséget is, melyet nem akarunk hisz mint többek közt edukációs 
+        program az első számú prioritásunk ezen dolgok megalapozása.
+      </p>
+      <p>
+        Az oktatási folyamat egy fontos része, hogy érdekeltséget váltson ki a felhasználóból, így ennek céljául reward system 
+        kerül implementálásra melynek célja, hogy behálózza a felhasználót és érezzen egy előrehaladást melynek következményeképpen
+        jutalmazásra kerül sor. Ez a megjutalmazás érzet pedig akár iskolai/intézményi környezeten kívül is itt tartja és segíti 
+        a tanulását. Az előre haladás vezérlője az xp pont, minden egyes szimulációs nap után összegződésre kerül sor, 
+        az adott eltelt nap végére a növény adott állapotától függően, egy előre definiált lista alapján 
+        kerül az xp pont kiosztásra, mely végül összegződik. Az így szerzett pontokkal lehet előrehaladni mellyel új, 
+        esetlegesen nehezebben gondját viselhető növényt oldunk fel. Természetesen mint korábbiakban leírtak szerint, 
+        az így feloldott növényekről is rendelkezésre áll egy adattábla melyen szerepel a származási régió, történet, stb.
+      </p>
+
+      <h3>5.2. Az alkalmazás használatának menete</h3>
+      <p>
+        A felhasználó az alkalmazás elindítása után, a menübe érkezve kiválaszt egy már meglévő csoportot, vagy létrehoz egyet.
+        Egy újonnan létrehozott csoport esetén eldöntheti hogy egyedül vagy esetleg csoportosan szeretne növényt gondozni. Ennek 
+        megfelelően a generált kóddal, vagy linkkel meghívhatja a kívánt társait. Beállíthatja a csoportban a résztvevők, szereplők 
+        jogait, alapértelmezett a csoport létrehozó a hierarchia legtetején lévő személy a tulajdonos. Ő tud ha szükséges kirakni 
+        embert, meghívni új tagot és létrehozni új jogosultságokkal rendelkező szerepeket. 
+        A csoporton belül kiválasztja a gondozni kívánt virtuális növényt, vagy ha még nem tette elültet egyet. 
+        A növény kiválasztásakor megtekintheti a növény adatlapját és ezzel megismerheti annak alapvető jellemzőit és igényeit, 
+        majd megkezdheti a gondozását. A növényre nyomva megjelenik egy legördülő menü szerű fül, melyen kiválaszthatjuk kívánt
+        műveletünket, melyet végre akarunk hajtani, például: öntözés, tápanyag pótlás stb... . 
+        A rendszer bemutatja a növény aktuális állapotát, például a föld jelenlegi víztartalmát és a beszűrődő fényt, illetve milyen 
+        fejlődési szakaszban van.
+      </p>
+      <p>
+        A felhasználó a növény igényeinek megfelelő gondozási műveleteket végezhet, de ezen kívül akár módosíthatja a környezetét is.  
+        A műveletek hatására a növény állapota idővel változik. 
+        A rendszer visszajelzést ad arról, hogy a gondozás megfelelő volt-e, illetve jelzi, ha a növénynek másfajta 
+        vagy további törődésre van szüksége. A változások nem feltétlenül azonnal jelennek meg: 
+        a felhasználó később visszatérhet, és megfigyelheti a növény fejlődését. A folyamat során a felhasználó kipróbálhat különböző gondozási módszereket, 
+        és megfigyelheti azok következményeit. Ha a növény állapota romlik, a visszajelzések segíthetnek megérteni 
+        ennek okát.
+      </p>
+      <p>
+        A cél nem a pontgyűjtés vagy a verseny, hanem a tanulás és a növénygondozási összefüggések megismerése. 
+        Az alkalmazás használata ezért játékos és interaktív élményt adhat, miközben elsősorban oktatási 
+        és szimulációs eszközként működik. Fontos célunk ,hogy a telefon ne csak ártalmas eszköz lehessen mellyel a gyermekek 
+        koncentráció képessége romlik napról napra, köszönhetően a különböző gyors formátumú közösségi platformoknak, 
+        appoknak, hanem valami jóra is használható legyen.
+      </p>
+
+    </section>
+
+    <section id="korlatozasok">
+      <h2>6. Korlátozások és feltételezések</h2>
+
+      <p>
+        Az alkalmazás a növények gondozását és fejlődését szimulálja, ezért a
+        valóságban zajló biológiai folyamatokat egyszerűsített formában jeleníti meg.
+        A növények fejlődését befolyásoló tényezők például a víz mennyisége, a
+        fényviszonyok és a hőmérséklet előre meghatározott szabályok alapján hatnak
+        a szimulációra. A rendszer oktatási célú szemléltetést biztosít, de nem
+        modellezi teljes pontossággal az egyes növényfajok minden egyedi tulajdonságát.
+      </p>
+
+      <p>
+        A termék várhatóan korlátozott számú növényfajtát
+        tartalmaz. A növények köre, az elérhető műveletek, valamint az
+        állapotjelzések a fejlesztés során meghatározott keretekhez igazodnak. A
+        rendszer nem feltétlenül tartalmaz minden olyan tényezőt, amely egy valódi
+        növény fejlődését befolyásolhatja.
+      </p>
+
+      <p>
+        A termék egy mobil alkalmazás, így fontos beszélni hardver igényekről. Azt feltételezzük, hogy a felhasználó rendelkezik
+        legalább az elmúlt évtizedben kiadott telefon modellel. Ezen felül korlátozások is jelen vannak, hisz hiába fejlődött 
+        rengeteget a technológia, akkor is első számú szempont, hogy az alkalmazás egyszerű legyen, ezáltal hardver igénye se legyen nagy.
+        Tehát a korlátozás érvényben van a számítás kapacitásra, a memória igényre, és tárhelyigényére. Ezeket kell határtok 
+        közt, alacsonyan tartani.
+      </p>
+
+      <p>
+        A termék továbbá feltételezi, hogy a felhasználó rendelkezik alapvető ismeretekkel és 
+        képes a kezelőfelületi műveletek elvégzésére. A felületnek ugyanakkor kezdők számára is érthetőnek kell lennie,
+        ezért a növények állapotát és a gondozási lehetőségeket világos jelzésekkel,
+        rövid magyarázatokkal mutatjuk be.
+      </p>
+
+      <p>
+        A szimuláció feltételezi, hogy a felhasználó gondozási műveletei és a növény
+        állapotváltozásai között meghatározható kapcsolat van. A rendszernek
+        következetesen kell kezelnie ezeket az összefüggéseket: azonos vagy hasonló
+        feltételek mellett a növény állapota is azonos vagy hasonló szabályok szerint
+        változzon. A növény fejlődése a szimulált idő múlásától is függ, ezért a
+        felhasználó döntéseinek hatása nem minden esetben jelenik meg azonnal.
+      </p>
+
+      <p>
+        Ha a növények állapota és a felhasználói előrehaladás mentésre kerül, a
+        rendszer feltételezi, hogy ezek az adatok később is elérhetők lesznek a
+        felhasználó számára. Ennek biztosítása érdekében feltételezzük, hogy a felhasználó rendelkezik stabil
+        internet kapcsolattal, hogy problámamentesen elérhesse a szervereket és adatai mentésre kerülhessenek az adatbázisba.
+        Adatkezeléssel kapcsolatosan fontos, hogy a tárolása megbízható, biztonságos legyen, és a felhasználóról 
+        a lehető legkevesebb információt kelljen tárolni, amivel kompromitálható lenne. Ennek garanciája képpen feladatunk, hogy ezt 
+        tisztán és érthetően közöljük a felhasználóval is az ÁFSZ-ben. Személyes információk tárolása kizárólag ideiglenesen 
+        történik, fiók megszüntetése esetén törlődnek.
+      </p>
+
+      <p>
+        Csapatunk projektjének pénzügyi megszorításai is vannak. Költségvetés java része fejlesztésre, tesztelésre megy el, 
+        a maradék pedig a szerverek és adatbázis üzemeltetésére. Mivel nem havidíjas szolgáltatást nyújtunk, nem szolgáltatunk 
+        live service-t, vagyis a végleges termék elkészülése után nem áll szándékunkban további érdemleges tartalmilag, újdonságokkal 
+        támogatni az applikációt, feltételezésünk, hogy ezt a felhasználó megérti, elfogadja.
+      </p>
+    </section>
+
+    <section id="minoseg">
+      <h2>7. Minőségi követelmények</h2>
+
+      <h3>7.1. Használhatóság</h3>
+      <p>
+        A felület megtervezésekor a legfőbb cél, hogy a diákok és a pedagógusok is könnyen, tanulás nélkül tudják használni. A növények állapotában
+        bekövetkező változásokat egyértelmű ikonokkal és vizuális jelzésekkel kell mutatni. Fontos, hogy a felhasználó minél kevesebb kattintással el
+        tudja végezni a kívánt műveleteket, így az alkalmazás használata folyamatos és kényelmes lesz.
+      </p>
+
+      <h3>7.2. Teljesítmény és gyorsaság</h3>
+      <p>
+        A 6. pontban rögzített hardveres korlátozásoknak megfelelően a programnak minimális memória- és tárhelyigénnyel kell rendelkeznie. A növények
+        fejlődését számoló háttérfolyamatoknak úgy kell működniük, hogy közben ne terheljék túl az alacsonyabb számítási kapacitású, régebbi eszközöket sem.
+      </p>
+
+      <h3>7.3. Biztonság és adatvédelem</h3>
+      <p>
+        A hálózati kommunikáció és a profilkezelés során az adatok biztonsága kiemelten fontos. A rendszernek garantálnia kell a 6. pontban megfogalmazott adatkezelési
+        elvek technikai megvalósítását, biztosítva a személyes adatok kizárólagos ideiglenes tárolását és a fióktörlés esetén történő végleges, visszaállíthatatlan megsemmisítését.
+      </p>
+    </section>
+
+    <section id="dokumentacio">
+      <h2>8. Dokumentációs követelmények</h2>
+      
+      <p>
+        <strong>Felhasználói kézikönyv és Súgó:</strong> Ennek a dokumentációnak a fajtája egy használati útmutató, melynek médiája az alkalmazáson belül olvasható digitális
+        szöveg és ábrák összessége. Tartalmát tekintve lépésről lépésre bemutatja, hogyan kell használni az applikációt, például hogyan lehet csoportot létrehozni, tagokat meghívni,
+        jogosultságokat beállítani és a növényeket gondozni.
+      </p>
+
+      <p>
+        <strong>Fejlesztői leírás és rendszerterv:</strong> Ez egy technikai dokumentáció, amely elektronikus dokumentumként (például PDF formátumban) lesz elérhető. Tartalmazza az alkalmazás
+        felépítését, az adatbázis szerkezetét és a növények fejlődését irányító szabályokat, hogy később más fejlesztők is megértsék a működését.
+      </p>
+
+      <p>
+        <strong>Jogi dokumentumok:</strong> Ide tartoznak az Általános Szerződési Feltételek (ÁSZF) és az Adatvédelmi Tájékoztató. Médiájukat tekintve webes linkként és az alkalmazáson belül
+        elérhető szövegként jelennek meg. Tartalmuk a szolgáltatás használatának feltételeit és az adatkezelés pontos szabályait rögzíti.
+      </p>
+    </section>
+
+    <section id="kovetelmenyek">
+      <h2>9. Kockázat lista</h2>
+
+      <p>
+        <strong>A többjátékos (multiplayer) mód megvalósításának nehézsége (Magas kockázat):</strong> A csoportos növénygondozás és a mindenkinél egyszerre frissülő gondozásinapló leprogramozása
+        bonyolult feladat. Ha a hálózati kommunikáció nem működik jól, a projekt csúszhat, vagy az adatok pontatlanok lehetnek. Ennek elkerülése érdekében ezen funkciók fejlesztését és tesztelését
+        a lehető leghamarabb el kell kezdeni.
+      </p>
+
+      <p>
+        <strong>Pénzügyi korlátok és a szerverek fenntartása (Magas kockázat):</strong> A 6. pontban említett "live service" modell hiánya miatt a projekt lezárása után a szerverek havidíjának kifizetése
+        problémát jelenthet. Megoldásként már a tervezéskor a legköltséghatékonyabb szervermegoldásokat kell választani az üzemeltetéshez.
+      </p>
+
+      <p>
+        <strong>Lassulás a régebbi telefonokon (Közepes kockázat):</strong> Bár az alkalmazás egyszerűnek készül, az egy évtizedes telefonok támogatása nem várt teljesítménybeli problémákat eredményezhet.
+        Ennek kiküszöbölésére folyamatos tesztelés szükséges gyengébb fizikai tesztkészülékeken, valamint biztosítani kell a bonyolultabb animációk kikapcsolásának lehetőségét.
+      </p>
+
+      <p>
+        <strong>Értesítések miatti lemorzsolódás (Közepes kockázat):</strong> Az 5. pontban említett értesítési funkció nem megfelelő paraméterezése a felhasználói bázis csökkenéséhez (az alkalmazás törléséhez)
+        vezethet. Ezt a kockázatot a kiküldési gyakoriság szigorú korlátozásával, valamint a felhasználó általi teljes testreszabhatóság biztosításával (értesítések némítása, időzítése) kerüljük el.
+      </p>
+
+      <p>
+        <strong>A tanulás háttérbe szorulása a pontgyűjtés miatt (Alacsony kockázat):</strong> Előfordulhat, hogy a diákokat jobban érdekli az XP pontok gyűjtése és az új növények feloldása, mint a tényleges
+        biológiai ismeretek elsajátítása. Megoldásként a pontozási rendszert úgy kell kialakítani, hogy az szigorúan csak a növények valós igényeit figyelembe vevő, helyes gondozást jutalmazza.
+      </p>
+    </section>
+
+    <section id="szotar">
+      <h2>10. Szótár</h2>
+      <table>
+        <thead>
+          <tr>
+            <th>Fogalom</th>
+            <th>Magyarázat</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Gondozási művelet</td>
+            <td>A növény egészségét megőrző/gyarapító tevékenységek virtuális fromája</td>
+          </tr>
+          <tr>
+            <td>Multiplayer</td>
+            <td>Egyidejűleg több felhasználó együtt használja a rendszert, gondozza a növényt.</td>
+          </tr>
+          <tr>
+            <td>Push notification</td>
+            <td>Mobiltelefonon érkező üzenet, értesítés mely megnyomásával az alkalmazás megnyitható.</td>
+          </tr>
+          <tr>
+            <td>Xp pont</td>
+            <td>
+              Gyakran videójátékokban használt terminológia. Az xp pont az angol experience points, 
+              vagyis tapasztalati pontot jelenti mely szimplán az alkalmazásban követhető pontrendszer.
+            </td>
+          </tr>
+          <tr>
+            <td>Reward system</td>
+            <td>Jutalmazási rendszer, valamilyen események alapján, után jutalmakkal látja el a felhasználót.</td>
+          </tr>
+          <tr>
+            <td>Bug</td>
+            <td>Nem szándékozott, a rendszer megfelelő müködését akadályozó kód részlet.</td>
+          </tr>
+          <tr>
+            <td>Live service</td>
+            <td>
+              Általában hónapról-hónapra történő felügyeletet és fejlesztést jelent. Időszakonkénti tartalmi frissítésekkel, 
+              hibák javításával.
+            </td>
+          </tr>
+          <tr>
+            <td>Interakció</td>
+            <td>Tevékenység, cselekedet, valamilyen input, melyre az alkalmazás választ küld.</td>
+          </tr>
+          <tr>
+            <td>Gondozási napló</td>
+            <td>
+              Alkalmazáson belüli tevékenységet nyilvántartó napló. 
+              Bejegyzésre kerül az adott idővel együtt az gondozási/egyéb művelet
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
+  </main>
+
+</body>
+</html>
