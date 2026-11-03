@@ -1,0 +1,858 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>SRS Dokumentum</title>
+    <link rel="stylesheet" href="../stilusok/cimlap.css">
+    <link rel="stylesheet" href="../stilusok/alap.css">
+    <style>
+        table {
+            width: 90%;
+            margin: 0 auto;
+            border-collapse: collapse;
+        }
+
+        th, td {
+            padding: 9px 11px;
+            border: 1px solid #777;
+            font-size: 18px;
+            text-align: left;
+            vertical-align: top;
+        }
+
+        th {
+        background-color: #beb9b9;
+        }
+
+        ul li {
+            font-size: 20px;
+        }
+
+        .usecaseimg {
+            width: 90%;
+            display: block;
+            margin: 0 auto;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Csoport neve: Palánták</h1>
+        <h1>Feladat sorszáma: 3</h1>
+        <h1>Feladat címe: Szoftverkövetelmény-specifikáció dokumentum (SRS)</h1>
+        <div class="title">
+            <h1>Srs Dokumentum</h1>
+            <h3>Gyakorlatvezető:</h3>
+            <h3>Dr. Árvai László</h3>
+        </div>
+        <h1>Csoporttagok:</h1>
+        <table class="team">
+            <tr>
+                <td>Mata Márk</td>
+                <td>K8DGVI</td>
+                <td>mark.mata@student.uni-miskolc.hu</td>
+            </tr>
+            <tr>
+                <td>Suba Kinga</td>
+                <td>LI5C7L</td>
+                <td>kinga.suba@student.uni-miskolc.hu</td>
+            </tr>
+            <tr>
+                <td>Zsólyomi Klaudia Vanda</td>
+                <td>CHZQ7Z</td>
+                <td>klaudia.vanda.zsolyomi@student.uni-miskolc.hu</td>
+            </tr>
+            <tr>
+                <td>Zsák István</td>
+                <td>SIE9FL</td>
+                <td>istvan.zsak@student.uni-miskolc.hu</td>
+            </tr>
+            <tr>
+                <td>Baranyovszki Kata</td>
+                <td>W9JKTC</td>
+                <td>kata.baranyovszki@student.uni-miskolc.hu</td>
+            </tr>
+        </table>
+        <h2>Beadás dátuma: 2026. 11. 04.</h2>
+    </header>
+
+    <main>
+
+        <div class="document-info">
+            <table>
+                <thead>
+                    <tr>
+                        <th><strong>Dátum</strong></th>
+                        <th><strong>Verzió</strong></th>
+                        <th><strong>Leírás</strong></th>
+                        <th><strong>Szerző</strong></th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>2026. 11. 01.</td>
+                        <td>1.0</td>
+                        <td>Teljes verzió</td>
+                        <td>Suba Kinga, Zsólyomi Klaudia Vanda, Baranyovszki Kata, Zsák István, Mata Márk</td>
+                    </tr>
+                    <tr>
+                        <td>2026. 11. 04.</td>
+                        <td>1.1</td>
+                        <td>Végleges verzió</td>
+                        <td>Suba Kinga, Zsólyomi Klaudia Vanda, Baranyovszki Kata, Zsák István, Mata Márk</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <nav class="tartalomj">
+            <h3>Tartalomjegyzék</h3>
+            <ol>
+                <li><a href="#bevezetes">Bevezetés</a></li>
+                <li><a href="#attekintes">Áttekintés</a></li>
+                    <ol>
+                        <li><a href="#minspec">Minimum rendszerkövetelmény</a></li>
+                        <li><a href="#recspec">Ajánlott rendszerkövetelmény</a></li>
+                        <li><a href="#felhaszn">Leendő felhasználók jellemzői</a></li>
+                        <li><a href="#legfontosabbfunkc">Legfontosabb funkciók</a></li>
+                        <li><a href="#korlatesfugg">Korlátozások, függőségek</a></li>
+                    </ol>
+                <li><a href="#funkciok">Rendszer funkciói</a></li>
+                    <ol>
+                        <li><a href="#usecaseUML">Use case diagram</a></li>
+                        <li><a href="#usecaseUML2">További részletek a diagramról</a></li>
+                    </ol>
+                <li><a href="#hasznalhatosag">Használhatóság</a></li>
+                <li><a href="#megbizhatosag">Megbízhatóság</a></li>
+                <li><a href="#teljesitmeny">Teljesítmény</a></li>
+                <li><a href="#tamogatottsag">Támogatottság</a></li>
+                <li><a href="#tervezesi-korlatozasok">Tervezési korlátozások</a></li>
+                <li><a href="#dokumentacio">On-line dokumentáció és Help rendszer</a></li>
+                <li><a href="#komponensek">Felhasznált kész komponensek</a></li>
+                <li><a href="#interfeszek">Interfészek</a></li>
+                    <ol>
+                        <li><a href="#felhasznaloi-interfeszek">Felhasználói interfészek</a></li>
+                        <li><a href="#hardver-interfeszek">Hardver interfészek</a></li>
+                        <li><a href="#szoftver-interfeszek">Szoftver interfészek</a></li>
+                        <li><a href="#kommunikacios-interfeszek">Kommunikációs interfészek</a></li>
+                    </ol>
+                <li><a href="#szabvanyok">Alkalmazott szabványok</a></li>
+                <li><a href="#mellekletek">Mellékletek</a></li>
+            </ol>
+        </nav>
+
+        <section id="bevezetes">
+            <h2>1. Bevezetés</h2>
+            <p>Ennek a Szoftverkövetelmény-specifikáció (SRS) dokumentumnak a célja, hogy felvázolja és részletesen leírja az edukációs 
+                célú mobil növénygondozó és fejlődésszimulációs alkalmazásunk funkcionális és nem funkcionális 
+                követelményeit. 
+                Ez a dokumentum átfogó útmutatóként szolgál a fejlesztőcsapat számára, biztosítva, hogy minden lényeges részlet, a Firebase integrációtól kezdve a szimulációs 
+                logikán át az XP-rendszerig egyértelmű legyen, elkerülve a későbbi félreértéseket a megvalósítás során.
+            </p>
+            <p>
+                A dokumentum terjedelme magában foglalja a növénynevelő alkalmazás oktatási célkitűzéseit, 
+                az elvárt felhasználói élményt a diák, tanár és egyéb felhasználók számára, a Firebase-alapú rendszerarchitektúrát, 
+                valamint a mobilplatformokból adódó tervezési korlátokat. 
+                A funkcionális követelmények meghatározása mellett ez az SRS dokumentum áttekintést nyújt 
+                a projekt 13 hetes időkeretéről és a megvalósításhoz szükséges várható fejlesztési költségekről is.
+            </p>
+            <p>
+                Mind ezek mellett, tömören összefoglalja, minden, a szoftertverben jelenlévő belső és külsőleg is megfigyelhető mechanikát.
+                Részletesen leírja az öntözési mechanikát, táplálási mechanikát, és az egyéb felmerülő játék/alkalmazás részleteit.
+            </p>
+
+        </section>
+
+        <section id="attekintes">
+            <h2>2. Áttekintés</h2>
+
+            <section id="minspec">
+
+                <h3>Minimum Specifikáció</h3>
+                <p>Mivel az alkalmazás célközönsége (diákok) gyakran régebbi készülékekkel rendelkezik, a hardverigényt 
+                    alacsonyan kell tartani:</p>
+                <ul>
+                    <li><strong>Android:</strong> 6.0 (Marshmallow)</li>
+                    <li><strong>iOS:</strong> 13.0</li>
+                    <li><strong>RAM:</strong> 2 GB</li>
+                    <li><strong>Tárhely:</strong> &lt; 100 MB</li>
+                    <li><strong>Hálózat:</strong> Aktív internetkapcsolat szükséges a felhőszinkronizációhoz.</li>
+                </ul>
+
+            </section>
+            <section id="recspec">
+
+                <h3>Ajánlott Specifikáció</h3>
+                <p>A tárhely igényét, mindenféle képpen alacsonyan 100MB alatt kell tartani, de legrosszabb esetbenis 100MB környékén (+- 10/15)</p>
+                <p>Ennek oka, elsősorban az alkalmazás felhő alapú így nincs szüksége nagy mennyiségű adat lokális 
+                    tárolására, másodszor pedig az alkalmazás nem egy openworld játék, se nem egy kifejezetten "valós" 3D játék, ez
+                    és a célközönség figyelembe vételével leszögezhezjük, hogy az applikációban használt textúrák, képek, ikonok sem kellenek, 
+                    hogy felettébb magas felbontásúak legyenek, így ismét a tárhely igény alacsonyabb lehet.
+                </p>
+                <ul>
+                    <li><strong>Android:</strong> 9.0+</li>
+                    <li><strong>iOS:</strong> 14.0+</li>
+                    <li><strong>RAM:</strong> 4 GB (A zökkenőmentes Flutter animációk és valós idejű Firestore szinkronizáció érdekében).</li>
+                    <li><strong>Tárhely:</strong> &lt; 100 MB</li>
+                    <li><strong>Hálózat:</strong> Aktív internetkapcsolat szükséges a felhőszinkronizációhoz.</li>
+                </ul>
+
+            </section>
+
+            <section id="felhaszn">
+
+                <h3>A leendő felhasználók jellemzői</h3>
+                <p>
+                    A célfelhasználók elsősorban általános és középiskolás diákok, 8-16 év közötti fiatalok, valamint a természettudományos tantárgyakat oktató pedagógusok.
+                    Szolgáltatásunk azonban nem csak ezen felhasználók érdeklődését keltheti fel. Ugyanis a tervezett elbűvőlő 
+                    múvészeti alkotások (alkalmazásban szereplő képek, textúrák) bármely korosztályt megfoghatja, még azokat is 
+                    akik nem féltétlen megszállotjai a biológiának, növényeknek vagy a természetnek. A termékünk képes lehet 
+                    megszerettetni ezen témákat velük és növelni a lehetséges felhasználói kört.
+                </p>
+
+            </section>
+
+            <section id="legfontosabbfunkc">
+
+                <h3>Legfontosabb megvalósítandó funkciók</h3>
+                <ul>
+                    <li>
+                        <strong>Növénygondozási szimuláció:</strong> Öntözés, táplálás, fényviszonyok módosítása, amelyre a 
+                        növény vizuálisan reagál (fejlődik, vagy hervad.).
+                    </li>
+                    <li>
+                        <strong>Csoportkezelés (Multiplayer):</strong> Tanárok/diákok által létrehozható csoportok (osztályok),
+                         ahol a tagok látják egymás növényeit, akár interaktálhatnak vele (ha a csoportbeállítás megengedi).
+                    </li>
+                    <li>
+                        <strong>Gondozási napló:</strong> Tevékenységek (ki, mikor, mit csinált) visszakövetése a csoporton belül.
+                    </li>
+                    <li>
+                        <strong>Jutalmazási rendszer (XP):</strong> A helyes gondozásért tapasztalati pont jár, amivel új 
+                        növényfajták, háttér dekorciók oldhatók fel.
+                    </li>
+                    <li>
+                        <strong>Állítható időszimuláció:</strong> A szimuláció sebessége (1x - 6x) állítható, 
+                        hogy illeszkedjen az iskolai projektek időtartamához, de otthoni kikapcsoló jellegű szimuláció/hobbi 
+                        is lehessen.
+                    </li>
+                </ul>
+            
+            </section>
+            
+            <section id="korlatesfugg">
+
+                <h3>Korlátozások, függőségek</h3>
+                <p>
+                    Az alkalmazás kizárólag mobil eszközökre készül, méghozzá Android vagy iOS operációs rendszerű készülékekre. 
+                    Ennek oka az idő igény, figyelembe véve a leggyakoribb felhasználói eszközöket, és azok operációs rendszereit 
+                    juttotunk erre a megállapodásra. Emulátorral valószínűleg használható asztali számítógépeken is, de ez 
+                    hivatalosan támogatva nincs így bármely ebből következendő hibáért nem vállalunk felelősséget és amennyiben a 
+                    technikai hiba nem reprodukálható a fent említett eszközök valamelyikén, nem vagyunk hajlandóak azokat javítani.
+                </p>
+                <p>
+                    A termék célját és célközönségét figyelembe véve a szimulált biológiai folyamatok egyszerűsítettek, így ezek 
+                    nem modellezik a valóság 100%-át, oktatási cálok miatt elengedhetetlen az arany középutat megkeresnünk és bizonyos 
+                    elemeket szimplifikálni kell.
+                </p>
+
+                <p>
+                    Az alkalmazás fenntartása a projekt lezárása után nem feltétlen garantált. Mivel nem nyújtunk live service szolgáltatást 
+                    az egyetlen amit garantálni tudunk, hogy a szerverek múködni fognak(1-2 év), azonban bármelyin más frissítést 
+                    előállítani nem fogunk. A továbbiakban, hogy a szerverek meddig garantálnak működést nem tudjuk, függ ugyanis 
+                    a projekt sikerességétől, fogadottságától és az esetleges bevételektől. Mindezeket tudomásul véve a felhőköltségeket 
+                    minimalizáni kell, hogy fenntartható legyen magasabb felhasználó szám esetén is.
+                </p>
+
+                <p>
+                    <strong>Feltételezés:</strong> a Firebase Authentication és Cloud Firestore szolgáltatások ingyenese kerete elegendő lesz
+                    a tesztelési és bemutatási fázisban.
+                </p>
+
+                <p>
+                    <strong>Függőség:</strong> valós idejű naplózási rendszer miatt és egyéb multiplayer funkciók miatt, az alkalmazás
+                     erősen függ stabil internet kapcsolattól. A bejelentkeztetési rendszer függ a Firebase Authentication szolgáltatásától, 
+                    míg az adattárolás függ a Firebase Cloud Firestore szolgáltatástól.
+                </p>
+
+
+            </section>
+
+        </section>
+        <section id="funkciok">
+            <h2>3. A rendszer funkciói (Use Cases)</h2>
+
+            <section id="usecaseUML">
+
+                <img src="usecase1.png" alt="use_case_diagram" class="usecaseimg">
+            
+            </section>
+
+            <p><strong>Regisztráció</strong></p>
+            <ul>
+                <li><strong>Prekondíció:</strong> Az alkalmazás meg van nyitva, van internetkapcsolat.</li>
+                <li><strong>Posztkondíció:</strong> A felhasználónak regisztrálódik egy profil a megadott adatokkal.</li>
+                <li><strong>Main flow:</strong> A felhasználó megadja az e-mail címét és jelszavát, majd a "Regisztráció" gombra kattin.</li>
+                <li><strong>Exception flows:</strong> Megadott e-mail cím már foglalt vagy a jelszó nem elég erős, esetleg hálózati hiba esetén hibaüzenet jelenik meg.</li>
+            </ul>
+
+            <p><strong>Bejelentkezés</strong></p>
+            <ul>
+                <li><strong>Prekondíció:</strong> Alkalmazás meg van nyitva, van internetkapcsolat és rendelkezik a felhasználó fiókkal.</li>
+                <li><strong>Posztkondíció:</strong> A felhasználó sikeresen a belép a fiókjába és ezzel az alkalmzásba is.</li>
+                <li><strong>Main flow:</strong> A felhasználó megadja a belépési adatait. A Firebase Auth ellenőrzi azokat, majd sikeres azonosítás után beengedi a felhasználót a főmenübe.</li>
+                <li><strong>Exception flows:</strong> A felhasználó rossz jelszót, vagy e-mailt adott meg.</li>
+            </ul>
+
+            <p><strong>Csoport létrehozása</strong></p>
+            <ul>
+                <li><strong>Prekondíció:</strong> A felhasználó sikeresen bejelntkezett.</li>
+                <li><strong>Posztkondíció:</strong> Egy új csoport jön létre és a létrehozó felhasználó automatikusan megkapja a "Csoporttulajdonos" jogosultságot.</li>
+                <li><strong>Main flow:</strong> A felhasználó a felületen kiválasztja a csoport létrehozása opciót, megadja a csoport nevét, és megerősíti a szándékát. A rendszer generálja a csoportot.</li>
+                <li><strong>Exception flow:</strong> A felhasználó nem ad meg nevet a csoportnak.</li>
+            </ul>
+
+            <p><strong>Csatlakozás meglévő csoporthoz.</strong></p>
+            <ul>
+                <li><strong>Prekondíció:</strong> A felhasználó sikeresen bejelentkezetts, és rendelkezik egy érvényes meghívó kóddal vagy linkkel.</li>
+                <li><strong>Posztkondíció:</strong> A felhasználó csatlakozott a csoporthoz.</li>
+                <li><strong>Main flow:</strong> A felhasználó megadja a csoport kódját a csatlakozási felületen. A rendszer ellenőrzi a kódot és hozzáadja a tagok listájához.</li>
+                <li><strong>Exception flows:</strong> A megadott kód érvénytelen, lejárt, vagy a csoport időközben törlésre került.</li>
+            </ul>
+
+            <p><strong>Előrehaladás megtekintése.</strong></p>
+            <ul>
+                <li><strong>Prekondíció:</strong> A felhasználó be van jelentkezve.</li>
+                <li><strong>Posztkondíció:</strong> Előrehaladás menü megnyílik, ahol láthatja a megszerzett xp-t, feloldott tartalmat.</li>
+                <li><strong>Main flow:</strong> A felhasználó megnyitja a profilját. A rendszer lekéri és megjeleníti a pontjait és a feloldott/feloldható dolgokat.</li>
+                <li><strong>Alternate flow:</strong> Ha elegendő xp gyűlt össze, akkor felkínálja a növény/dekoráció feloldását.</li>
+            </ul>
+
+            <p><strong>Új növény elültetése</strong></p>
+            <ul>
+                <li><strong>Prekondíció:</strong> A felhasználó egy csoporttagja (csoporttulajdonos/csoporttag).</li>
+                <li><strong>Posztkondíció:</strong>Új növény jön létre az, ami bekerül a gondozási naplóba és az adatbázisba.</li>
+                <li><strong>Main flow:</strong> A felhasználó megnyomja az új növény ültetése gombot, majd kiválasztja a kívánt növényt, a talajt és a környezetet.</li>
+            </ul>
+
+            <p><strong>Talaj nedvesség megvizsgálása</strong></p>
+            <ul>
+                <li><strong>Prekondíció:</strong> Egy már elültetett növény van kiválasztva.</li>
+                <li><strong>Posztkondíció:</strong> A talaj víztartalma megjelenik egy rövid időre a felhasználó számára.</li>
+                <li><strong>Main flow:</strong> A felhasználó rányom egy már elültetett növényre, majd kiválasztja a "talaj nedvesség megvizsgálása" opciót.</li>
+            </ul>
+
+            <p><strong>Környezet hőmérséklet megvizsgálása</strong></p>
+            <ul>
+                <li><strong>Prekondíció:</strong> Egy már elültett növény van kiválasztva.</li>
+                <li><strong>Posztkondíció:</strong> A környezet hőmérséklete egy rövid időre megjelenik a felhasználó kijelzőjén.</li>
+                <li><strong>Main flow:</strong> A felhasználó rányom egy már elültetett növényre, majd kiválasztja a "környezet hőmérsékletének megvizsgálása" opciót. </li>
+            </ul>
+
+            <p><strong>Környezet páratartalmának megvizsgálása</strong></p>
+            <ul>
+                <li><strong>Prekondíció:</strong> Egy már elültett növény van kiválasztva.</li>
+                <li><strong>Posztkondíció:</strong> A környezet páratartalma egy rövid időre megjelenik a felhasználó kijelzőjén egy műszer kijelzőjén.</li>
+                <li><strong>Main flow:</strong> A felhasználó rányom egy már elültetett növényre, majd kiválasztja a "környezet hőmérsékletének megvizsgálása" opciót. </li>
+            </ul>
+
+            <p><strong>Növény meglocsolása</strong></p>
+            <ul>
+                <li><strong>Prekondíció:</strong> Egy már elültetett növény van kiválasztva.</li>
+                <li><strong>Posztkondíció:</strong> A növény talajának nedvessége megnő a locsolás időtartamától függően.</li>
+                <li><strong>Main flow:</strong> A felhasználó rányom egy már elültetett növényre, kiválasztja a "locsolás" opciót, majd nyomva tartja a növény körül a kijelzőt, ezzel locsolva a növényt (50ml/s a locsolási ráta).</li>
+            </ul>
+
+            <p><strong>Talaj tápanyaggal való ellátása</strong></p>
+            <ul>
+                <li><strong>Prekondíció:</strong> Egy már elültetett növény van kiválasztva.</li>
+                <li><strong>Posztkondíció:</strong> A növény talajának egy bizonyos tápanyag tartalma megnő.</li>
+                <li><strong>Main flow:</strong> A felhasználó rányom egy már elültetett növényre, kiválasztja a "tápanyaggal való ellátás" opciót.</li>
+            </ul>
+
+            <p><strong>Közös gondozási napló megtekintése</strong></p>
+            <ul>
+                <li><strong>Prekondíció:</strong> A felhasználó csoporttag.</li>
+                <li><strong>Posztkondíció:</strong> Megjelenik az esemény napló.</li>
+                <li><strong>Main flow:</strong> A felhasználó rányom a gondozási napló fülre. A rendszer lekérdezi a Cloud Firestore-ból az elmúlt időszak bejegyzéseit, és időrendben megjeleníti azokat.</li>
+                <li><strong>Exception flow:</strong> Nincs megjeleníthető adat, offline állapot miatt vagy más okból.</li>
+            </ul>
+
+            <p><strong>Csoport beállítások</strong></p>
+            <ul>
+                <li><strong>Prekondíció:</strong> A felhasználó csoporttulajdonos.</li>
+                <li><strong>Posztkondíció:</strong> Megjelenik a beállítások menü, a beállított móddal feloldódnak további beállítások.</li>
+                <li><strong>Main flow:</strong> A felhasználó rányom a csoportra amiben tulajdonos és azon belül a beállításokra. Kiválasztja a csoport módját (privát, co-op, observatory).</li>
+                <li><strong>Extend flows:</strong> A módosítás során a tulajdonos megváltoztathatja a Jogosultságokat, Új tagot hívhat meg, vagy Tagot rúghat ki, ezen döntések végén mentésre kerül.</li>
+                <li><strong>Exception flow:</strong> A felhasználónak nincs joga módosítani a beállításokat.</li>
+            </ul>
+
+            <p><strong>Szimuláció sebességének beállítása</strong></p>
+            <ul>
+                <li><strong>Prekondíció:</strong> A felhasználó csoporttulajdonos.</li>
+                <li><strong>Posztkondíció:</strong> A szimuláció sebessége módosul.</li>
+                <li><strong>Main flow:</strong> A felhasználó rányom a csoportra amiben tulajdonos és azon belül a beállításokra. Kiválasztja a szimuláció sebességét (1x-6x).</li>
+                <li><strong>Exception flow:</strong> A felhasználónak nincs joga módosítani a beállításokat.</li>
+            </ul>
+
+            <p><strong>Valós idejű szinkronizáció</strong></p>
+            <ul>
+                <li><strong>Prekondíció:</strong> Az alkalmazás fut, a felhasználó be van jelentkezve, és a készülék stabil internetkapcsolattal rendelkezik.</li>
+                <li><strong>Posztkondíció:</strong> Az adatok minden csoporttagnál azonnal frissülnek.</li>
+                <li><strong>Main flow:</strong> Cloud Firestore szerver érzékel egy adat módosítást és azonnal frissíti a többi aktív eszközt.</li>
+                <li><strong>Exception flow:</strong> Az internetkapcsolat megszakad. Internetkapcsolat helyreállása esetén a rendszer pótolja a szinkronizálást.</li>
+            </ul>
+
+            <p><strong>Push értesítés küldése</strong></p>
+            <ul>
+                <li><strong>Prekondíció:</strong> A felhasználó engedélyezte az üzenetek küldését az eszközön.</li>
+                <li><strong>Posztkondíció:</strong> A felhasználó megkapja az értesítést az esetleges adódó problémáról vagy emlékeztetésről.</li>
+                <li><strong>Main flow:</strong> Cloud Firestore adatbázis állapota alapján megállapítja, hogy értesítést kell küldeni, majd a rendszer elküldi a kliens eszközre.</li>
+            </ul>
+
+        </section>
+
+        <section id="hasznalhatosag">
+
+            <h2 id="hasznalhatosag">4. Használhatóság</h2>
+            <h2>4.1. Nemfunkcionális követelmények</h2>
+
+            <h3>Képzési idő</h3>
+
+            <p>
+                Egy gyermek barát, letisztult felülettel kell rendelkeznie az alkalmazásnak, 
+                ezzel is a legjobb felhasználói élményt szolgáltatva. Legrosszabb esetben is 4 vagy 5 gomb lesz található egyszerre, 
+                egy felületen, a neveik beszédesek lesznek, hogy könnyen elsajátítható legyen a kezelése akár egy fél óra alatt is.
+            </p>
+
+            <h3>Feladatvégzési idő</h3>
+
+            <p>
+                Szimuláció révén a növénygondozás feladatai gyorsan elvégezhetőek. 
+                Hagyományos esetben napi akár 10 percet is igénybe vehet. A mi megoldásunk, a szimuláción keresztül, 
+                digitális formában nem igényel több mint 5 percet. 
+            </p>
+            <p>
+                Más meglévő rendszerekhez képest célunk a az egyszerűbb, gyorsabb elvégzés. 
+                Míg más e-learning rendszerekben több képernyőn át törénő több kattintást igényel a miénk, sokkal egyszerűbb kisebb képernyőre 
+                fókuszáló képernyő érintés, vagy húzás.
+            </p>
+
+            <h3>Kezdő felhasználó tanulásának elősegítése</h3>
+
+            <p>
+                Új felhasználók számára, interaktív bevezető lehetőségét kínáljuk fel, 
+                hogy átvezesse őket az alkalmazás funkcióin és lehetőségein. Továbbá lehetőséget 
+                kínálunk kezdő felhasználók számára, hogy egy hiba esetén az ne legyen végzetes, hanem mint 
+                visszajelzés formájában tudják, hogy amit tettek annak a növényre nézve következményei lehetnek.
+            </p>
+            <p>
+                Pedagógusok vagy csoporttulajdonosok számára továbbá szolgálunk egy könnyen elérhető súgó rendszert, amely 
+                egy rövid digitális bemutatást ad egy funkcióról, ha elfelejtettük volna. Vagy korábbi bemutatóban nem bemutatott 
+                dolgokról nézhetünk útmutatót.
+            </p>
+
+            <h3>Hibakezelés és visszajelzés</h3>
+
+            <p>
+                A rendszernek egyértelmű és a legtöbb esetben jól szemléltető vizuális visszajelzést kell adnia, 
+                hogy az effektív tanulást lehetővé tegye.
+            </p>
+
+            <h3>Felhasználói felület hasonlósága</h3>
+
+            <p>
+                A betanulás elősegítésése érdekében célunk, hogy a felhasználói felület egy már bevett mintát kövessen, 
+                így az alkalmazás elemeinek layout-ja nem lesz ismeretlen még egy új felhasználónak sem.
+            </p>
+
+        </section>
+
+        <section id="megbizhatosag">
+
+            <h2>5. Megbízhatóság</h2>
+            
+            <h3>Rendelkezésre állás</h3>
+
+            <p>
+                A szoftver piacra dobást követően az első 1-2 hónapban ~100% -ban, hisz ilyenkor nagyon 
+                fontos a friss hiba jelentések rögzítése és minél előbbi javítása. Utána azonban mivel, már korábban említettük 
+                nem lesz live-service, esetlegesen adódó nagyon nagy hiba esetén javíthatjuk, de ezen hibákat terveink szerint 
+                már a tesztelés fázisban, legrosszabb esetben kiadás utáni 1-2 hónapban kiszűrjük és javítjuk.
+            </p>
+
+            <h3>MTBF</h3>
+
+            <p>
+                Átlagosan 2 hónap egy-egy komolyabb, a rendszer leállását vagy a gondozási funkciók 
+                szünetelését okozó hiba között. Ez a stabilitási időszak elég hosszú ahhoz, hogy a folyamatos 
+                hibák ne zavarják a felhasználókat.
+            </p>
+
+            <h3>MTTR</h3>
+
+            <p>
+                A felmerülő kritikus hibákat (például ha a növények állapota nem frissül a csoporttagoknál) 
+                a lehető leggyorsabban meg kell oldani, minimalizálva az érintett játékosok számát. Csapatunk létszámát figyelembe véve, 
+                az átlagos javítási idő 1 nagyon maximum 2 nap.
+            </p>
+
+        </section>
+
+        <section id="teljesitmeny">
+
+            <h2>6. Teljesítmény</h2>
+            
+            <h3>Válaszidő</h3>
+
+            <p>
+                A leggyakrabban használt funkciók, kliens oldaliak, menük közti navigáció, stb. 
+                Ezek válaszideje viszonylag gyors kategóriába esik, mely hardverfüggőek, de igyekszünk lent tartani 100-50ms alatt.
+            </p>
+            <p>
+                Hálózat szempontjából a válaszidő, az általunk választott szolgáltatótól függ elsősorban. 
+                Igy igyekeztünk olyat választani a képes minőségi szolgáltatást nyújtani, 
+                azonban az alkalmazásunk multiplayer oldala nem feltétlen igényel nagyon alacsony válaszidőket, így bőven bele fér 
+                akár a 1500-2000ms is.
+            </p>
+
+            <h3>Kapacitás</h3>
+
+            <p>
+                A tesztelési és a béta szakaszban 100-200 egyidejű felhasználó biztonságos kiszolgálása a cél. 
+                Publikálás után a rendszernek a Cloud Firestore-nak köszönhetően akár több ezer egyidejű felhasználót 
+                is bírnia kell teljesítményromlás nélkül, így jól skálázható.
+            </p>
+
+            <p>
+                Mivel az alkalmazás nagyrészt szöveges adatokat, numerikus értékeket (növények állapotváltozói, XP pontok) 
+                tárol és videókat, képeket nem, az adatbázis mérete az első évben várhatóan nem haladja meg a 2 GB-ot. A továbbiakban 
+                pedig, hasonlóan mérete alacsony marad ami segíti az alacsony fenntartási költségeket.
+            </p>
+
+            <h3>Korlátozott használhatóság idején elvárható / teljesítendő mutatók</h3>
+
+            <p>
+                Korlátozott vagyis offline mód alatt egyértelmű jelzést kell adni, hogy nincs hálózati kapcsolat.
+            </p>
+
+            <h3>Erőforrás igények</h3>
+
+            <p>
+                <strong>Processzor:</strong> Az alkalmazás futtatásához, 
+                tekintve hogy egy 2D egyszerű szimulációs számításokat végez, elegendő kell hogy legyen egy bármilyen 
+                több magos 2 GHz-es processzor.
+            </p>
+            <p>
+                <strong>RAM:</strong> Habár a minimum hardverkövetelmény 2 GB RAM, magának az alkalmazásnak a 
+                futásidejű memóriafogyasztása nem haladhatja meg a 150-200MB, hogy ne lassítsa a régebbi eszközöket se.
+            </p>
+            <p>
+                <strong>Háttértár kapacitás:</strong> az alkalmazás mindenféle képpen 100-150Mb alatt kell, 
+                hogy maradjon ezzel is támogatva a régebbi készülékeket.
+            </p>
+            <p>
+                <strong>Sávszélesség:</strong> mivel apró, kis méretű adatok cserélődnek, így egy 1-2Mbps sávszélesség is elegndő.
+            </p>
+
+        </section>
+
+        <section id="tamogatottsag">
+            <h2>7. Támogatottság</h2>
+
+            <p>
+                A rendszerünk elkészülte utáni karbantartást, a hibajavításokat és a későbbi üzemeltetést a következő módon tervezzük megoldani:
+            </p>
+
+            <p>
+                <strong>Kódolási szabványok és architektúra:</strong> Hogy a kódunk később is átlátható és bővíthető maradjon, tartjuk magunkat a hivatalos "Effective Dart" ajánlásokhoz. A program felépítésénél a Clean Architecture elvet használjuk, így a felület, a logika és az adatbázis kezelése szépen különválik.
+            </p>
+            <p>
+                <strong>Hibakeresés és naplózás:</strong> Mivel éles használat közben nehéz megtalálni a rejtett hibákat, bekötjük a Firebase Crashlytics szolgáltatást. Ez automatikusan jelzi nekünk, ha az alkalmazás összeomlik valakinél, és részletes hibanaplót küld, így sokkal gyorsabban tudjuk javítani a problémákat.
+            </p>
+            <p>
+                <strong>Karbantartói felület:</strong> Mivel a projektre kapott időnk véges, nem írunk külön adminisztrációs felületet. Helyette a Google Firebase kész webes konzolját (Firebase Console) fogjuk használni arra, hogy kezeljük az adatbázist, a felhasználói fiókokat és a biztonsági beállításokat.
+            </p>
+        </section>
+
+        <section id="tervezesi-korlatozasok">
+            <h2>8. Tervezési korlátozások</h2>
+            
+            <p>
+                Az alkalmazás tervezési, felépítési és megvalósítási fázisát több olyan technológiai és módszertani korlát határozza meg, melyek biztosítják a rendszer egységességét, fenntarthatóságát és a rendelkezésre álló időkeret tartását.
+            </p>
+            
+            <p>
+                <b>Felépítési követelmények</b>: A szoftver kliens-felhő felépítésre épül. A kliens oldalon fut a natív mobilalkalmazás, amely a lokális felületi elemeket és a logika egy részét kezeli, míg a szerver oldali feladatokat (adattárolás, felhasználókezelés) a Google Firebase mint felhőszolgáltatás látja el. A Flutter keretrendszeren belül kötelezően alkalmazni kell a Clean Architecture elveti, élesen elválasztva egymástól a felhasználói felületet, a logikát és az adatbázis-kezelő réteget.
+            </p>
+
+            <p>
+                <b>Programozási nyelvek és keretrendszerek</b>: A kódoláshoz kizárólag a Dart programozási nyelv (3.x verzió) és a Flutter keretrendszer használható. Mivel a projekt egyik célja a cross-platform támogatás, tilos felesleges platformfüggő kódrészleteket beépíteni, kivéve azokat a hivatalos natív csomagokat, amelyek elengedhetetlenek a hardveres interfészek eléréséhez.
+            </p>
+
+            <p>
+                <b>Fejlesztőeszközök és verziókezelés</b>: A fejlesztők a Visual Studio Code környezetét és az Android Studio vagy az Xcode mobil emulátorát használhatják. A forráskód verziókövetése a Git rendszeren keresztül, egy központi GitHub repository-ban történik. A csapatmunkához a Gitflow ágazási modellt kell követni, amelyben a main a stabil verzió, a develop az integrációs ág, a funkciókat pedig külön ágakon kell kidolgozni és később összevonni.
+            </p>
+
+            <p>
+                <b>Újrafelhasználható komponensek</b>: A fejlesztési idő optimalizálása érdekében a megbízható, széles körben tesztelt és hivatalos csomagtárból származó könyvtárak építhetők be.
+            </p>
+
+            <p>
+                <b>Fejlesztési módszertan</b>: A projekt az agilis szoftverfejlesztési elveken alapul. A haladást heti megbeszélésekkel és a projektmenedzserrel történő konzultációkkal ellenőrizzük, a minőséget pedig automatizált egységtesztekkel és komponenstesztekkel biztosítjuk.
+            </p>
+
+        </section>
+
+        <section id="dokumentacio">
+            <h2>9. Online dokumentáció és Help rendszer</h2>
+
+            <p>
+                Az alkalmazás elsődleges célközönsége a 8-16 éves diákok köréből kerül ki, illetve oktatási segédeszközként is funkciónál, elengedhetetlen, hogy a szoftver egy beépített, intuitív és könnyen áttekintető súgórendszerrel is rendelkezzen amely külső böngészők megnyitása nélkül is teljeskörű tájékoztatást nyújt.
+            </p>
+
+            <p>
+                <b>Interaktív bevezető</b>: Az alkalmazás első alkalommal történő indításakor vagy új fiók regisztrációját követően egy vizuális, lépésről lépésre haladó bemutató indul el. Ez az interaktív útmutató grafikus elemekkel és rövid leírásokkal vezeti végig a felhasználót a legfontosabb alapműveleteken: bemutatja az új növény elültetésének menetét, a virtuális eszközök használatát, valamint a locsolás és tápanyag utánpótlási mechanikákat is.
+            </p>
+
+            <p>
+                <b>Súgó és GYIK</b>: A képernyőn és a funkcióknál (például csoportbeállítások felület) egy diszkrét, de könnyen észrevehető súgó ikon érhető el. Erre rákattintva egy felugró ablakban jelenik meg az adott funkció tömör, az adott kontextusba illeszkedő egyszerűbb magyarázata.
+            </p>
+
+            <p>
+                <b>Csoportvezetői kéziköny</b>: A tanárok és esetleges egyéb csoportvezetők számára a csoportbeállítások menüponton belül külön digitális útmutató biztosított. Ez részletesen ismerteti a csoportmódok sajátosságait, a jogosultságok kiosztásának és módosításának menetét, valamint tanácsot ad arra vonatkózóan, hogy a szimulációs sebességet hogyan érdemes beállítani az egyes iskolai projektekhez. 
+            </p>
+
+            <p>
+                <b>Offline elérhetőség és hibabejelentés</b>: A súgószövegek és a statikus leírások az alkalmazásba vannak csomagolva, így azok stablit internetkapcsolat hiányában is zökkenőmentesen böngészhetőek. Amennyiben a felhasználó technikai hibába ütközik, a profil menüponton keresztül egy beépített űrlap segítségével közvetlenül hibabejelentést küldhet a fejlesztőcsapatnak.
+            </p>
+
+            <p>
+                <b>Online wiki</b>: A belső súgórendszer mellett egy dedikált, online elérhető tudásbázist is biztosítunk. Ez a felület a részletesebb, szöveges leírások mellett animált gifekkel és rövid videós bemutatókkal szemlélteti a komplexebb folyamatokat, mint például a csoportok szinkronizációs folyamatát vagy a növényekről szóló részletes adatokat, viselkedésüket és a növények fejlődési ciklusait. A felhőalapú frissitések és a jövőbeli verzióváltások új funkciókat hozhatnak magukkal, ezért a dokumentáció folyamatosan frissülő formában követi a szoftver változásait, ezzel biztosítva hogy a felhasználók és az érdeklődők mindig a legaktuálisabb információkhoz férjenek hozzá.
+            </p>
+
+        </section>
+
+        <section id="komponensek">
+           <h2>10. Felhasznált kész komponensek</h2>
+
+            <p>
+                Az alkalmazást nem akarjuk teljesen nulláról megírni, mert ahhoz sokkal több idő kellene, mint amennyi a projektre jut. Ezért több kész, ingyenesen használható eszközt és szolgáltatást veszünk igénybe. Ebben a részben leírjuk, hogy melyeket választottuk, és miért pont ezeket.
+            </p>
+
+            <h3>Keretrendszerek</h3>
+
+            <p>
+                Az alkalmazást a Flutter keretrendszerrel és a Dart programozási nyelvvel készítjük el. Ezt a Google fejleszti, és mobilalkalmazások építésére találták ki.
+            </p>
+            <p>
+                <strong>Ingyenes és nyílt forráskódú.</strong> A Flutter és a Dart is nyílt forráskódú (BSD licenc). Ez azt jelenti, hogy bárki szabadon letöltheti és használhatja őket, nem kell érte fizetni, és semmilyen megkötés nincs sem az oktatási, sem a későbbi használatra. Egy diákprojektnél ez nagyon fontos, mert nincs költségvetésünk.
+            </p>
+            <p>
+                <strong>Több platform támogatása.</strong> A Flutterrel elég egyszer megírni az alkalmazást, és abból Android és iOS rendszerre is elkészül a program. Ha külön írnánk meg az Androidos és az iOS-es változatot, kétszer annyi munkánk lenne, és minden javítást is kétszer kellene elvégezni. Így viszont mindkét rendszeren ugyanaz a program fut.
+            </p>
+            <p>
+                <strong>A Dart nyelv.</strong> A Dart objektumorientált nyelv, ezért jól illik ahhoz, amit az órákon tanultunk. Könnyen megtanulható, és kifejezetten arra készült, hogy gyorsan lehessen vele felhasználói felületet építeni.
+            </p>
+            <p>
+                <strong>Felületi elemek.</strong> A Flutterben megtalálható a Material Design összes alap eleme, például a gombok, a menük, a csúszkák és az animációk. Ezek az érintőképernyővel is jól használhatók, és a legtöbb dolog, ami a szimulációhoz kell, már benne van, nekünk csak össze kell raknunk.
+            </p>
+            <p>
+                <strong>Gyors kipróbálás.</strong> A Flutter Hot Reload nevű funkciója miatt ha átírunk valamit a kódban, a változás pár másodpercen belül látszik a telefonon vagy az emulátoron, nem kell újraindítani az egész programot. Ez sok időt spórol, főleg a felület finomhangolásánál és a hibakeresésnél. Ráadásul a hivatalos dokumentáció is részletes, így általában gyorsan megtaláljuk, amit keresünk.
+            </p>
+            <p>
+                <strong>Nagy közösség.</strong> A Flutterhez rengeteg kész csomag érhető el a pub.dev oldalon, például a Firebase használatához vagy az értesítések kezeléséhez. Ha elakadunk valamivel, nagy eséllyel valaki már megoldotta ugyanezt, és online megtaláljuk a választ.
+            </p>
+            <p>
+                <strong>Jó teljesítmény.</strong> A Flutter saját maga rajzolja ki a felületet, ezért az alkalmazás folyamatosan, 60 képkocka/másodperc sebességgel is futhat, még a régebbi és gyengébb telefonokon is. Mivel a célközönségünk sokszor nem a legújabb készüléket használja, ez nekünk különösen fontos.
+            </p>
+
+            <h3>Felhőalapú szolgáltatások és adatbázis-kezelő rendszerek</h3>
+
+            <p>
+                Az adatok tárolására és a háttérműködéshez a Google Firebase-t használjuk, azon belül is a Cloud Firestore adatbázist, a Firebase Authentication bejelentkezési szolgáltatást és a Firebase Cloud Messaging értesítési szolgáltatást. Azért döntöttünk emellett, mert ezzel nem kell saját szervert építenünk és üzemeltetnünk, ami egy ekkora csapatnak és ennyi időnek nagyon sokat számít.
+            </p>
+            <p>
+                <strong>Ingyenes kezdőcsomag.</strong> A Firebase Spark csomagja ingyenes. Ez elég ahhoz, hogy a fejlesztés alatt és a tesztelés, illetve a beadás idején mindent kipróbáljunk, anélkül hogy pénzt kellene rá költenünk. Ha később sokkal többen használnák az alkalmazást, akkor lehet fizetős csomagra váltani, de addig nem kell.
+            </p>
+            <p>
+                <strong>Valós idejű szinkronizálás.</strong> A Cloud Firestore egy NoSQL adatbázis, ami az adatok változását azonnal elküldi az összes csatlakoztatott eszköznek. Ha például egy diák meglocsolja a közös növényt, a tanár és a többi csoporttag rögtön látja a telefonján, hogy megváltozott a növény állapota, nem kell frissíteni semmit. Mivel nálunk a csoportos működés az egyik fő funkció, erre feltétlenül szükségünk van.
+            </p>
+            <p>
+                <strong>Kész bejelentkezés.</strong> A Firebase Authentication elintézi az e-mailes regisztrációt és a belépést. Ez azért jó, mert a jelszavak biztonságos tárolását és a bejelentkezett állapot kezelését elég nehéz jól megcsinálni, és ha hibázunk, az komoly biztonsági probléma lehet. Itt viszont egy bevált, kész megoldást kapunk.
+            </p>
+            <p>
+                <strong>Terhelhetőség.</strong> Az egész a Google szervereire épül, ezért ha sokan használják egyszerre az alkalmazást, akkor sem kell attól tartanunk, hogy leáll. Akár több ezer felhasználót is ki tud szolgálni, és a szerverek karbantartásával sem nekünk kell foglalkozni.
+            </p>
+            <p>
+                <strong>Értesítések.</strong> A Firebase Cloud Messaging segítségével a felhőből közvetlenül tudunk értesítést küldeni a telefonokra. Így emlékeztethetjük a diákokat, ha elmaradt az öntözés, vagy ha a növényük állapota rosszabbodott.
+            </p>
+            <p>
+                <strong>Biztonsági szabályok és kezelőfelület.</strong> A Firestore-ban szabályokat állíthatunk be arra, hogy ki mihez férhet hozzá. Így például csak az adott csoport tagjai láthatják a csoport növényeit. A Firebase webes konzolján pedig egy helyen átnézhetjük és módosíthatjuk az adatokat, a felhasználókat és ezeket a szabályokat, és ki is tudjuk próbálni, hogy jól működnek-e.
+            </p>
+        </section>
+
+        <section id="interfeszek">
+            <h2>11. Interfészek</h2>
+
+            <p>
+                Ebben a részben azt írjuk le, hogy az alkalmazás hogyan kapcsolódik a felhasználóhoz, a telefon részeihez, a más szoftverekhez és a hálózathoz.
+            </p>
+
+            <h3 id="felhasznaloi-interfeszek">11.1. Felhasználói interfészek</h3>
+
+            <p>
+                Az alkalmazás kinézete letisztult és modern lesz, és illeszkedik a témájához, vagyis a természethez és a növénygondozáshoz. A gombok, a menük és a jelek a Material Design 3 szabványait követik, amit a legtöbb mobilalkalmazásban használnak. Ezért a felhasználók már ismerik ezeket, és nem kell sokat gondolkodniuk azon, hogyan kell használni őket, ami a fiatalabb korosztálynak is megkönnyíti a dolgot.
+            </p>
+            <p>
+                A grafika barátságos, színes 2D illusztrációkból áll. Ezeken látszik a növény fejlődése a magtól egészen a virágzásig, és az is, ha elhanyagolják: ilyenkor a növény elszárad, elhervad, így a felhasználó a képről is látja, hogy valamit rosszul csinált.
+            </p>
+            <p>
+                <strong>Kezdők.</strong> A kezdő diákok egy rövid, interaktív bevezetőt (tutorialt) kapnak, ami lépésről lépésre megmutatja az alapvető dolgokat, például az öntözést, a tápanyag adását és a műszerek leolvasását. A felületnek egyszerűnek kell lennie, és ha valaki hibázik a gondozásban, az nem lehet végzetes: a program inkább vizuálisan jelzi, hogy mi volt rossz, hogy tanuljanak belőle.
+            </p>
+            <p>
+                <strong>Tapasztaltabb felhasználók és tanárok.</strong> A pedagógusok és a csoporttulajdonosok olyan felületet kapnak, ahol áttekinthetik az osztályokat, összehasonlíthatják a növények állapotát, beállíthatják a szimuláció sebességét, és kezelhetik a csoport jogosultságait.
+            </p>
+            <p>
+                <strong>Kezdőképernyő.</strong> Az alkalmazás elindítása után ez az első, amit a felhasználó lát. Itt lehet regisztrálni vagy belépni az e-mail címmel és a jelszóval. Gyorsnak és egyszerűnek kell lennie, hogy a tanórán ne vesszen el az idő azzal, hogy mindenki bejelentkezésre vár.
+            </p>
+            <p>
+                <strong>Menük és gombok.</strong> A menükön keresztül érhetők el a fő funkciók, például a növény kiválasztása, az ültetés és a növény állapotának ellenőrzése. Egy képernyőn legfeljebb 4-5 gomb lesz, érthető felirattal és jól elkülönítve egymástól, hogy ne legyen zsúfolt a kép.
+            </p>
+            <p>
+                <strong>Gondozási eszközök.</strong> A felületen megtalálhatók azok az eszközök, amikkel a növényt gondozni lehet: az öntözőkanna a talaj nedvességének szabályozásához, a tápoldat, és a virtuális mérőműszerek, amik a hőmérsékletet, a talaj nedvességét és a páratartalmat mutatják.
+            </p>
+            <p>
+                <strong>Profil és csoport.</strong> A profilban a felhasználó láthatja a megszerzett XP pontjait, a szintjét és az eredményeit. Ugyanitt érhető el a csoport közös gondozási naplója is, ahol látszik, hogy ki, mikor és milyen gondozási lépést végzett el.
+            </p>
+
+            <h3 id="hardver-interfeszek">11.2. Hardver interfészek</h3>
+
+            <p><strong>Képernyőfelbontások</strong></p>
+            <p>
+                Az alkalmazásnak sokféle telefonon és táblagépen kell jól működnie, mert a diákok különböző készülékeket használnak. A Flutter reszponzív elrendezést tud használni, vagyis a felület magától igazodik a képernyő méretéhez. Többek között ezeket a felbontásokat támogatjuk:
+            </p>
+            <ul>
+                <li>480x800 (WVGA)</li>
+                <li>720x1280 (HD)</li>
+                <li>1080x1920 és 1080x2400 (Full HD és FHD+)</li>
+                <li>1440x2560 (QHD) és a szokásos táblagépes felbontások</li>
+            </ul>
+
+            <p><strong>Bemenet és kimenet</strong></p>
+            <p>
+                Az alkalmazást főleg érintőképernyővel lehet használni. Ide tartozik a menügombok megnyomása, a csúszkák húzása, és a kijelző nyomva tartása is, amikor a felhasználó locsol (50 ml/s sebességgel). A kimenet a telefon kijelzője, ahol a növény állapotának változásai látszanak. Ezen kívül a telefon rezgését is használjuk: egy rövid rezgés jelzi, ha egy művelet sikerült.
+            </p>
+
+            <p><strong>Hálózat</strong></p>
+            <p>
+                Az alkalmazáshoz végig internetkapcsolat kell, mert a mentések a felhőben vannak, és a csoportos funkciók is ezen keresztül működnek. A felhasználók Wi-Fi-t vagy mobilinternetet használhatnak, attól függően, mijük van.
+            </p>
+
+            <p><strong>Mentés a felhőbe</strong></p>
+            <p>
+                A felhőben tároljuk a felhasználónevet, az e-mail címet és az egyéni beállításokat. Ezen kívül ide kerülnek a megszerzett XP pontok és a feloldott növényfajták, a virtuális növények adatai (a típusuk, a fejlettségi szintjük, a nedvességük és a tápanyagszintjük), valamint a csoportok adatai és a közös napló bejegyzései.
+            </p>
+            <p>
+                A mentés a következőképpen működik. Az alkalmazás összegyűjti, hogy mi változott, majd ezeket az adatokat elküldi a Google Cloud Firestore adatbázisba. A Firestore a háttérben automatikusan szétküldi az újdonságokat a csoport többi tagjának is. Közben a biztonsági szabályok (Firestore Security Rules) minden olvasásnál és íráskor ellenőrzik, hogy az adott felhasználónak van-e joga hozzá.
+            </p>
+
+            <p><strong>Hang</strong></p>
+            <p>
+                Az alkalmazás hangot is használ, például vízcsobogást locsoláskor, vagy egy rövid hangjelzést, ha a növény fejlődési szintet lépett. Ezek a telefon hangszóróján és a vezetékes vagy Bluetooth fülhallgatón is szólnak.
+            </p>
+
+            <h3 id="szoftver-interfeszek">11.3. Szoftver interfészek</h3>
+
+            <p>
+                Az alkalmazás működéséhez a következő szoftverekre és szolgáltatásokra van szükség.
+            </p>
+            <p>
+                <strong>Android és iOS.</strong> Az alkalmazás ezeken a mobil operációs rendszereken fut. A minimum az Android 6.0 és az iOS 13.0, de az újabb verziók (Android 9.0 és iOS 14.0 vagy újabb) ajánlottak.
+            </p>
+            <p>
+                <strong>Google Cloud Firestore.</strong> Ez az adatbázis, ahol az összes adat tárolva van: a felhasználók, a csoportok, a növények, a napló és az XP pontok.
+            </p>
+            <p>
+                <strong>Firebase Authentication.</strong> Ez intézi a regisztrációt és a bejelentkezést.
+            </p>
+            <p>
+                <strong>Firebase Cloud Messaging (FCM).</strong> Ezen keresztül küldjük a push értesítéseket a felhőből a telefonokra.
+            </p>
+            <p>
+                <strong>Firebase webes konzol.</strong> Ez a fejlesztőknek és az üzemeltetőknek van, itt lehet kezelni az adatbázist és a jogosultságokat. A felhasználók nem látják, csak mi.
+            </p>
+
+            <h3 id="kommunikacios-interfeszek">11.4. Kommunikációs interfészek</h3>
+
+            <p><strong>Regisztráció és bejelentkezés</strong></p>
+            <p>
+                A felhasználók az e-mail címük és a jelszavuk megadásával regisztrálhatnak. A belépési adatokat a Firebase Authentication ellenőrzi, titkosított kapcsolaton keresztül. Ha minden rendben van, a felhasználó kap egy belépési azonosítót (tokent), amivel aztán elérheti a csoportja védett adatait.
+            </p>
+
+            <p><strong>Csoportos mód</strong></p>
+            <p>
+                A tanárok és a diákok létrehozhatnak egy csoportot, vagy meghívókóddal csatlakozhatnak egy meglévőhöz. A csoporton belül a tagok együtt követhetik a növények fejlődését, és megoszthatják egymás között a feladatokat.
+                A telefonok közvetlenül a Cloud Firestore szervereivel tartják a kapcsolatot, ezen keresztül küldik és fogadják az adatokat, például az öntözéseket és az állapotváltozásokat. A szerver gondoskodik róla, hogy a növény állapota mindenkinél ugyanaz legyen, így minden csoporttag ugyanazt az aktuális állapotot látja.
+            </p>
+
+            <p><strong>Közös gondozási napló</strong></p>
+            <p>
+                A gondozási napló egy időrendi lista, amiben a csoport tagjai és a tanárok látják, hogy ki, mikor és mit csinált a növénnyel. A naplóbejegyzések ugyanúgy a Cloud Firestore-on keresztül jutnak el azonnal a csoport tagjaihoz. A Firestore biztonsági szabályai pedig megakadályozzák, hogy a csoporton kívüli bárki beleláthasson. A bejegyzéseket az adatbázis időponttal és a felhasználó azonosítójával együtt tárolja.
+            </p>
+
+            <p><strong>Internetkapcsolat</strong></p>
+            <p>
+                Az alkalmazásnak internetre van szüksége a felhős szinkronizáláshoz és a mentett növények betöltéséhez. A diákok és a tanárok készülékei titkosított (HTTPS) kapcsolaton keresztül tartják a kapcsolatot a felhőszolgáltatásokkal, így mindig a friss adatokat kapják meg. Ha a kapcsolat megszakad, az alkalmazás jelzi ezt a felhasználónak, és amikor visszajön az internet, pótolja a kimaradt szinkronizálást.
+            </p>
+
+            <p><strong>Értesítések és visszajelzés</strong></p>
+            <p>
+                A Firebase Cloud Messaging és a telefon saját értesítési rendszere segítségével az alkalmazás figyelmeztetést küld a diákoknak, ha a növényük állapota kritikussá válik, például ha kiszáradás fenyegeti. Emellett lesz egy belső visszajelző felület is, ahol a felhasználók közvetlenül jelezhetik a fejlesztőknek, ha valami nem működik jól (hibabejelentés).
+            </p>
+
+            <p>
+                Ezek az interfészek teszik lehetővé, hogy a felhasználók és a rendszer megfelelően együtt tudjon működni, és ezek nélkül az alkalmazás nem működne.
+            </p>
+        </section>
+
+        <section id="szabvanyok">
+            <h2>12. Alkalmazott szabványok</h2>
+
+            <h3>12.1. Kötelezően alkalmazandó szabványok</h3>
+
+            <p>
+                <strong>GDPR (Általános Adatvédelmi Rendelet):</strong> Alapvető elvárás, hogy a felhasználóink adatait az európai adatvédelmi szabályoknak megfelelően, biztonságosan kezeljük.
+            </p>
+            <p>
+                <strong>COPPA (Children's Online Privacy Protection Act) irányelvek:</strong> Mivel az alkalmazásunkat 8-16 éves diákok is használni fogják, különösen figyelnünk kell a kiskorúak adatainak (például az e-mail címek) védelmére és a biztonságos tárolásra.
+            </p>
+
+            <h3>12.2. Választás alapján alkalmazott szabványok</h3>
+
+            <p>
+                <strong>Material Design 3:</strong> A kinézetet a Google által kitalált Material Design elvek alapján építjük fel. Így az appunk kezelése ismerős, logikus és kényelmes lesz a felhasználóknak.
+            </p>
+            <p>
+                <strong>GitFlow ágazási modell:</strong> A közös programozáshoz és a verziókövetéshez a GitHubon a GitFlow módszert használjuk. Így elkerülhetjük, hogy véletlenül elrontsuk egymás kódját, mivel a fejlesztés (develop) és a stabil verzió (main) külön ágakon fut.
+            </p>
+        </section>
+
+        <section id="mellekletek">
+            <h2>13. Mellékletek</h2>
+
+            <p>
+                <strong>1. Melléklet - Use Case diagram:</strong> A dokumentum 3.1-es pontjában hivatkozott ábra, amely bemutatja az alkalmazásunk funkcióit (<code>usecase1.png</code>).
+            </p>
+            <p>
+                <strong>2. Melléklet - Flutter dokumentáció:</strong> Az általunk használt keretrendszer hivatalos leírása, ami alapján dolgozunk (<a href="https://docs.flutter.dev/" target="_blank">https://docs.flutter.dev/</a>).
+            </p>
+            <p>
+                <strong>3. Melléklet - Firebase szolgáltatások:</strong> A háttérrendszerhez használt Cloud Firestore és a többi Google szolgáltatás hivatalos integrációs útmutatója (<a href="https://firebase.google.com/docs" target="_blank">https://firebase.google.com/docs</a>).
+            </p>
+        </section>
+
+    </main>
+</body>
+</html>
