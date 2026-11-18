@@ -22,7 +22,7 @@
         }
 
         th {
-        background-color: #beb9b9;
+            background-color: #beb9b9;
         }
 
         ul li {
@@ -36,7 +36,7 @@
         }
 
         .alrendszer {
-            width:35%;
+            width: 35%;
             display: block;
         }
     </style>
@@ -47,7 +47,7 @@
         <h1>Feladat sorszáma: 4</h1>
         <h1>Feladat címe: Analízis Modell</h1>
         <div class="title">
-            <h1>Projektterv</h1>
+            <h1>Analízis modell</h1>
             <h3>Gyakorlatvezető:</h3>
             <h3>Dr. Árvai László</h3>
         </div>
@@ -110,27 +110,41 @@
             <ol>
                 <li><a href="#bevezetes">Bevezetés</a></li>
                 <li><a href="#kezdetioszdi">Kezdeti Osztálydiagram</a></li>
+                <ol>
+                    <li><a href="#osztalydiagram">Osztálydiagram</a></li>
+                    <li><a href="#osztalyoklista">Osztályok felsorolása</a></li>
+                    <li><a href="#alrendszerek">Alrendszerek</a></li>
                     <ol>
-                        <li><a href="#osztalydiagram">Osztálydiagram</a></li>
-                        <li><a href="#osztalyoklista">Osztályok felsorolása</a></li>
-                        <li><a href="#alrendszerek">Alrendszerek</a></li>
-                        <ol>
-                            <li><a href="#bejfiok">Bejelentkezés és fiók</a></li>
-                            <li><a href="#multi">Csoport és multiplayer</a></li>
-                            <li><a href="#szimul">Szimuláció</a></li>
-                            <li><a href="#gondozas">Gondozás</a></li>
-                            <li><a href="#juti">Jutalmazás</a></li>
-                            <li><a href="#adatkez">Adatkezelés és támogatás</a></li>
-                            <li><a href="#alegyuttmukodese">Az alrendszerek együttműködése</a></li> 
-                        </ol>
+                        <li><a href="#bejfiok">Bejelentkezés és fiók</a></li>
+                        <li><a href="#multi">Csoport és multiplayer</a></li>
+                        <li><a href="#szimul">Szimuláció</a></li>
+                        <li><a href="#gondozas">Gondozás</a></li>
+                        <li><a href="#juti">Jutalmazás</a></li>
+                        <li><a href="#adatkez">Adatkezelés és támogatás</a></li>
+                        <li><a href="#alegyuttmukodese">Az alrendszerek együttműködése</a></li>
                     </ol>
+                </ol>
                 <li><a href="#elsoalrendszer">Az első alrendszer modellje</a></li>
+                <ol>
+                    <li><a href="#statikusmodell">Statikus modell</a></li>
                     <ol>
-                        <li><a href="#statikusmodell">Statikus Modell</a></li>
-                        <li><a href="#dinamikusmodell">Dinamikus Modell</a></li>
-                        <li><a href="#funkcionalismodell">Funkcionális Modell</a></li>
-                        <li><a href="#analizismodellosztalyai">Az analízis modell osztályai</a></li>
+                        <li><a href="#kapcsolatok">Kapcsolatok pontosítása</a></li>
+                        <li><a href="#attributumok">Attribútumok azonosítása</a></li>
+                        <li><a href="#bazisosztalyok">Bázisosztályok keresése</a></li>
                     </ol>
+                    <li><a href="#dinamikusmodell">Dinamikus modell</a></li>
+                    <li><a href="#funkcionalismodell">Funkcionális modell</a></li>
+                    <li><a href="#operaciok">Operációk azonosítása</a></li>
+                    <li><a href="#analizisdiagram">Az analízis modell osztálydiagramja</a></li>
+                    <li><a href="#osztalylista">Az analízis modell osztályainak listája</a></li>
+                    <ol>
+                        <li><a href="#osztaly1">FelhasznaloiFiok</a></li>
+                        <li><a href="#osztaly2">Profil</a></li>
+                        <li><a href="#osztaly3">BejelentkezesKezelo</a></li>
+                        <li><a href="#osztaly4">BeallitasKezelo</a></li>
+                        <li><a href="#osztaly5">ErtesitesKezelo</a></li>
+                    </ol>
+                </ol>
                 <li><a href="#szabvanyok">Alkalmazott szabványok</a></li>
                 <li><a href="#mellekletek">Mellékletek</a></li>
             </ol>
@@ -138,11 +152,20 @@
 
         <section id="bevezetes">
             <h2>1. Bevezetés</h2>
+            <p>
+                A virtuális növénygondozó alkalmazás célja egy olyan modern, cross-platform program létrehozása, ami interaktív és biztonságos módon segíti a diákok fejlődését. A fejlesztés a Flutter keretrendszerre és a Dart programozási nyelvre épül, a felhős háttérszolgáltatásokat pedig a Google Firebase biztosítja.
+            </p>
+            <p>
+                A legfőbb célkitűzés, hogy a 8-16 éves korosztálynak és a tanároknak egy költséghatékony és kockázatmentes alternatíva álljon rendelkezésre a valós növénynevelés helyett. A diákok virtuális csoportokban nevelhetik a digitális növényeiket, amelyek fejlődését egy szimulációs motor számítja ki a környezeti tényezők és a gondozás alapján. A tartós motivációt az alkalmazásba épített játékos elemek (például tapasztalati pontok és trófeák) biztosítják. A rendszerben a pedagógusok könnyen ellenőrizhetik a diákok munkáját, a szimuláció felgyorsításával pedig a hetekig tartó folyamatokat is egyszerűbben le tudják vezetni.
+            </p>
+            <p>
+                Jelen dokumentum az alkalmazás analízis modelljét mutatja be, amely átmenetet képez a specifikációban leírt követelmények és a tényleges szoftverkomponensek között. A dokumentáció célja a működés logikus alrendszerekre bontása a konkrét kódolási és implementációs részletek mellőzésével. Az anyag első felében a teljes rendszer kezdeti osztálydiagramja és a főbb alrendszerek kerülnek bemutatásra. Ezt követően az első, „Bejelentkezés és fiók” alrendszer részletes, UML diagramokkal támogatott statikus, dinamikus és funkcionális modellje olvasható.
+            </p>
         </section>
 
         <section id="kezdetioszdi">
             <h2>2. Kezdeti Osztálydiagram</h2>
-        
+
             <section id="osztalydiagram">
                 <h3>2.1 Osztálydiagram</h3>
 
@@ -159,155 +182,149 @@
                     <b>FelhasznaloiFiok</b><br>
                     A felhasználó alapvető regisztrációs és fiókadatait tárolja, valamint azonosítja a felhasználót a rendszerben.
                 </p>
-                
+
                 <p>
                     <b>Profil</b><br>
                     A felhasználó mindenki számára látható adatait tárolja.
                 </p>
-                
+
                 <p>
                     <b>ErtesitesKezelo</b><br>
                     A push értesítések fogadását és küldését felügyeli a telefon és az FCM (Firebase Cloud Messaging) token segítségével.
                 </p>
-                
+
                 <p>
                     <b>BejelentkezesKezelo</b><br>
                     A felhasználó hitelesítését, belépését, kijelentkezését és a munkamenet érvényesítését kezeli.
                 </p>
-                
+
                 <p>
                     <b>BeallitasKezelo</b><br>
                     A felhasználóhoz tartozó egyedi alkalmazásbeállításokat kezeli és tárolja a fiókhoz kapcsolva.
                 </p>
-                
+
                 <p>
                     <b>JutalmazasKezelo</b><br>
                     Kiszámítja a megszolgált tapasztali pontokat és egyéb bónuszokat.
                 </p>
-                
+
                 <p>
                     <b>FeloldhatoTartalomKezelo</b><br>
                     Nyilvántartja a szintekhez kötött növényfajtákat, dekorációkat és felügyeli azok aktiválásat és elérhetőségét.
                 </p>
-                
+
                 <p>
                     <b>SzintKezelo</b><br>
                     Kiszámítja a felhasználó szintjét, és a szintlépés feltételeinek teljesülését vizsgálja.
                 </p>
-                
+
                 <p>
                     <b>CsoportTag</b><br>
                     Egy felhasználó adott csoporton belüli tagságát és szerepkörét tárolja.
-                </p>
-                
-
-                <p>
-                    <b>JogosultsagKezelo</b><br>
-                    Eldönti hogy egy csoporttag elvégezheti-e a az adott műveletet.
                 </p>
 
                 <p>
                     <b>NaploBejegyzes</b><br>
                     Egy elvégzett gondozási esemény konkrét adatait rögzíti.
                 </p>
-                
+
                 <p>
                     <b>GondozasiNaplo</b><br>
                     A csoporton belül végrehajtott összes naplóbejegyzés időrendi gyűjtőhelye.
                 </p>
-                
+
                 <p>
                     <b>Csoport</b><br>
                     A diákok és pedagógusok által alkotott csoport adatait, valamint a csoporthoz tartozó szimulációs sebességet tárolja.
                 </p>
-                
+
                 <p>
                     <b>MeghivoKod</b><br>
                     A csoporthoz történő gyors csatlakozáshoz szükséges véletlenszerűen generált egyedi kódot hozza létre, valamint érvényesíti azt.
                 </p>
-                
+
                 <p>
                     <b>Ertekeles</b><br>
                     Lehetővé teszi, hogy a csoporttagok és a tanárok értékeljék egymás növényeit.
                 </p>
-                
+
                 <p>
                     <b>Tanacs</b><br>
                     A csoporttagok közti szöveges segítségnyújtást teszi lehetővé.
                 </p>
-                
+
                 <p>
                     <b>Noveny</b><br>
                     A nevelt növény. Gondozási műveletek és környezeti hatások alapján számítja ki a jelenlegi állapotát.
                 </p>
-                
+
                 <p>
                     <b>NovenyFajta</b><br>
                     Közös katalógus, amely az adott növényfaj igényeit, ideális környezeti feltételeit tárolja.
                 </p>
-                
+
                 <p>
                     <b>FejlodesiAllapot</b><br>
                     A növény pillanatnyi állapotát tárolja.
                 </p>
-                
+
                 <p>
                     <b>KornyezetiTenyezok</b><br>
                     A növény körüli környezet fizikai jellemzőit tárolja, valamint frissíti.
                 </p>
-                
+
                 <p>
                     <b>SzimulacioIdozito</b><br>
                     A növény belső szimulációs órája. Az állapotfrissítéseket ütemezi.
                 </p>
-                
+
                 <p>
                     <b>Talaj</b><br>
                     A növény alatti talaj típusát, nedvességtartalmát és tápanyagszintjét tárolja és frissíti.
                 </p>
-                
+
                 <p>
                     <b>GondozasiEszkoz</b><br>
                     Egységes felületet és közös műveleteket definiálja a többi gondozási eszközzel. <br>
-                    Absztakt osztály. 
+                    Absztakt osztály.
                 </p>
-                
+
                 <p>
                     <b>Ontozokanna</b><br>
                     A talaj víztartalmának növelésére szolgáló eskzöz.
                 </p>
-                
+
                 <p>
                     <b>Tapoldat</b><br>
                     A talaj tápanyagtartalmának növelésére szolgáló valami.
                 </p>
-                
+
                 <p>
                     <b>Meromuszer</b><br>
                     Egységes felületet és közös műveleteket definiálja a többi mérési eszközzel. <br>
                     Absztakt osztály.
                 </p>
-                
+
                 <p>
                     <b>TalajnedvessegMero</b><br>
                     A talaj nedvességtartalmát leolvasó mérőműszer.
                 </p>
-                
+
                 <p>
                     <b>Homero</b><br>
                     A könyezet jelenlegi léghőmérsékletét leolvasó mérőműszer.
                 </p>
-                
+
                 <p>
                     <b>Hibabejelento</b><br>
                     Lehető teszi a technikai problémák jelentését a fejlesztők felé.
                 </p>
-                
+
                 <p>
                     <b>SugoRendszer</b><br>
                     Az új felhasználókat segítő interaktív tutorial és a beépített, kereshető súgót biztosítja.
                 </p>
-                
+
                 <p>
                     <b>FelhoSzinkronizacio</b><br>
                     A helyi adatok és a Firestore közti kétirányú adatszinkronizációért felelős osztály.
@@ -322,7 +339,7 @@
                     <h3>2.3.1. Bejelentkezés és fiók</h3>
                     <img src="bejelent_fiok_od.png" alt="Bejelentkezés és fiók" class="alrendszer">
                     <p>
-                        Ez az elrendszer felelős a felhasználók azonosításáért, a munkamenet érvényesítéséért, a nyilvános profil adatainak kezeléséért, a személyes eszközbeállításokért és a push értesítések fogadásáért.
+                        Ez az elrendszer felelős a felhasználók azonosításáért, a munkamenet érvényesítéséért, a nyilvános profil adatainak kezeléséért, a személyes eszközbeállításokért és a push értesítések fogadásáért. Ez az alrendszer a belépési kapu az alkalmazásba
                     </p>
                     <p>
                         Az alrendszerhez tartozó osztályok:
@@ -335,19 +352,18 @@
                         </ul>
                     </p>
                 </section>
-                
+
                 <section id="multi">
                     <h3>2.3.2. Csoport és multiplayer</h3>
                     <img src="csoport_multi_od.png" alt="Csoport és multiplayer" class="alrendszer">
                     <p>
-                        A közösségi együttműködéshez szükséges dolgokat összefogó alrendszer. Összefogja a csoportokat, a csatlakozási lehetőségeket, a tevékenységet rögzítő naplót, valamint a csoporttagok közötti interaktív lehetőségeket és a csoporttagok jogosultságait.
+                        A közösségi együttműködéshez szükséges dolgokat összefogó alrendszer. Összefogja a csoportokat, a csatlakozási lehetőségeket, a tevékenységet rögzítő naplót, valamint a csoporttagok közötti interaktív lehetőségeket.
                     </p>
                     <p>
                         Az alrendszerhez tartozó osztályok:
                         <ul>
                             <li>Csoport</li>
                             <li>CsoportTag</li>
-                            <li>JogosultsagKezelo</li>
                             <li>MeghivoKod</li>
                             <li>GondozasiNaplo</li>
                             <li>NaploBejegyzes</li>
@@ -356,7 +372,7 @@
                         </ul>
                     </p>
                 </section>
-                
+
                 <section id="szimul">
                     <h3>2.3.3. Szimuláció</h3>
                     <img src="szimulacio_od.png" alt="Szimuláció" class="alrendszer">
@@ -375,7 +391,7 @@
                         </ul>
                     </p>
                 </section>
-                
+
                 <section id="gondozas">
                     <h3>2.3.4 Gondozás</h3>
                     <img src="gondozas_od.png" alt="Gondozás" class="alrendszer">
@@ -394,7 +410,7 @@
                         </ul>
                     </p>
                 </section>
-                
+
                 <section id="juti">
                     <h3>2.3.5 Jutalmazás</h3>
                     <img src="jutalmazas_od.png" alt="Jutalmazás" class="alrendszer">
@@ -410,7 +426,7 @@
                         </ul>
                     </p>
                 </section>
-                
+
                 <section id="adatkez">
                     <h3>2.3.6. Adatkezelés és támogatás</h3>
                     <img src="adatkez_tamog_od.png" alt="Adatkezelés és támogatás" class="alrendszer">
@@ -463,7 +479,7 @@
                         <tr>
                             <td>Adatkezelés és támogatás</td>
                             <td>Bejelentkezés és fiók<br>Csoport és multiplayer<br>Szimuláció</td>
-                            <td>Valós időben szinkronizálja a felhasználó, a csoport és a növény állapotát</td>
+                            <td>A <b>FelhoSzinkronizacio</b> valós időben szinkronizálja a felhasználó, a csoport és a növény állapotát</td>
                         </tr>
                         <tr>
                             <td>Adatkezelés és támogatás</td>
@@ -474,36 +490,157 @@
                 </section>
 
             </section>
-                
-        </section>              
+
+        </section>
 
         <section id="elsoalrendszer">
-            <h2>3. Az első alrendszer</h2>
+            <h2>3. Az első alrendszer modellje: Bejelentkezés és fiók</h2>
+            <p>
+                Ez a fejezet a Bejelentkezés és fiók alrendszert mutatja be részletesen, mivel ez az alkalmazás belépési pontja. Enélkül a többi funkció (például a csoportok vagy a növénygondozás) nem lenne elérhető a felhasználók számára.
+            </p>
 
             <section id="statikusmodell">
-                <h3>3.1 Statikus Modell</h2>
+                <h3>3.1 Statikus modell</h3>
+                <p>
+                    A statikus modell kialakítása az alrendszerhez tartozó entitások és a köztük lévő logikai viszonyok feltérképezésén alapul.
+                </p>
+
+                <section id="kapcsolatok">
+                    <h4>3.1.1 Kapcsolatok pontosítása</h4>
+                    <p>
+                        A tervezés során a <b>FelhasznaloiFiok</b> osztály funkcionál központi elemként. A <b>Profil</b> és a <b>BeallitasKezelo</b> osztályok kompozíciós kapcsolatban állnak a fiókkal, hiszen ezek szorosan hozzá tartoznak: ha a fiók törlődik, a profil és a beállítások is megsemmisülnek. A <b>BejelentkezesKezelo</b> és az <b>ErtesitesKezelo</b> osztályok viszont csak használják a fiók adatait a feladataik elvégzéséhez, így köztük egyszerű asszociációs kapcsolat áll fenn.
+                    </p>
+                </section>
+
+                <section id="attributumok">
+                    <h4>3.1.2 Attribútumok azonosítása</h4>
+                    <p>
+                        A kapcsolatok tisztázása után az egyes osztályok által tárolt adatok kerültek meghatározásra. A hitelesítéshez a fióknál a felhasznaloID, az email és a letrehozasDatuma szükséges. A profil a megjelenoNev és az avatar mellett a szintXP-t és az aktualisSzint-et is tárolja. Az értesítéskezelő a működéshez az fcmToken-t, a beállítások osztály pedig a hangero, az ertesitesek (bool) és a nyelv preferenciáit tartalmazza. A bejelentkezéskezelő az aktivMunkamenet változót tartja nyilván.
+                    </p>
+                </section>
+
+                <section id="bazisosztalyok">
+                    <h4>3.1.3 Bázisosztályok keresése</h4>
+                    <p>
+                        A tervezés része annak vizsgálata is, hogy a közös tulajdonságok összevonhatók-e egy ősosztályba (bázisosztályba). Mivel ebben a konkrét alrendszerben az osztályok (fiók, profil, kezelők) teljesen eltérő feladatokat látnak el és más adatokat tárolnak, nem indokolt közös bázisosztály létrehozása (ellentétben például a Gondozás alrendszerrel, ahol a különböző eszközöknek van egy közös ősosztálya).
+                    </p>
+                </section>
             </section>
 
             <section id="dinamikusmodell">
-                <h3>3.2 Dinamikus Modell</h2>
+                <h3>3.2 Dinamikus modell</h3>
+                <p>
+                    A dinamikus modellt egy szekvenciadiagram ábrázolja, ami egy sikeres bejelentkezés folyamatát mutatja be időrendben. Amikor a felhasználó megadja az adatait, a <b>BejelentkezesKezelo</b> ellenőrzi azokat a <b>FelhasznaloiFiok</b> entitásban. Ha az adatok megfelelőek, a rendszer betölti a felhasználó korábbi beállításait, és frissíti a telefonos értesítésekhez szükséges tokent az <b>ErtesitesKezelo</b> segítségével.
+                </p>
+                <img src="dinamikus_modell.png" alt="Bejelentkezés folyamatának dinamikus modellje" class="alrendszerdiagram">
             </section>
 
             <section id="funkcionalismodell">
-                <h3>3.3 Funkcionális Modell</h2>
+                <h3>3.3 Funkcionális modell</h3>
+                <p>
+                    A funkcionális modell (használati eset diagram) azokat a műveleteket foglalja össze, amelyeket a felhasználó ebből az alrendszerből el tud indítani. Ilyen az alapvető regisztráció, a bejelentkezés és a kijelentkezés. A profil és a beállítások módosítását egy <code>&lt;&lt;include&gt;&gt;</code> nyíl köti a bejelentkezéshez, ami azt jelzi, hogy ezeknek a funkcióknak feltétele a sikeres belépés.
+                </p>
+                <img src="funkcionalis_modell.png" alt="Bejelentkezés és fiók funkcionális modellje" class="alrendszerdiagram">
             </section>
 
-            <section id="analizismodellosztalyai">
-                <h3>3.3 Az analízis modell osztályai</h2>
+            <section id="operaciok">
+                <h3>3.4 Operációk azonosítása</h3>
+                <p>
+                    A dinamikus és funkcionális modellek alapján meghatározásra kerültek az osztályokhoz tartozó függvények (operációk). A bejelentkezési folyamatból adódik az email és Google alapú bejelentkezés (<code>emailBejelentkezes()</code>, <code>googleBejelentkezes()</code>). Az értesítésekhez az <code>ertesitesFogadas()</code>, a beállításokhoz pedig a <code>beallitasokMentese()</code> operáció tartozik.
+                </p>
             </section>
-        </section>    
+
+            <section id="analizisdiagram">
+                <h3>3.5 Az analízis modell osztálydiagramja</h3>
+                <p>
+                    Az előző pontokban azonosított kapcsolatok, attribútumok és operációk alapján összeáll a Bejelentkezés és fiók alrendszer végső osztálydiagramja.
+                </p>
+                <img src="statikus_modell.png" alt="Bejelentkezés és fiók statikus modellje" class="alrendszerdiagram">
+            </section>
+
+            <section id="osztalylista">
+                <h3>3.6 Az analízis modell osztályainak listája</h3>
+                <p>Az elkészült osztálydiagram alapján az alrendszer osztályainak és azok felelősségeinek részletes bontása az alábbi:</p>
+
+                <section id="osztaly1">
+                    <h4>3.6.1 FelhasznaloiFiok</h4>
+                    <p>A rendszer hitelesítési alapköve, a belépéshez szükséges alapadatokat kezeli.</p>
+                    <ul>
+                        <li><i>Attribútumok:</i> felhasznaloID (String), email (String), letrehozasDatuma (DateTime)</li>
+                        <li><i>Metódusok:</i> regisztracio(), fiokTorlese(), adatokFrissitese()</li>
+                    </ul>
+                </section>
+
+                <section id="osztaly2">
+                    <h4>3.6.2 Profil</h4>
+                    <p>A többi csapattag és a tanárok számára publikusan látható adatokat tárolja.</p>
+                    <ul>
+                        <li><i>Attribútumok:</i> megjelenoNev (String), avatar (String), szintXP (int), aktualisSzint (int)</li>
+                        <li><i>Metódusok:</i> profilFrissitese(), jelszoModosit(), statisztikaLekerdezese()</li>
+                    </ul>
+                </section>
+
+                <section id="osztaly3">
+                    <h4>3.6.3 BejelentkezesKezelo</h4>
+                    <p>Felelőssége, hogy a felhasználó be tudjon lépni, és a munkamenet végéig bent is maradjon.</p>
+                    <ul>
+                        <li><i>Attribútumok:</i> aktivMunkamenet (String)</li>
+                        <li><i>Metódusok:</i> emailBejelentkezes(), googleBejelentkezes(), kijelentkezes(), jelszoModositas()</li>
+                    </ul>
+                </section>
+
+                <section id="osztaly4">
+                    <h4>3.6.4 BeallitasKezelo</h4>
+                    <p>Elmenti és betölti az alkalmazáshoz tartozó megjelenítési preferenciákat.</p>
+                    <ul>
+                        <li><i>Attribútumok:</i> hangero (double), ertesitesek (bool), nyelv (String)</li>
+                        <li><i>Metódusok:</i> hangBeallitas(), beallitasokMentese()</li>
+                    </ul>
+                </section>
+
+                <section id="osztaly5">
+                    <h4>3.6.5 ErtesitesKezelo</h4>
+                    <p>A push értesítések fogadását felügyeli, és a telefon operációs rendszerével kommunikál.</p>
+                    <ul>
+                        <li><i>Attribútumok:</i> fcmToken (String)</li>
+                        <li><i>Metódusok:</i> ertesitesFogadas(), ertesitesiFigyelmeztetes()</li>
+                    </ul>
+                </section>
+            </section>
+        </section>
 
         <section id="szabvanyok">
             <h2>4. Alkalmazott szabványok</h2>
+            <p>Az analízis modell elkészítése és a szoftver tervezése során az alábbi iparági szabványokat és konvenciókat vettük figyelembe:</p>
+            <ul>
+                <li><b>UML 2.5 (Unified Modeling Language):</b> Az objektum-orientált rendszertervezéshez, valamint a statikus (osztálydiagram), dinamikus (szekvenciadiagram) és funkcionális (használati eset) modellek vizuális elkészítéséhez alkalmazott szabványos modellező nyelv.</li>
+                <li><b>HTML5 és CSS3:</b> A dokumentáció webes alapú, platformfüggetlen struktúrájának és reszponzív, esztétikus megjelenésének kialakításához alkalmazott W3C weblap-szabványok.</li>
+                <li><b>Material Design 3:</b> A Google által megalkotott UI/UX tervezési elvrendszer, amelyet a Flutter keretrendszerre épülő mobilalkalmazás felhasználói felületének (gombok, kártyák, navigáció) kialakításánál követünk.</li>
+                <li><b>Dart kódolási konvenciók (Effective Dart):</b> A Flutter alapjául szolgáló Dart programozási nyelv hivatalos stílusirányelvei, amelyek a kód olvashatóságát, az elnevezési szabályokat (camelCase, PascalCase) és a dokumentációt szabályozzák a csapatmunkában.</li>
+                <li><b>NoSQL / JSON adatszabványok:</b> A Google Firebase Firestore adatbázisával történő kommunikáció során használt dokumentum-alapú adatstruktúrák és adatcserélési formátumok.</li>
+            </ul>
         </section>
 
         <section id="mellekletek">
             <h2>5. Mellékletek</h2>
+            <p>A dokumentumban szereplő diagramok és modellek képfájljai:</p>
+            <ul>
+                <li><code>osztalydiagram.png</code> – A teljes rendszer kezdeti osztálydiagramja.</li>
+                <li><code>bejelent_fiok_od.png</code> – Bejelentkezés és fiók alrendszer osztálydiagramja.</li>
+                <li><code>csoport_multi_od.png</code> – Csoport és multiplayer alrendszer osztálydiagramja.</li>
+                <li><code>szimulacio_od.png</code> – Szimuláció alrendszer osztálydiagramja.</li>
+                <li><code>gondozas_od.png</code> – Gondozás alrendszer osztálydiagramja.</li>
+                <li><code>jutalmazas_od.png</code> – Jutalmazás alrendszer osztálydiagramja.</li>
+                <li><code>adatkez_tamog_od.png</code> – Adatkezelés és támogatás alrendszer osztálydiagramja.</li>
+                <li><code>statikus_modell.png</code> – A Bejelentkezés és fiók alrendszer részletes statikus modellje.</li>
+                <li><code>dinamikus_modell.png</code> – A bejelentkezési folyamat dinamikus modellje (szekvenciadiagram).</li>
+                <li><code>funkcionalis_modell.png</code> – A Bejelentkezés és fiók alrendszer funkcionális modellje (használati eset diagram).</li>
+            </ul>
         </section>
+
+    </main>
+</body>
+</html>
 
     </main>
 </body>
