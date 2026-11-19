@@ -1,0 +1,442 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Felhasználói Kézikönyv</title>
+    <link rel="stylesheet" href="../stilusok/cimlap.css">
+    <link rel="stylesheet" href="../stilusok/alap.css">
+    <style>
+        table {
+            width: 90%;
+            margin: 0 auto;
+            border-collapse: collapse;
+        }
+
+        th, td {
+            padding: 9px 11px;
+            border: 1px solid #777;
+            font-size: 18px;
+            text-align: left;
+            vertical-align: top;
+        }
+
+        th {
+        background-color: #beb9b9;
+        }
+
+        ul li {
+            font-size: 20px;
+        }
+
+        .usecaseimg {
+            width: 90%;
+            display: block;
+            margin: 0 auto;
+        }
+
+        .ol li {
+            font-size: 20px;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Csoport neve: Palánták</h1>
+        <h1>Feladat sorszáma: 4</h1>
+        <h1>Feladat címe: Felhasználói Kézikönyv</h1>
+        <div class="title">
+            <h1>Felhasználói Kézikönyv</h1>
+            <h3>Gyakorlatvezető:</h3>
+            <h3>Dr. Árvai László</h3>
+        </div>
+        <h1>Csoporttagok:</h1>
+        <table class="team">
+            <tr>
+                <td>Mata Márk</td>
+                <td>K8DGVI</td>
+                <td>mark.mata@student.uni-miskolc.hu</td>
+            </tr>
+            <tr>
+                <td>Suba Kinga</td>
+                <td>LI5C7L</td>
+                <td>kinga.suba@student.uni-miskolc.hu</td>
+            </tr>
+            <tr>
+                <td>Zsólyomi Klaudia Vanda</td>
+                <td>CHZQ7Z</td>
+                <td>klaudia.vanda.zsolyomi@student.uni-miskolc.hu</td>
+            </tr>
+            <tr>
+                <td>Zsák István</td>
+                <td>SIE9FL</td>
+                <td>istvan.zsak@student.uni-miskolc.hu</td>
+            </tr>
+            <tr>
+                <td>Baranyovszki Kata</td>
+                <td>W9JKTC</td>
+                <td>kata.baranyovszki@student.uni-miskolc.hu</td>
+            </tr>
+        </table>
+        <h2>Beadás dátuma: 2026. 11. 20.</h2>
+    </header>
+
+    <main>
+
+        <div class="document-info">
+            <table>
+                <thead>
+                    <tr>
+                        <th><strong>Dátum</strong></th>
+                        <th><strong>Verzió</strong></th>
+                        <th><strong>Leírás</strong></th>
+                        <th><strong>Szerző</strong></th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>2026. 11. 03.</td>
+                        <td>1.0</td>
+                        <td>Teljes verzió</td>
+                        <td>Suba Kinga, Zsólyomi Klaudia Vanda, Baranyovszki Kata, Zsák István, Mata Márk</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <nav class="tartalomj">
+            <h3>Tartalomjegyzék</h3>
+            <ol>
+                <li><a href="#bevezetes">Bevezetés</a></li>
+                <li><a href="#telepites">Letöltés és futtatás</a></li>
+                <ol>
+                    <li><a href="letoltes">Letöltés</a></li>
+                    <li><a href="futtatas">Futtatás</a></li>
+                </ol>
+                <li><a href="#regisztracio">Regisztráció/belépés</a></li>
+                <li><a href="#fomenu">Főmenü</a></li>
+                <li><a href="#kezelofelulet">Kezelő felület</a></li>
+                <li><a href="#hasznalatmenet">Alkalmazás használatának menete</a></li>
+                    <ol>
+                        <li><a href="#csoport">Csoport létrehozás</a></li>
+                        <li><a href="#csoportcsatlakozas">Belépés csoportba</a></li>
+                        <li><a href="#noveny">Növény kiválasztása</a></li>
+                        <li><a href="#ngondozas">Növény gondozása</a></li>
+                    </ol>
+                <li><a href="#hibajelentes">Hibajelentés és hibaelhárítás</a></li>
+                    <ol>
+                        <li><a href="#hjelentes">A hibajelentés menete</a></li>
+                        <li><a href="#lgyhibak">Leggyakoribb hibaüzenetek</a></li>
+                    </ol>
+            </ol>
+        </nav>
+
+        <section id="bevezetes">
+            <h2>1. Bevezetés</h2>
+            <p>
+                Az alábbi dokument a fejlesztő csapatunk által készített egyszerű útmutató az alkalmazáshoz. 
+                Végig vezet annak letöltésén, regisztráció/bejeelntkezés részén, át a csoport létrehozásán és beállításán egészen 
+                a növény kiválasztásához, elültetéséhez és gondozásához. A dokumentumban részletesen leírjuk az egyes menüpontokban történő 
+                lépéseket, továbbá feltüntetjük, hogyan lehet elérni az alklamazás beli súgót mely további hasznos infotmációkkal láthat el.
+            </p>
+        </section>
+
+        <section id="telepites">
+            <h2>2. Letöltés és futtatás</h2>
+
+            <section id="letoltes">
+
+                <h2>2.1 Letöltés és telepítés</h2>
+
+                <h3>Android</h3>
+
+                <p>
+                    Android operációs rendszerű készülék esetén, legyen szó táblagépről vagy telefonról, 
+                    a Google Play alkalmazást megnyitva lehet rákeresni a keresőmezőbe beírva a nevét. Esetleges név egyezés esetén 
+                    győződjön meg róla, hogy a fejlesztő/kiadó csapat neve Palánták. Innen egy egyszerű gombnyomással letöltheti és telepítheti 
+                    az alkalmazást az eszközére, ezt követően egy végső vírus ellenőrzést futtat le az eszköz/Google Play majd megnyithatóvá válik 
+                    az alkalmazás.
+                </p>
+
+                <h3>iOS</h3>
+                
+                <p>
+                    iOS operációs rendszerű készülék (iPad, iPhone) esetén, az App Store alkalmazást megnyitva kereshet rá a szoftverünkre 
+                    a keresőmező használatával. Esetleges név egyezés esetén győződjön meg róla, hogy a fejlesztő/kiadó csapat neve Palánták. 
+                    Innen a "Letöltés" gombra nyomva és szükség esetén FaceID vagy TouchID hitelesítést megadva a rendszer letölti a szoftvert 
+                    amely a telepítést követően azonnal megynithatóvá válik.
+                </p>
+
+            </section>
+            <section id="futtatas">
+
+                <h2>2.2 Futtatás</h2>
+
+                <p>
+                    Letöltést és telepítést követően, amennyiben a készülék hardver követelménye eléri a minimum követlemény 
+                    szintjét és stabil interneteléréssel rendelkezik az alkalmazás futtatása könnyen az eszközre telepített ikonra 
+                    történi koppintással történik. Egy betöltő képernyőt követően felfogja hozni a regisztrációs/bejelentkezős felületet.
+                </p>
+
+            </section>
+
+        </section>
+
+        <section id="regisztracio">
+            
+            <h2>3. Regisztráció/bejelentkezés</h2>
+
+            <p>
+                Ammenyiben már rendelkezik fiókkal az alkalmazás futtatását követően megjelenő felületen email cím 
+                és jelsző megadásával tud bejelentkezni, ha viszont még nincsen akkor a bejelentkezés (alapértelmezett) felületen megtalálható "Még nincsen fiókja?" szövegre nyomva megjelenik a 
+                regisztráció felülete, ahol egy email cím és jelszó megadásával a Firebase Authentication visszaigazolásával 
+                a fiók létrejön és egy nyugtázó, visszaigazoló email kerül kiküldésre automatikusan.
+            </p>
+
+        </section>
+
+        <section id="fomenu">
+
+            <h2>4. Kezelői felületek</h2>
+
+            <h3>Főmenü</h3>
+
+            <p>
+                A főmenüben megtalálható bal felső sarokban a bejelentkezett profilod képe melyre koppintva megnyitható a profil. 
+                Itt megtekinthető az alkalmazásban elért szinted, vagyis az xp-pontok szinté való konverziója mely lentebb található 
+                táblázat szerint történik (A szint nem egy külön mechanikai tényező szimplán egy felhasználó barátabb módja az xp-pontok megjelenítésére). 
+            </p>
+
+            <table>
+                <thead>
+                    <tr>
+                        <th>Szint</th>
+                        <th>Szükséges XP (Szintlépéshez)</th>
+                        <th>Összes XP (Eléréshez)</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr><td>1</td><td>78</td><td>0</td></tr>
+                    <tr><td>2</td><td>79</td><td>78</td></tr>
+                    <tr><td>3</td><td>82</td><td>157</td></tr>
+                    <tr><td>4</td><td>83</td><td>239</td></tr>
+                    <tr><td>5</td><td>86</td><td>322</td></tr>
+                    <tr><td>6</td><td>88</td><td>408</td></tr>
+                    <tr><td>7</td><td>89</td><td>496</td></tr>
+                    <tr><td>8</td><td>92</td><td>585</td></tr>
+                    <tr><td>9</td><td>93</td><td>677</td></tr>
+                    <tr><td>10</td><td>96</td><td>770</td></tr>
+
+                    <tr><td>11</td><td>98</td><td>866</td></tr>
+                    <tr><td>12</td><td>99</td><td>964</td></tr>
+                    <tr><td>13</td><td>102</td><td>1063</td></tr>
+                    <tr><td>14</td><td>103</td><td>1165</td></tr>
+                    <tr><td>15</td><td>106</td><td>1268</td></tr>
+                    <tr><td>16</td><td>108</td><td>1374</td></tr>
+                    <tr><td>17</td><td>109</td><td>1482</td></tr>
+                    <tr><td>18</td><td>112</td><td>1591</td></tr>
+                    <tr><td>19</td><td>113</td><td>1703</td></tr>
+                    <tr><td>20</td><td>116</td><td>1816</td></tr>
+
+                    <tr><td>21</td><td>117</td><td>1932</td></tr>
+                    <tr><td>22</td><td>120</td><td>2049</td></tr>
+                    <tr><td>23</td><td>122</td><td>2169</td></tr>
+                    <tr><td>24</td><td>124</td><td>2291</td></tr>
+                    <tr><td>25</td><td>125</td><td>2415</td></tr>
+                    <tr><td>26</td><td>128</td><td>2540</td></tr>
+                    <tr><td>27</td><td>129</td><td>2668</td></tr>
+                    <tr><td>28</td><td>132</td><td>2797</td></tr>
+                    <tr><td>29</td><td>133</td><td>2929</td></tr>
+                    <tr><td>30</td><td>136</td><td>3062</td></tr>
+
+                    <tr><td>31</td><td>138</td><td>3198</td></tr>
+                    <tr><td>32</td><td>139</td><td>3336</td></tr>
+                    <tr><td>33</td><td>142</td><td>3475</td></tr>
+                    <tr><td>34</td><td>143</td><td>3617</td></tr>
+                    <tr><td>35</td><td>146</td><td>3760</td></tr>
+                    <tr><td>36</td><td>148</td><td>3906</td></tr>
+                    <tr><td>37</td><td>149</td><td>4054</td></tr>
+                    <tr><td>38</td><td>152</td><td>4203</td></tr>
+                    <tr><td>39</td><td>153</td><td>4355</td></tr>
+                    <tr><td>40</td><td>156</td><td>4508</td></tr>
+
+                    <!-- 41-50. Szint -->
+                    <tr><td>41</td><td>158</td><td>4664</td></tr>
+                    <tr><td>42</td><td>159</td><td>4822</td></tr>
+                    <tr><td>43</td><td>162</td><td>4981</td></tr>
+                    <tr><td>44</td><td>163</td><td>5143</td></tr>
+                    <tr><td>45</td><td>166</td><td>5306</td></tr>
+                    <tr><td>46</td><td>167</td><td>5472</td></tr>
+                    <tr><td>47</td><td>170</td><td>5639</td></tr>
+                    <tr><td>48</td><td>172</td><td>5809</td></tr>
+                    <tr><td>49</td><td>174</td><td>5981</td></tr>
+                    <tr><td>50</td><td>175</td><td>6155</td></tr>
+
+                    <!-- 51-60. Szint -->
+                    <tr><td>51</td><td>178</td><td>6330</td></tr>
+                    <tr><td>52</td><td>179</td><td>6508</td></tr>
+                    <tr><td>53</td><td>182</td><td>6687</td></tr>
+                    <tr><td>54</td><td>183</td><td>6869</td></tr>
+                    <tr><td>55</td><td>186</td><td>7052</td></tr>
+                    <tr><td>56</td><td>188</td><td>7238</td></tr>
+                    <tr><td>57</td><td>189</td><td>7426</td></tr>
+                    <tr><td>58</td><td>192</td><td>7615</td></tr>
+                    <tr><td>59</td><td>193</td><td>7807</td></tr>
+                    <tr><td>60</td><td>7808</td><td>-</td></tr>
+                </tbody>
+            </table>
+
+            <p>
+                A főmenü közepén találhatók a "Csoport kiválasztás", "Csoport létrehozás", "Csoporthoz csatlakozás" gombok. A 
+                csoport kiválasztása gomb felhoz egy almenüt, melyben kiválasztható egy lista formájában megjelenő csoportok közül az amelyikben 
+                tevékenykedni akarunk. Az adott csoportra rábökve belépünk a csoportba.
+            </p>
+            <p>
+                A "Csoport létrehozása" gomb megnyomása felhoz egy almenüt/kis ablakot az alkalmazáson belül, ahol megadhatjuk annak nevét, 
+                és egyéb beállításait, például a csoport módját (co-op, privát, megfigyelő). E beállítás beállítása után szükség esetén tovább 
+                tényezőket tudunk módosítani, ilyen a csoport láthatósága, max létszáma, belépéshez szükséges minimum követleményt (xp-pont/szint), szimuláció sebességét.
+            </p>
+            <p>
+                A "Csoporthoz csatlakozás" gomb megnyomása további választási lehetőséget ad, az egyik lehetőség a "Csatlakozás publikus csoportokhoz" 
+                mely lehetőséget kínál, hogy böngésszük a publikus láthatóságú csoportokat. A másik lehetőség a "Csatlakozás meghívó kóddal", ezen 
+                lehetőség esetén a meghívó kódot kell az ez után megjelenő rublikába beírni. Ammenyiben a beírt kód hosszúsága megegyezik a 
+                az átalunk generált kódok hosszával (6 karakter), akkor a rublika alatt a "Csatlakozás" gomb felvillan és kattinthatóvá válik.
+                Esetleges hiba estetén egyértelmű hibaüzenetet ír ki, például: nem létező meghívókód vagy a meghívókód lejárt. Sikeres csatlakozás esetén 
+                bedob a csoportba és a szimulációs felülethez.
+            </p>
+
+            <h3>Csoport menü</h3>
+
+            <p>
+                Csoportba lépést követően ezen az új felületen találjuk magunkat. A bal felső sarokban található a "ház" ikonú gomb 
+                mely a szimulációs szobába, gondozó szobába visz. Jobb felső sarokban pedig  
+                egy bevásárló kosarat ábrázoló ikon mely a feloldási/előrehaladási menüre visz, itt látni is lehet a feloldott dolgokat 
+                sorban, de ami ennél is fontosabb fel oldani is lehet őket. Ezen felül található még a jobb alsó sarokban egy "?" ikonú 
+                gomb mellyel a súgót lehet előhozni és egy "könyv" ikonú gomb mellyel a tevékenység naplót.
+            </p>
+            <p>
+                A gondozó szobában találhatunk egy "virág" ikonú gombot, melynek a megnyomása felhoz egy listát. Itt találhatjuk a gondozott 
+                növényeink listáját, valamelyikre rányomva előhozza azt a növényt. a legalján (illetve, ha még nincsen egy se akkor a legtetején) 
+                található egy "+" ikon, ezzel lehet új növényt kiválasztva elültetni.
+            </p>
+            <p>
+                A gondozó szobában a kiválasztott növényre nyomva lehet egy legördülő listából kiválasztani a tenni kívánt cselekedeteket.
+                 Ezen cselekedetek közé tartozik a locsolás, állapot vizsgálat, talaj táplálás.
+            </p>
+
+        </section>
+
+        <section id="hasznalatmenet">
+            
+            <h2>6. Alkalmazás használatának menete</h2>
+
+            <h3 id="csoport">6.1 Csoport létrehozása</h3>
+                <ol>
+                    <li>A főmenüben válassza ki a <b>Csoport létrehozás</b> gombot</li>
+                    <li>Adja meg a csoport nevét</li>
+                    <li>A csoport létrehozása után a rendszer egy egyedi meghívókódot és hivatkozási linket generál</li>
+                    <li>A létrehozó felhasználó automatikusan megkapja a Csoporttulajdonos szerepkört</li>
+                </ol>
+
+            <h3 id="csoportcsatlakozas">6.2 Csatlakozás csoporthoz</h3>
+                <ol>
+                    <li>A főmenüben válassza ki a <b>Csoporthoz csatlakozás</b> gombot</li>
+                    <li>Adja meg a csatlakozni kívánt csoport egyedi meghívókódját</li>
+                    <li>A kód ellenőrzése után a rendszer hozzáadja a felhasználót a csoport taglistájához</li>
+                </ol>
+
+            <h3 id="noveny">6.3 Növény kiválasztása</h3>
+                <ol>
+                    <li>A gondozó szobában a "+" jelre kattintva előjön a az új növény kiválasztása felület</li>
+                    <li>Válassza ki a felnevelni kívánt növényfajtát</li>
+                    <li>Eután válassza ki a kívánt talajtípust és a kezdeti környezeti feltételeket</li>
+                    <li>Erősítse meg a választást, így az új növény rögzítésre kerül az adatbázisban, valamint megjlenik a gondozó szoba felületén</li>
+                </ol>
+
+            <h3 id="ngondozas">6.4 Növény gondozása</h3>
+                <ol>
+                    <li>A gondozó szoba felületén válassza ki a kívánt növényt az interaktív gondozási menü megnyitásához</li>
+                    <li>Használja a virtuális mérőműszereket a talaj nedvességtartalmának, a környezeti hőmérsékletnek és a páratartalom leolvasásához</li>
+                    <li>A <b>Locsolás</b> opció kiválasztását követően tartsa lenyomva a kijelzőt a növény körül a kívánt mennyiségű víz használatához</li>
+                    <li>Válassza a <b>Tápanyag-utánpótlás</b> opciót a talaj tápanyagtartalmának növeléséhez</li>
+                    <li>A korábban elvégzett műveleteket az automatikusan naplózott <b>Tevékenység naplóban</b> megtekintheti</li>
+                </ol>
+
+        </section>
+
+        </section>
+
+        <section id="hibajelentes">
+
+            <h2>7. Hibajelentés és hibaelhárítás</h2>
+
+            <h3 id="hjelentes">7.1 A hibabejelentés menete</h3>
+                <ol>
+                    <li>Nyissa meg a <b>Profil</b> menüpontot az alkalmazás felületén</li>
+                    <li>Válassza a <b>Hibabejelentés</b> opciót a beépített űrlap megnyitásához</li>
+                    <li>Részletezze a tapasztalt technikai hibát minél pontosabban</li>
+                    <li>A <b>Küldés</b> gombot kiválasztva a bejelentés továbbítva lesz a fejlesztőcsapat felé</li>
+                </ol>
+                <i>Esetleges alkamazás összeomlás esetén automatikusan egy részletes hibanapló lesz elküldve a fejlesztőcsapatnak</i>
+
+            <h3 id="lgyhibak">7.2 Leggyakoribb hibaüzenetek</h3>
+                <table>
+                    <thead>
+                        <th>Hibakategória</th>
+                        <th>A hiba leírása</th>
+                        <th>Rendszerválasz</th>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><b>Regisztrációs hiba</b></td>
+                            <td>Foglalt e-mail cím, nem elég erős jelszó vagy hálózati probléma</td>
+                            <td>A megfelelő hibaüzenet jelenik meg a kijelzőn</td>
+                        </tr>
+                        <tr>
+                            <td><b>Bejelentkezési hiba</b></td>
+                            <td>Helytelen e-mail cím vagy hibás jelszó</td>
+                            <td>A Firebase Authentication elutasítja az azonosítást</td>
+                        </tr>
+                        <tr>
+                            <td><b>Csoportlétrehozási hiba</b></td>
+                            <td>A csoport nevének megadása elmaradt</td>
+                            <td>A rendszer elutasítja a csoport létrehozását</td>
+                        </tr>
+                        <tr>
+                            <td><b>Csoportcsatlakozási hiba</b></td>
+                            <td>Érvénytelen vagy lejárt meghívókód, vagy már törölt csoport</td>
+                            <td>A csatlakozás nem megy végbe, egy megfelelő hibaüzenet jelzi a problémát</td>
+                        </tr>
+                        <tr>
+                            <td><b>Jogosultsági hiba</b></td>
+                            <td>Nem tulajdonos rangú tag próbál csoportbeállításokat módosítani</td>
+                            <td>A rendszer megtagadja a módosítást</td>
+                        </tr>
+                        <tr>
+                            <td><b>Hálózati kimaradás</b></td>
+                            <td>Megszakadt az internetkapcsolat</td>
+                            <td>Egyértelmű offline jelzés jelenik meg. Kapcsolat helyreállásakor az adatok automatikusan szinkronizálódnak</td>
+                        </tr>
+                        <tr>
+                            <td><b>Adathiány a naplóban</b></td>
+                            <td>Offline állapot vagy bejegyzések hiánya</td>
+                            <td>Nincs megjeleníthető adat visszajelzés a napló felületén</td>
+                        </tr>
+                        <tr>
+                            <td><b>Növény hervadása / elhalása</b></td>
+                            <td>Túlöntözés, vízhiány, rossz fény- vagy tápanyagviszonyok</td>
+                            <td>Vizuális tünetek a növényen és push értesítés (amennyiben engedélyezve van)</td>
+                        </tr>
+                        <tr>
+                            <td><b>Alkalmazás-összeomlás</b></td>
+                            <td>Váratlan szoftveres leállás vagy futási hiba</td>
+                            <td>Automatikus hibanapló küldése a fejlesztőcsapatnak</td>
+                        </tr>
+                    </tbody>
+                </table>
+
+        </section>
+    
+    </main>
+</body>
+</html>
