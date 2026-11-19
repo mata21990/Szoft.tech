@@ -1,0 +1,385 @@
+<!DOCTYPE html>
+<html lang="hu">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>Rendszertervezés</title>
+        <link rel="stylesheet" href="../../stilusok/alap.css">
+        <link rel="stylesheet" href="../../stilusok/cimlap.css">
+        <style>
+            table {
+                width: 90%;
+                margin: 0 auto;
+                border-collapse: collapse;
+            }
+
+            th, td {
+                padding: 9px 11px;
+                border: 1px solid #777;
+                font-size: 20px;
+                text-align: left;
+                vertical-align: top;
+            }
+
+            th {
+                background-color: #beb9b9;
+            }
+
+            ul li {
+                font-size: 18px;
+            }
+
+            .usecaseimg {
+                width: 90%;
+                display: block;
+                margin: 0 auto;
+            }
+
+            .kep {
+                display: block;
+                margin: 0 auto;
+            }
+        </style>
+    </head>
+    <body>
+        <header>
+            <h1>Csoport neve: Palánták</h1>
+            <h1>Feladat sorszáma: 4</h1>
+            <h1>Feladat címe: Rendszertervezés</h1>
+            <div class="title">
+                <h1>Rendszertervezés</h1>
+                <h3>Gyakorlatvezető:</h3>
+                <h3>Dr. Árvai László</h3>
+            </div>
+            <h1>Csoporttagok:</h1>
+            <table class="team">
+                <tr>
+                    <td>Mata Márk</td>
+                    <td>K8DGVI</td>
+                    <td>mark.mata@student.uni-miskolc.hu</td>
+                </tr>
+                <tr>
+                    <td>Suba Kinga</td>
+                    <td>LI5C7L</td>
+                    <td>kinga.suba@student.uni-miskolc.hu</td>
+                </tr>
+                <tr>
+                    <td>Zsólyomi Klaudia Vanda</td>
+                    <td>CHZQ7Z</td>
+                    <td>klaudia.vanda.zsolyomi@student.uni-miskolc.hu</td>
+                </tr>
+                <tr>
+                    <td>Zsák István</td>
+                    <td>SIE9FL</td>
+                    <td>istvan.zsak@student.uni-miskolc.hu</td>
+                </tr>
+                <tr>
+                    <td>Baranyovszki Kata</td>
+                    <td>W9JKTC</td>
+                    <td>kata.baranyovszki@student.uni-miskolc.hu</td>
+                </tr>
+            </table>
+            <h2>Beadás dátuma: 2026. 11. 20.</h2>
+        </header>
+
+        <main>
+            <div class="document-info">
+                <table>
+                    <thead>
+                        <tr>
+                            <th><strong>Dátum</strong></th>
+                            <th><strong>Verzió</strong></th>
+                            <th><strong>Leírás</strong></th>
+                            <th><strong>Szerző</strong></th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>2026. 11. 15.</td>
+                            <td>1.0</td>
+                            <td>Teljes verzió</td>
+                            <td>Suba Kinga, Zsólyomi Klaudia Vanda, Baranyovszki Kata, Zsák István, Mata Márk</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <nav class="tartalomj">
+                <h3>Tartalomjegyzék</h3>
+                <ol>
+                    <li><a href="#bevezetes">Bevezetés</a></li>
+                    <li><a href="#felhfelulet">Felhasználói felület</a></li>
+                        <ol>
+                            <li><a href="#loadscr">Töltőképernyő</a></li>
+                            <li><a href="#loginscr">Bejelentkezés/regisztráció felület</a></li>
+                            <li><a href="#mainmenu">Főmenü</a></li>
+                            <li><a href="#profile">Profil felület</a></li>
+                            <li><a href="#group">Csoportmenü</a></li>
+                            <li><a href="#shop">Bolt</a></li>
+                            <li><a href="#room">Szimulációs szoba</a></li>
+                            <li><a href="#logs">Bejegyzés napló</a></li>
+                        </ol>
+                    <li><a href="#adatm">Adatmodellek</a></li>
+                        <ol>
+                            <li><a href="#dbms">Adatbázis kezelő kiválasztása</a></li>
+                            <li><a href="#ER">Szemantikai adatmodell</a></li>
+                            <li><a href="#relation">Relációs adatmodell</a></li>
+                        </ol>
+                </ol>
+            </nav>
+
+            <section id="bevezetes">
+                <h2>1. Bevezetés</h2>
+                <p>
+                    A Rendszertervezés dokumentáció célja, hogy részletes betekintést nyújtson az applikáció struktúrájába 
+                    és működésébe. A dokumentum kifejti a kezelőfelületek és az adatbázis közötti kapcsolatokat. 
+                    A kezelőfelületek részletes leírása mellett bemutatja az adatbázis rendszer kialakítását, elemeit 
+                    és szerepét a játék folyamatában.
+                </p>
+            </section>
+
+            <section id="felhfelulet">
+                <h2>2. Felhasználói felület</h2>
+
+                <p>
+                    Felhasználói felület kialakításánál figyelembe vettük, hogy letisztult és átlátható legyen, egyszerre 
+                    kevés interakciós elemmel pl. gombbal ellátva, hogy a kevesebb tapasztalattal rendelkező felhasználók is 
+                    könnyen tudják használni.
+                </p>
+                <p>
+                    A felület és az alkalmazásban megjelenő assetek grafikája pixel art stílusban készült. Ennek elsődleges oka, 
+                    hogy barátibb, kevésbé túlstimuláló hatást kelthet a fiatal korosztály számára, hiszen ezen stílus egyik lényege 
+                    , hogy a régi retro hardver korlátozott időben készült alkotásokra hasonlítson modernebb formában, tehát kevés szín 
+                    kisebb felbontás felnagyobbítva, texture filtering kikapcsolva.
+                </p>
+
+                <section id="loadscr">
+                    <h3>2.1. Töltőképernyő</h3>
+                    <p>
+                        Az alkalmazás megnyitása után az alap assetek betöltése után ez a tervezett képernyő fogad, mely közben 
+                        az alkalmazás elvégzi a kellő mennyiségű háttér kommunikációt és kapcsoládást a szerverrel, adatbázissal.
+                    </p>
+                    <img class="kep" src="../rendszertervezes/loadingscreen.png" alt="Töltőképernyő">
+                </section>
+
+                <section id="loginscr">
+                    <h3>2.2. Bejelentkezés/regisztráció felület</h3>
+                    <p>
+                        A töltőképernyő véget érése után, megjelenik egy képernyő melyen vélaszthatunk, hogy bejelentkezni szeretnénk 
+                        vagy regisztrálni, a megfelelő kiválasztása után a hozzá tartozó menü megjelenik.
+                    </p>
+                    <img class="kep" src="loginorreg.png" alt="Belépés menü">
+                    <br>
+                    <img class="kep" src="login.png" alt="Belépési adatok menü">
+                    <br>
+                    <img class="kep" src="register.png" alt="Regisztrációs fül">
+                </section>
+
+                <section id="mainmenu">
+                    <h3>2.3. Főmenü</h3>
+                    <p>
+                        Bejelentkezést követően, a főmenü tárul elénk, itt láthatjuk profil képünket/avatárunkat, a felhasználó 
+                        nevünket és egyéb gombokat. A jobb felső sarokban található egy hamburger menü ikonjához hasonló ikon, ezzel 
+                        hozhatjuk be a beállítások fült, ahol beállíthatjuk többek közt az alkalmazás nyelvét.
+                    </p>
+                    <p>
+                        Középen van a két fő gomb, az egyik ami elindítja a csoport létrehozás folyamatát, a másik pedig a csoporthoz való 
+                        csatlakozás, melynek menetéről részletesebben a felhasználói kézikönyvben lehet olvasni.
+                    </p>
+                    <img class="kep" src="mainmenu.png" alt="Főmenü">
+                </section>
+
+                <section id="profile">
+                    <h3>2.4. Profil felület</h3>
+                    <p>
+                        A főmenüben az avatárra koppintva megjelenik a profil ablak. Itt lehet felhasználó nevet módosítani 
+                        (ez az ami csoportokban megjelenik mások számára), avatárt/profilképet és emellett megtalálhatjuk még a 
+                        jelenlegi szintünket illetve egy "bar", csík/rúd formájában látjuk az előrehaladásunkat.
+                    </p>
+                    <img class="kep" src="profilmenu.png" alt="Profil ablak">
+                </section>
+
+                <section id="group">
+                    <h3>2.5. Csoportmenü</h3>
+                    <p>
+                        5 interaktáéható gomb található. 
+                        Az exit amivel kiléphetünk a csoportból vissza a főmenübe. a Könyv amivel megtekinthetjük a gondozási naplót.
+                        A kérdőjel ami a súgó oldalt hozza fel, a ház amivel a gondozáó szpbába léphetünk és a bevásárló kosár amivel 
+                        a boltba léphetünk feloldani növényeket.
+                    </p>
+                    <img class="kep" src="csoportmenu.png" alt="Csoport menü">
+                </section>
+
+                <section id="shop">
+                    <h3>2.6. Bolt</h3>
+                    <img class="kep" src="bolt.png" alt="Bolt">
+                </section>
+
+                <section id="room">
+                    <h3>2.7. Növénygondozó szoba</h3>
+                    <p>
+                        A plusz ikonnal vehetünk fel (ültethetünk) új növényt amennyiben már van legalább 2, megjelenik az opció, hogy
+                        kiválasszuk a növényt. A növényre nyomva végezhetünk különféle műveleteket.
+                    </p>
+                    <img class="kep" src="gondozo.png" alt="Növénygondozó">
+                </section>
+
+            </section>
+
+            <section id="adatm">
+                <h2>3. Adatmodellek</h2>
+
+                <section id="dbms">
+                    <h3>3.1. Adatbázis kezelő kiválasztása</h3>
+                    <p>
+                        Az alkalmazásunk működéséhez megbízható, felhőalapú adatbázisra van szükség, hiszen a többplatformos működés (Android és iOS) és a csoportos játékmenet miatt a felhasználóknak minden eszközről el kell érniük és azonnal látniuk kell a friss adatokat. El kell tárolnunk a regisztrációs adatokat, az egyéni beállításokat, a csoportokat és a meghívókódokat, a virtuális növények állapotát, valamint a közös gondozási napló bejegyzéseit.
+                    </p>
+                    <p>
+                        A Palánták alkalmazás háttérrendszeréhez a <strong>Google Firebase</strong> szolgáltatásait, azon belül az adatok tárolásához a <strong>Cloud Firestore</strong> adatbázist, a bejelentkezéshez pedig a <strong>Firebase Authentication</strong> szolgáltatást választottuk:
+                    </p>
+                    <ul>
+                        <li><strong>Azonnali frissítés a csoporttagok között:</strong> A Cloud Firestore az adatok változását azonnal elküldi az összes csatlakozott eszköznek. Ha valaki meglocsolja a növényt, a tanár és a többi diák oldalfrissítés nélkül rögtön látja a változást.</li>
+                        <li><strong>Egyszerű összekötés a Flutterrel:</strong> A hivatalos Firebase csomagok (cloud_firestore, firebase_auth, firebase_messaging) kifejezetten Dart és Flutter alá készültek, így könnyen beépíthetők a programba.</li>
+                        <li><strong>Offline működés:</strong> Ha átmenetileg megszakad az internetkapcsolat, a Firestore helyben eltárolja a változásokat, és amint visszajön a net, automatikusan szinkronizálja őket a szerverrel.</li>
+                        <li><strong>Ingyenes kezdés és skálázhatóság:</strong> Nem kell saját szervert építenünk és üzemeltetnünk, a Firebase ingyenes (Spark) csomagja pedig bőven elég a fejlesztéshez és a teszteléshez is.</li>
+                        <li><strong>Biztonságos hozzáférés:</strong> A Firebase Authentication intézi a belépést és a jelszavak védelmét, a Firestore Security Rules segítségével pedig beállíthatjuk, hogy egy csoport adatait csak a csoport tagjai láthassák.</li>
+                    </ul>
+                </section>
+
+                <section id="ER">
+                    <h3>3.2. Szemantikai adatmodell</h3>
+                    <img src="Palantak_ER .png" alt="Szemantikai adatmodell" class="usecaseimg">
+                </section>
+
+                <section id="relation">
+                    <h3>3.3. Relációs adatmodell</h3>
+                    <img src="Palantak_relacio1.drawio.png" alt="Relációs adatmodell" class="usecaseimg">
+
+                    <p><strong>Felhasznalo:</strong></p>
+                    <ul>
+                      
+                        <li>email: a felhasználó egyedi e-mail címe</li>
+                        <li>letrehozas_datum: a regisztráció időpontja</li>
+                        <li>megjelenitett_nev: az alkalmazásban látható felhasználónév</li>
+                        <li>avatar: a kiválasztott profilkép azonosítója</li>
+                        <li>osszes_xp: a gondozási műveletekkel megszerzett tapasztalati pontok összege</li>
+                        <li>fcm_token: a push értesítések kézbesítéséhez használt eszközazonosító token</li>
+                        <li>Elsődleges kulcs: felhasznalo_ID</li>
+                    </ul>
+
+                    <p><strong>Beallitasok:</strong></p>
+                    <ul>
+                      
+                        <li>hangero: a hangeffektek beállított hangereje</li>
+                        <li>ertesitesek: a push értesítések engedélyezettségét jelző logikai érték</li>
+                        <li>nyelv: a kezelőfelület kiválasztott nyelve</li>
+                        <li>Elsődleges kulcs: beallitas_ID</li>
+                        <li>Idegen kulcs: felhasznalo_ID (Felhasznalo tábla elsődleges kulcsa)</li>
+                    </ul>
+
+                    <p><strong>Csoport:</strong></p>
+                    <ul>
+              
+                        <li>csoport_nev: a csoport megnevezése</li>
+                        <li>mod: a csoport működési módja</li>
+                        <li>max_letszam: a csoportba csatlakozható tagok maximális száma</li>
+                        <li>min_xp: a csatlakozáshoz elvárt minimális XP-szint</li>
+                        <li>szimulacio_seb: a csoportra érvényes időszimulációs szorzó</li>
+                        <li>Elsődleges kulcs: csoport_ID</li>
+                    </ul>
+
+                    <p><strong>MeghivoKod:</strong></p>
+                    <ul>
+                      
+                        <li>lejarat_datuma: a meghívókód érvényességének lejárati időpontja</li>
+                        <li>Elsődleges kulcs: kod</li>
+                        <li>Idegen kulcs: csoport_ID (Csoport tábla elsődleges kulcsa)</li>
+                    </ul>
+
+                    <p><strong>CsoportTag:</strong></p>
+                    <ul>
+                     
+                        <li>szerepkor: a tag jogosultsági szintje</li>
+                        <li>csatlakoz_datuma: a csoportba való belépés időpontja</li>
+                        <li>Elsődleges kulcs: tag_ID</li>
+                        <li>Idegen kulcsok: felhasznalo_ID (Felhasznalo tábla elsődleges kulcsa), csoport_ID (Csoport tábla elsődleges kulcsa)</li>
+                    </ul>
+
+                    <p><strong>FeloldhatoTartalom:</strong></p>
+                    <ul>
+                      
+                        <li>szukseges_szint: a tartalom feloldásához szükséges minimális felhasználói szint</li>
+                        <li>Elsődleges kulcs: tartalom_ID</li>
+                    </ul>
+
+                    <p><strong>FelhasznaloFeloldas:</strong></p>
+                    <ul>
+                     
+                        <li>feloldas_ideje: a tartalom feloldásának pontos időpontja</li>
+                        <li>Elsődleges kulcsok és idegen kulcsok: felhasznalo_ID (Felhasznalo tábla elsődleges kulcsa), tartalom_ID (FeloldhatoTartalom tábla elsődleges kulcsa)</li>
+                    </ul>
+
+                    <p><strong>Novenyfajta:</strong></p>
+                    <ul>
+                      
+                        <li>noveny_neve: a növényfajta magyar elnevezése</li>
+                        <li>tudomanyos_nev: a növényfajta latin neve</li>
+                        <li>leiras: oktató jellegű leírás a növény származásáról és jellemzőiről</li>
+                        <li>opt_nedvesseg: a növény számára ideális talajnedvességi érték</li>
+                        <li>fenyigeny: a növény fényigényének kategóriája</li>
+                        <li>Elsődleges kulcs: fajta_ID</li>
+                        <li>Idegen kulcs: tartalom_ID (FeloldhatoTartalom tábla elsődleges kulcsa)</li>
+                    </ul>
+
+                    <p><strong>VirtualisNoveny:</strong></p>
+                    <ul>
+                       
+                        <li>ultetes_ideje: a növény elültetésének időpontja</li>
+                        <li>egeszs_szazalek: a növény aktuális általános egészségi állapota százalékban</li>
+                        <li>utolso_kalkulacio: a szimulációs motor utolsó állapotfrissítésének időbélyege</li>
+                        <li>Elsődleges kulcs: noveny_ID</li>
+                        <li>Idegen kulcsok: tag_ID (CsoportTag tábla elsődleges kulcsa), fajta_ID (Novenyfajta tábla elsődleges kulcsa)</li>
+                    </ul>
+
+                    <p><strong>FejlodesiAllapot:</strong></p>
+                    <ul>
+                       
+                        <li>aktualis_fazis: a növény jelenlegi növekedési fázisa</li>
+                        <li>Elsődleges kulcs: allapot_ID</li>
+                        <li>Idegen kulcs: noveny_ID (VirtualisNoveny tábla elsődleges kulcsa)</li>
+                    </ul>
+
+                    <p><strong>KornyezetiTenyezok:</strong></p>
+                    <ul>
+                     
+                        <li>fenyviszony: a növényt érő fényintenzitás mértéke</li>
+                        <li>paratartalom: a környezet levegőjének páratartalma</li>
+                        <li>homerseklet: a környezet aktuális hőmérséklete</li>
+                        <li>Elsődleges kulcs: kornyezet_ID</li>
+                        <li>Idegen kulcs: noveny_ID (VirtualisNoveny tábla elsődleges kulcsa)</li>
+                    </ul>
+
+                    <p><strong>Talaj:</strong></p>
+                    <ul>
+                        
+                        <li>talaj_tipus: a kiválasztott talajfajta megnevezése</li>
+                        <li>nedvesseg: a talaj pillanatnyi víztartalma</li>
+                        <li>tapanyagszint: a talajban rendelkezésre álló tápanyagok mennyisége</li>
+                        <li>Elsődleges kulcs: talaj_ID</li>
+                        <li>Idegen kulcs: noveny_ID (VirtualisNoveny tábla elsődleges kulcsa)</li>
+                    </ul>
+
+                    <p><strong>NaploBejegyzes:</strong></p>
+                    <ul>
+                    
+                        <li>muvelet_tipus: az elvégzett tevékenység típusa</li>
+                        <li>idobelyeg: a művelet végrehajtásának pontos időpontja</li>
+                        <li>mennyiseg: a felhasznált víz vagy tápoldat mennyisége</li>
+                        <li>Elsődleges kulcs: bejegyzes_ID</li>
+                        <li>Idegen kulcsok: noveny_ID (VirtualisNoveny tábla elsődleges kulcsa), tag_ID (CsoportTag tábla elsődleges kulcsa), csoport_ID (Csoport tábla elsődleges kulcsa)</li>
+                    </ul>
+                </section>
+            </section>
+        </main>
+    </body>
+</html>
