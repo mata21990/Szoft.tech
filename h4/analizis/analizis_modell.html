@@ -143,6 +143,11 @@
                         <li><a href="#osztaly3">BejelentkezesKezelo</a></li>
                         <li><a href="#osztaly4">BeallitasKezelo</a></li>
                         <li><a href="#osztaly5">ErtesitesKezelo</a></li>
+                        <li><a href="#osztaly6">Csoport</a></li>
+                        <li><a href="#osztaly7">CsoportTag</a></li>
+                        <li><a href="#osztaly8">MeghivoKod</a></li>
+                        <li><a href="#osztaly9">Noveny</a></li>
+                        <li><a href="#osztaly10">NovenyFajta</a></li>
                     </ol>
                 </ol>
                 <li><a href="#szabvanyok">Alkalmazott szabványok</a></li>
@@ -510,12 +515,18 @@
                     <p>
                         A tervezés során a <b>FelhasznaloiFiok</b> osztály funkcionál központi elemként. A <b>Profil</b> és a <b>BeallitasKezelo</b> osztályok kompozíciós kapcsolatban állnak a fiókkal, hiszen ezek szorosan hozzá tartoznak: ha a fiók törlődik, a profil és a beállítások is megsemmisülnek. A <b>BejelentkezesKezelo</b> és az <b>ErtesitesKezelo</b> osztályok viszont csak használják a fiók adatait a feladataik elvégzéséhez, így köztük egyszerű asszociációs kapcsolat áll fenn.
                     </p>
+                    <p>
+                        A csoportos résznél a <b>FelhasznaloiFiok</b> a <b>CsoportTag</b> osztályon keresztül kapcsolódik a <b>Csoport</b>-hoz. A <b>Csoport</b> és a <b>CsoportTag</b> között aggregációs kapcsolat van, a belépéshez kellő <b>MeghivoKod</b> pedig kompozícióval tartozik a csoporthoz, mert a csoport nélkül nincs értelme. A növénynevelésnél a <b>CsoportTag</b> asszociációval kapcsolódik a saját <b>Noveny</b> osztályához, ami pedig a <b>NovenyFajta</b> adatait használja ahhoz, hogy tudja, milyen igényei vannak.
+                    </p>
                 </section>
 
                 <section id="attributumok">
                     <h4>3.1.2 Attribútumok azonosítása</h4>
                     <p>
                         A kapcsolatok tisztázása után az egyes osztályok által tárolt adatok kerültek meghatározásra. A hitelesítéshez a fióknál a felhasznaloID, az email és a letrehozasDatuma szükséges. A profil a megjelenoNev és az avatar mellett a szintXP-t és az aktualisSzint-et is tárolja. Az értesítéskezelő a működéshez az fcmToken-t, a beállítások osztály pedig a hangero, az ertesitesek (bool) és a nyelv preferenciáit tartalmazza. A bejelentkezéskezelő az aktivMunkamenet változót tartja nyilván.
+                    </p>
+                    <p>
+                        A csoportoknál a <b>Csoport</b> tárolja a csoportID-t, a nev-et, a szimulaciosSebesseg-et és a letrehozasDatuma-t. A <b>CsoportTag</b>-hoz a tagID, a felhasznaloID, a szerepkor és a csatlakozasDatuma tartozik, a <b>MeghivoKod</b>-nál pedig a kod, a csoportID, a lejaratIdeje és az aktiv (bool) adatok kellenek. A <b>Noveny</b> a novenyID, a becenev, az ultetesDatuma és az eletbenVan értékeket tárolja, a <b>NovenyFajta</b> pedig a fajtaID, a fajtaNev, az idealisNedvesseg, az idealisHomerseklet és a szuksegesSzint adatokat.
                     </p>
                 </section>
 
@@ -548,6 +559,9 @@
                 <p>
                     A dinamikus és funkcionális modellek alapján meghatározásra kerültek az osztályokhoz tartozó függvények (operációk). A bejelentkezési folyamatból adódik az email és Google alapú bejelentkezés (<code>emailBejelentkezes()</code>, <code>googleBejelentkezes()</code>). Az értesítésekhez az <code>ertesitesFogadas()</code>, a beállításokhoz pedig a <code>beallitasokMentese()</code> operáció tartozik.
                 </p>
+                <p>
+                    A csoportos résznél a <b>Csoport</b> osztályhoz a <code>tagHozzaadasa()</code> és a <code>sebessegModositasa()</code> függvények kerültek, a <b>MeghivoKod</b>-hoz a <code>kodGeneralasa()</code> és a <code>kodErvenyesitese()</code>, a <b>CsoportTag</b>-hoz pedig a <code>novenyGondozasa()</code>. A növényeknél a <b>Noveny</b> az <code>allapotFrissitese()</code> és az <code>egeszsegSzamitasa()</code> műveleteket kapta, a <b>NovenyFajta</b> pedig az <code>igenyekLekerdezese()</code> függvényt.
+                </p>
             </section>
 
             <section id="analizisdiagram">
@@ -560,54 +574,648 @@
 
             <section id="osztalylista">
                 <h3>3.6 Az analízis modell osztályainak listája</h3>
-                <p>Az elkészült osztálydiagram alapján az alrendszer osztályainak és azok felelősségeinek részletes bontása az alábbi:</p>
+                <p>Az elkészült osztálydiagram alapján az osztályok és azok felelősségeinek, attribútumainak és operációinak részletes bontása az alábbi:</p>
 
                 <section id="osztaly1">
                     <h4>3.6.1 FelhasznaloiFiok</h4>
-                    <p>A rendszer hitelesítési alapköve, a belépéshez szükséges alapadatokat kezeli.</p>
                     <ul>
-                        <li><i>Attribútumok:</i> felhasznaloID (String), email (String), letrehozasDatuma (DateTime)</li>
-                        <li><i>Metódusok:</i> regisztracio(), fiokTorlese(), adatokFrissitese()</li>
+                        <li><b>felelőssége, feladata:</b> A rendszer hitelesítési alapköve; a felhasználó alapvető regisztrációs és belépési adatait tárolja, valamint azonosítja a felhasználót a rendszerben.</li>
+                        <li><b>együttműködők:</b> Profil, BeallitasKezelo, BejelentkezesKezelo, ErtesitesKezelo, CsoportTag, FelhoSzinkronizacio</li>
+                        <li><b>attribútumok</b></li>
                     </ul>
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Név</th>
+                                <th>Típus</th>
+                                <th>Leírás</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>felhasznaloID</td>
+                                <td>String</td>
+                                <td>A felhasználó egyedi azonosítója a Firebase rendszerben.</td>
+                            </tr>
+                            <tr>
+                                <td>email</td>
+                                <td>String</td>
+                                <td>A regisztrációhoz és bejelentkezéshez használt e-mail-cím.</td>
+                            </tr>
+                            <tr>
+                                <td>letrehozasDatuma</td>
+                                <td>DateTime</td>
+                                <td>A felhasználói fiók létrehozásának pontos időpontja.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <ul>
+                        <li><b>operációk</b></li>
+                    </ul>
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Név</th>
+                                <th>Argumentumok</th>
+                                <th>Működése, feladata</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>regisztracio</td>
+                                <td>email: String, jelszo: String</td>
+                                <td>Létrehoz egy új felhasználói fiókot a megadott adatokkal.</td>
+                            </tr>
+                            <tr>
+                                <td>fiokTorlese</td>
+                                <td>-</td>
+                                <td>Véglegesen törli a fiókot és a hozzá tartozó kompozíciós adatokat.</td>
+                            </tr>
+                            <tr>
+                                <td>adatokFrissitese</td>
+                                <td>ujEmail: String</td>
+                                <td>Módosítja a felhasználói fiók alapadatait.</td>
+                            </tr>
+                        </tbody>
+                    </table>
                 </section>
 
                 <section id="osztaly2">
                     <h4>3.6.2 Profil</h4>
-                    <p>A többi csapattag és a tanárok számára publikusan látható adatokat tárolja.</p>
                     <ul>
-                        <li><i>Attribútumok:</i> megjelenoNev (String), avatar (String), szintXP (int), aktualisSzint (int)</li>
-                        <li><i>Metódusok:</i> profilFrissitese(), jelszoModosit(), statisztikaLekerdezese()</li>
+                        <li><b>felelőssége, feladata:</b> A felhasználó többi csoporttag és a pedagógusok számára nyilvánosan látható adatait, valamint a megszerzett tapasztalati pontokat és szintet tárolja.</li>
+                        <li><b>együttműködők:</b> FelhasznaloiFiok, JutalmazasKezelo, SzintKezelo</li>
+                        <li><b>attribútumok</b></li>
                     </ul>
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Név</th>
+                                <th>Típus</th>
+                                <th>Leírás</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>megjelenoNev</td>
+                                <td>String</td>
+                                <td>A felhasználó által választott, mások számára látható név.</td>
+                            </tr>
+                            <tr>
+                                <td>avatar</td>
+                                <td>String</td>
+                                <td>A kiválasztott profilkép azonosítója vagy elérési útja.</td>
+                            </tr>
+                            <tr>
+                                <td>szintXP</td>
+                                <td>int</td>
+                                <td>A felhasználó által eddig összegyűjtött tapasztalati pontok száma.</td>
+                            </tr>
+                            <tr>
+                                <td>aktualisSzint</td>
+                                <td>int</td>
+                                <td>A felhasználó jelenlegi elért szintje a rendszerben.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <ul>
+                        <li><b>operációk</b></li>
+                    </ul>
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Név</th>
+                                <th>Argumentumok</th>
+                                <th>Működése, feladata</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>profilFrissitese</td>
+                                <td>nev: String, avatar: String</td>
+                                <td>Frissíti a felhasználó megjelenő nevét és profilképét.</td>
+                            </tr>
+                            <tr>
+                                <td>jelszoModosit</td>
+                                <td>regiJelszo: String, ujJelszo: String</td>
+                                <td>Elindítja a fiókhoz tartozó jelszó megváltoztatását.</td>
+                            </tr>
+                            <tr>
+                                <td>statisztikaLekerdezese</td>
+                                <td>-</td>
+                                <td>Visszaadja a felhasználó aktuális szintjét és XP-adatait.</td>
+                            </tr>
+                        </tbody>
+                    </table>
                 </section>
 
                 <section id="osztaly3">
                     <h4>3.6.3 BejelentkezesKezelo</h4>
-                    <p>Felelőssége, hogy a felhasználó be tudjon lépni, és a munkamenet végéig bent is maradjon.</p>
                     <ul>
-                        <li><i>Attribútumok:</i> aktivMunkamenet (String)</li>
-                        <li><i>Metódusok:</i> emailBejelentkezes(), googleBejelentkezes(), kijelentkezes(), jelszoModositas()</li>
+                        <li><b>felelőssége, feladata:</b> A felhasználó hitelesítését, beléptetését, kijelentkeztetését és az aktív munkamenet érvényesítését kezeli.</li>
+                        <li><b>együttműködők:</b> FelhasznaloiFiok, BeallitasKezelo, ErtesitesKezelo</li>
+                        <li><b>attribútumok</b></li>
                     </ul>
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Név</th>
+                                <th>Típus</th>
+                                <th>Leírás</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>aktivMunkamenet</td>
+                                <td>String</td>
+                                <td>Az aktuálisan bejelentkezett munkamenet azonosító tokenje.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <ul>
+                        <li><b>operációk</b></li>
+                    </ul>
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Név</th>
+                                <th>Argumentumok</th>
+                                <th>Működése, feladata</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>emailBejelentkezes</td>
+                                <td>email: String, jelszo: String</td>
+                                <td>Hitelesíti a felhasználót e-mail-cím és jelszó alapján.</td>
+                            </tr>
+                            <tr>
+                                <td>googleBejelentkezes</td>
+                                <td>-</td>
+                                <td>Elvégzi a bejelentkezést Google-fiók segítségével.</td>
+                            </tr>
+                            <tr>
+                                <td>kijelentkezes</td>
+                                <td>-</td>
+                                <td>Lezárja az aktív munkamenetet és kilépteti a felhasználót.</td>
+                            </tr>
+                            <tr>
+                                <td>jelszoModositas</td>
+                                <td>email: String</td>
+                                <td>Jelszó-visszaállítási vagy módosítási folyamatot indít el.</td>
+                            </tr>
+                        </tbody>
+                    </table>
                 </section>
 
                 <section id="osztaly4">
                     <h4>3.6.4 BeallitasKezelo</h4>
-                    <p>Elmenti és betölti az alkalmazáshoz tartozó megjelenítési preferenciákat.</p>
                     <ul>
-                        <li><i>Attribútumok:</i> hangero (double), ertesitesek (bool), nyelv (String)</li>
-                        <li><i>Metódusok:</i> hangBeallitas(), beallitasokMentese()</li>
+                        <li><b>felelőssége, feladata:</b> A felhasználóhoz tartozó egyedi alkalmazás- és megjelenítési preferenciákat kezeli, menti és tölti be.</li>
+                        <li><b>együttműködők:</b> FelhasznaloiFiok, BejelentkezesKezelo, FelhoSzinkronizacio</li>
+                        <li><b>attribútumok</b></li>
                     </ul>
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Név</th>
+                                <th>Típus</th>
+                                <th>Leírás</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>hangero</td>
+                                <td>double</td>
+                                <td>Az alkalmazás hangeffektjeinek beállított hangereje.</td>
+                            </tr>
+                            <tr>
+                                <td>ertesitesek</td>
+                                <td>bool</td>
+                                <td>Jelzi, hogy a felhasználó engedélyezte-e a push értesítéseket.</td>
+                            </tr>
+                            <tr>
+                                <td>nyelv</td>
+                                <td>String</td>
+                                <td>Az alkalmazás felületének kiválasztott nyelve.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <ul>
+                        <li><b>operációk</b></li>
+                    </ul>
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Név</th>
+                                <th>Argumentumok</th>
+                                <th>Működése, feladata</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>hangBeallitas</td>
+                                <td>ujHangero: double</td>
+                                <td>Módosítja az alkalmazás aktuális hangerőszintjét.</td>
+                            </tr>
+                            <tr>
+                                <td>beallitasokMentese</td>
+                                <td>-</td>
+                                <td>Elmenti a módosított beállításokat a felhasználói fiókhoz.</td>
+                            </tr>
+                        </tbody>
+                    </table>
                 </section>
 
                 <section id="osztaly5">
                     <h4>3.6.5 ErtesitesKezelo</h4>
-                    <p>A push értesítések fogadását felügyeli, és a telefon operációs rendszerével kommunikál.</p>
                     <ul>
-                        <li><i>Attribútumok:</i> fcmToken (String)</li>
-                        <li><i>Metódusok:</i> ertesitesFogadas(), ertesitesiFigyelmeztetes()</li>
+                        <li><b>felelőssége, feladata:</b> A push értesítések fogadását és küldését felügyeli a mobileszköz és a Firebase Cloud Messaging (FCM) token segítségével.</li>
+                        <li><b>együttműködők:</b> FelhasznaloiFiok, BejelentkezesKezelo</li>
+                        <li><b>attribútumok</b></li>
                     </ul>
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Név</th>
+                                <th>Típus</th>
+                                <th>Leírás</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>fcmToken</td>
+                                <td>String</td>
+                                <td>Az eszköz egyedi Firebase Cloud Messaging azonosító tokenje.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <ul>
+                        <li><b>operációk</b></li>
+                    </ul>
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Név</th>
+                                <th>Argumentumok</th>
+                                <th>Működése, feladata</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>ertesitesFogadas</td>
+                                <td>uzenet: String</td>
+                                <td>Feldolgozza és megjeleníti a beérkező push értesítést az eszközön.</td>
+                            </tr>
+                            <tr>
+                                <td>ertesitesiFigyelmeztetes</td>
+                                <td>tipus: String</td>
+                                <td>Emlékeztető figyelmeztetést küld (pl. szükséges öntözés esetén).</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </section>
+
+                <section id="osztaly6">
+                    <h4>3.6.6 Csoport</h4>
+                    <ul>
+                        <li><b>felelőssége, feladata:</b> A diákok és pedagógusok által alkotott virtuális csoport alapadatait, taglistáját, valamint a csoporthoz beállított szimulációs sebességet tárolja és kezeli.</li>
+                        <li><b>együttműködők:</b> CsoportTag, MeghivoKod, GondozasiNaplo, SzimulacioIdozito, FelhoSzinkronizacio</li>
+                        <li><b>attribútumok</b></li>
+                    </ul>
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Név</th>
+                                <th>Típus</th>
+                                <th>Leírás</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>csoportID</td>
+                                <td>String</td>
+                                <td>A csoport egyedi azonosítója a Firestore adatbázisban.</td>
+                            </tr>
+                            <tr>
+                                <td>nev</td>
+                                <td>String</td>
+                                <td>A csoport megjelenítendő neve (pl. osztály neve).</td>
+                            </tr>
+                            <tr>
+                                <td>szimulaciosSebesseg</td>
+                                <td>double</td>
+                                <td>A pedagógus által beállított időgyorsítási szorzó.</td>
+                            </tr>
+                            <tr>
+                                <td>letrehozasDatuma</td>
+                                <td>DateTime</td>
+                                <td>A csoport létrehozásának pontos időpontja.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <ul>
+                        <li><b>operációk</b></li>
+                    </ul>
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Név</th>
+                                <th>Argumentumok</th>
+                                <th>Működése, feladata</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>tagHozzaadasa</td>
+                                <td>tag: CsoportTag</td>
+                                <td>Új felhasználót vesz fel a csoport tagjai közé.</td>
+                            </tr>
+                            <tr>
+                                <td>tagEltavolitasa</td>
+                                <td>felhasznaloID: String</td>
+                                <td>Eltávolítja a megadott azonosítójú tagot a csoportból.</td>
+                            </tr>
+                            <tr>
+                                <td>sebessegModositasa</td>
+                                <td>ujSebesseg: double</td>
+                                <td>Módosítja a csoport növényeire érvényes szimulációs sebességet.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </section>
+
+                <section id="osztaly7">
+                    <h4>3.6.7 CsoportTag</h4>
+                    <ul>
+                        <li><b>felelőssége, feladata:</b> Összeköti a felhasználói fiókot egy adott csoporttal, valamint tárolja a felhasználó csoporton belüli szerepkörét (diák vagy pedagógus).</li>
+                        <li><b>együttműködők:</b> FelhasznaloiFiok, Csoport, Noveny, Ertekeles, Tanacs</li>
+                        <li><b>attribútumok</b></li>
+                    </ul>
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Név</th>
+                                <th>Típus</th>
+                                <th>Leírás</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>tagID</td>
+                                <td>String</td>
+                                <td>A csoporttagság egyedi azonosítója.</td>
+                            </tr>
+                            <tr>
+                                <td>felhasznaloID</td>
+                                <td>String</td>
+                                <td>A taghoz tartozó FelhasznaloiFiok azonosítója.</td>
+                            </tr>
+                            <tr>
+                                <td>szerepkor</td>
+                                <td>String</td>
+                                <td>A tag jogosultsági szintje (diák vagy tanár).</td>
+                            </tr>
+                            <tr>
+                                <td>csatlakozasDatuma</td>
+                                <td>DateTime</td>
+                                <td>A csoporthoz való csatlakozás időpontja.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <ul>
+                        <li><b>operációk</b></li>
+                    </ul>
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Név</th>
+                                <th>Argumentumok</th>
+                                <th>Működése, feladata</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>szerepkorModositasa</td>
+                                <td>ujSzerepkor: String</td>
+                                <td>Frissíti a tag csoporton belüli jogosultságát.</td>
+                            </tr>
+                            <tr>
+                                <td>novenyGondozasa</td>
+                                <td>noveny: Noveny, eszkoz: GondozasiEszkoz</td>
+                                <td>Gondozási műveletet hajt végre egy növényen a kiválasztott eszközzel.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </section>
+
+                <section id="osztaly8">
+                    <h4>3.6.8 MeghivoKod</h4>
+                    <ul>
+                        <li><b>felelőssége, feladata:</b> Véletlenszerűen generált, egyedi csatlakozási kódot hoz létre egy adott csoporthoz, és ellenőrzi annak érvényességét belépéskor.</li>
+                        <li><b>együttműködők:</b> Csoport, CsoportTag</li>
+                        <li><b>attribútumok</b></li>
+                    </ul>
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Név</th>
+                                <th>Típus</th>
+                                <th>Leírás</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>kod</td>
+                                <td>String</td>
+                                <td>A generált, karakterekből álló egyedi meghívókód.</td>
+                            </tr>
+                            <tr>
+                                <td>csoportID</td>
+                                <td>String</td>
+                                <td>Annak a csoportnak az azonosítója, amelyhez a kód tartozik.</td>
+                            </tr>
+                            <tr>
+                                <td>lejaratIdeje</td>
+                                <td>DateTime</td>
+                                <td>Az időpont, ameddig a kód felhasználható.</td>
+                            </tr>
+                            <tr>
+                                <td>aktiv</td>
+                                <td>bool</td>
+                                <td>Jelzi, hogy a meghívókód jelenleg érvényes-e.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <ul>
+                        <li><b>operációk</b></li>
+                    </ul>
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Név</th>
+                                <th>Argumentumok</th>
+                                <th>Működése, feladata</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>kodGeneralasa</td>
+                                <td>csoportID: String</td>
+                                <td>Új, egyedi meghívókódot állít elő a megadott csoporthoz.</td>
+                            </tr>
+                            <tr>
+                                <td>kodErvenyesitese</td>
+                                <td>kod: String</td>
+                                <td>Ellenőrzi, hogy a megadott kód létezik-e és nem járt-e le.</td>
+                            </tr>
+                            <tr>
+                                <td>kodErvenytelenitese</td>
+                                <td>-</td>
+                                <td>Inaktiválja a kódot, megakadályozva a további csatlakozásokat.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </section>
+
+                <section id="osztaly9">
+                    <h4>3.6.9 Noveny</h4>
+                    <ul>
+                        <li><b>felelőssége, feladata:</b> A felhasználó által nevelt virtuális növényt reprezentálja; a gondozási műveletek és a környezeti hatások alapján számítja ki aktuális állapotát.</li>
+                        <li><b>együttműködők:</b> NovenyFajta, FejlodesiAllapot, KornyezetiTenyezok, Talaj, SzimulacioIdozito, CsoportTag</li>
+                        <li><b>attribútumok</b></li>
+                    </ul>
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Név</th>
+                                <th>Típus</th>
+                                <th>Leírás</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>novenyID</td>
+                                <td>String</td>
+                                <td>A virtuális növény egyedi azonosítója.</td>
+                            </tr>
+                            <tr>
+                                <td>becenev</td>
+                                <td>String</td>
+                                <td>A felhasználó által a növénynek adott egyedi név.</td>
+                            </tr>
+                            <tr>
+                                <td>ultetesDatuma</td>
+                                <td>DateTime</td>
+                                <td>A növény elültetésének időpontja.</td>
+                            </tr>
+                            <tr>
+                                <td>eletbenVan</td>
+                                <td>bool</td>
+                                <td>Jelzi, hogy a növény még él-e vagy elpusztult.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <ul>
+                        <li><b>operációk</b></li>
+                    </ul>
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Név</th>
+                                <th>Argumentumok</th>
+                                <th>Működése, feladata</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>allapotFrissitese</td>
+                                <td>-</td>
+                                <td>A talaj és a környezeti tényezők alapján újraszámolja a növény állapotát.</td>
+                            </tr>
+                            <tr>
+                                <td>gondozasAlkalmazasa</td>
+                                <td>eszkoz: GondozasiEszkoz</td>
+                                <td>Feldolgozza a felhasználó által végzett gondozási beavatkozást.</td>
+                            </tr>
+                            <tr>
+                                <td>egeszsegSzamitasa</td>
+                                <td>-</td>
+                                <td>Összeveti a jelenlegi értékeket a fajta igényeivel és frissíti az egészségszintet.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </section>
+
+                <section id="osztaly10">
+                    <h4>3.6.10 NovenyFajta</h4>
+                    <ul>
+                        <li><b>felelőssége, feladata:</b> Katalógusként tárolja az egyes választható növényfajok biológiai igényeit és ideális környezeti paramétereit.</li>
+                        <li><b>együttműködők:</b> Noveny, FeloldhatoTartalomKezelo</li>
+                        <li><b>attribútumok</b></li>
+                    </ul>
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Név</th>
+                                <th>Típus</th>
+                                <th>Leírás</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>fajtaID</td>
+                                <td>String</td>
+                                <td>A növényfajta egyedi azonosítója.</td>
+                            </tr>
+                            <tr>
+                                <td>fajtaNev</td>
+                                <td>String</td>
+                                <td>A növényfaj hivatalos megnevezése.</td>
+                            </tr>
+                            <tr>
+                                <td>idealisNedvesseg</td>
+                                <td>double</td>
+                                <td>A fajta számára optimális talajnedvességi érték százalékban.</td>
+                            </tr>
+                            <tr>
+                                <td>idealisHomerseklet</td>
+                                <td>double</td>
+                                <td>A fajta számára optimális környezeti hőmérséklet Celsius-fokban.</td>
+                            </tr>
+                            <tr>
+                                <td>szuksegesSzint</td>
+                                <td>int</td>
+                                <td>A fajta feloldásához szükséges minimális felhasználói szint.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <ul>
+                        <li><b>operációk</b></li>
+                    </ul>
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Név</th>
+                                <th>Argumentumok</th>
+                                <th>Működése, feladata</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>igenyekLekerdezese</td>
+                                <td>-</td>
+                                <td>Visszaadja a növényfajta ideális környezeti és gondozási értékeit.</td>
+                            </tr>
+                            <tr>
+                                <td>leirasMegjelenitese</td>
+                                <td>-</td>
+                                <td>Visszaadja a fajtáról szóló oktató, tájékoztató szöveget.</td>
+                            </tr>
+                        </tbody>
+                    </table>
                 </section>
             </section>
-        </section>
 
         <section id="szabvanyok">
             <h2>4. Alkalmazott szabványok</h2>
@@ -637,10 +1245,6 @@
                 <li><code>funkcionalis_modell.png</code> – A Bejelentkezés és fiók alrendszer funkcionális modellje (használati eset diagram).</li>
             </ul>
         </section>
-
-    </main>
-</body>
-</html>
 
     </main>
 </body>
