@@ -1,0 +1,346 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Tesztelési terv</title>
+    <link rel="stylesheet" href="../stilusok/cimlap.css">
+    <link rel="stylesheet" href="../stilusok/alap.css">
+    <style>
+        table {
+            width: 90%;
+            margin: 0 auto;
+            border-collapse: collapse;
+        }
+
+        th, td {
+            padding: 9px 11px;
+            border: 1px solid #777;
+            font-size: 18px;
+            text-align: left;
+            vertical-align: top;
+        }
+
+        th {
+            background-color: #beb9b9;
+        }
+
+        ul li {
+            font-size: 16px;
+        }
+
+        .osztalydiagram {
+            width: 90%;
+            display: block;
+            margin: 0 auto;
+        }
+
+        .alrendszer {
+            width: 35%;
+            display: block;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Csoport neve: Palánták</h1>
+        <h1>Feladat sorszáma: 5</h1>
+        <h1>Feladat címe: Tesztelési terv</h1>
+        <div class="title">
+            <h1>Tesztelési terv</h1>
+            <h3>Gyakorlatvezető:</h3>
+            <h3>Dr. Árvai László</h3>
+        </div>
+        <h1>Csoporttagok:</h1>
+        <table class="team">
+            <tr>
+                <td>Mata Márk</td>
+                <td>K8DGVI</td>
+                <td>mark.mata@student.uni-miskolc.hu</td>
+            </tr>
+            <tr>
+                <td>Suba Kinga</td>
+                <td>LI5C7L</td>
+                <td>kinga.suba@student.uni-miskolc.hu</td>
+            </tr>
+            <tr>
+                <td>Zsólyomi Klaudia Vanda</td>
+                <td>CHZQ7Z</td>
+                <td>klaudia.vanda.zsolyomi@student.uni-miskolc.hu</td>
+            </tr>
+            <tr>
+                <td>Zsák István</td>
+                <td>SIE9FL</td>
+                <td>istvan.zsak@student.uni-miskolc.hu</td>
+            </tr>
+            <tr>
+                <td>Baranyovszki Kata</td>
+                <td>W9JKTC</td>
+                <td>kata.baranyovszki@student.uni-miskolc.hu</td>
+            </tr>
+        </table>
+        <h2>Beadás dátuma: 2026. 11. 25.</h2>
+    </header>
+
+    <main>
+
+        <div class="document-info">
+            <table>
+                <thead>
+                    <tr>
+                        <th><strong>Dátum</strong></th>
+                        <th><strong>Verzió</strong></th>
+                        <th><strong>Leírás</strong></th>
+                        <th><strong>Szerző</strong></th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>2026. 11. 25.</td>
+                        <td>0.1</td>
+                        <td>Kezdetleges verzió</td>
+                        <td>Suba Kinga, Zsólyomi Klaudia Vanda, Baranyovszki Kata, Zsák István, Mata Márk</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <nav class="tartalomj">
+            <h3>Tartalomjegyzék</h3>
+            <ol>
+                <li><a href="#bevezetes">Bevezetés</a>
+                    <ol>
+                        <li><a href="#alfateszt">Alfa teszt</a></li>
+                        <li><a href="#zbetateszt">Nyílt béta teszt</a></li>
+                        <li><a href="#nybetateszt">Zárt béta teszt</a></li>
+                    </ol>
+                </li>
+                <li><a href="#funkteszt">Funkcionális tesztelés</a></li>
+                <li><a href="#teljesitmenyteszt">Teljesítménytesztelés</a></li>
+                <li><a href="#felhfelulet">Felhasználó felület tesztelése</a></li>
+                <li><a href="#haloteszt">Hálózati tesztelés</a></li>
+                <li><a href="#biztonsagteszt">Biztonsági tesztelés</a></li>
+                <li><a href="#manteszt">Manuális tesztelés</a></li>
+                <li><a href="#autteszt">Automatizált tesztelés</a></li>
+            </ol>
+        </nav>
+
+        <section id="bevezetes">
+            <h2>1. Bevezetés</h2>
+            <p>
+                Az alkalmáz célja a növények fejlődésének és a gondozási műveletek hatásainak valósághű, de mégis egyszerűsített bemutatása oktatási környezetben, kiemelt fontossággal bír az alkalmazás megbízható működése. A tesztelés során A tesztelés során a funkciókat, a több felhasználó közötti szinkronizációt, a helyes és jól működő kapcsolatokat az adatbázissal, valamint a különböző méretű eszközökön való helyes megjelenítést és átfogóan kell vizsgálni. 
+            </p>
+
+            <section id="alfateszt">
+                <h3>1.1 Alfa teszt</h3>
+                <p>
+                    Ebben a szakaszban a tesztelés belső fejlesztői környezetben zajlik emulátorok és tesztkészülékek segítségével. Az ellenőrzés középpontjában a helyi funkciók állnak; a növények állapotváltozásának-, és a szimulációs időzíző helyessége, a képernyők közötti navigáció, valamint a vizuális elemek és animációk helyes megjelenése. Az online szolgáltatások vizsgálata is ebben a szakaszban történik még szimulált, helyi tesztadatbázis használatával.
+                </p>
+            </section>
+
+            <section id="zbetateszt">
+                <h3>1.2 Zárt béta teszt</h3>
+                <p>
+                    A béta tesztben egy szűkebb körű, meghívott tesztelői csoport kezébe kerül az alkalmazás. Ebben az időszakban már valós felhőalapú környezetben fut a rendszer, így ellenőrízhetővé válik a felhasználók regisztrációja, a csoportok létrehozása és kezelése is. A többjátékos kapcsolatok, a közös gondozási napló és a valós idejű értesítések ellenőrzése a legfontosabb tesztelése cél.
+                </p>
+            </section>
+
+            <section id="nybetateszt">
+                <h3>1.3 Nyílt béta teszt</h3>
+                <p>
+                    A nyílvános megjelenés előtti utolsó tesztelési fázis, ahol a hangsúly a rendszer terhelhetőségére és stabilitására helyeződik a alapvető működési logikával szemben. Az adatbázis kapacitásának ellenőrzése több párhuzamos lekérdezés mellett, valamint a hálózati kapcsolat megszakadásának és helyreállításának alapos vizsgálata történik ebben a fázisban. 
+                </p>
+            </section>
+        </section>
+
+        <section id="funkteszt">
+            <h2>2. Funkcionális tesztelés</h2>
+            <p>
+                A tesztelés során fontos ellenőrizni, hogy az alkalmazás üzleti logikája és a felhasználói műveletek a követelményekben leírtak szerint mennek-e végbe. Kiemelt figyelmet kell fordítani a növények életciklusára, talajállapotára és a környezeti tényezők matematikai összefüggéseira, valamint a csoportok heyles működésére.
+            </p>
+            <p>
+                <b>Szimuláció és gondozás</b>: Meg kell vizsgálni, hogy a növény öntözése, tápoldatozása és a fényviszonyok módosításai milyen hatással vannak a növény egészségi állapotára. A tesztelésnek igazolni kell, hogy a növény állapota kizárólag a megadott biológiai igényeknek megfelelően változik. Szintén ellenőrizni kell a szimuláció gyorsításának helyes működését, hogy magasabb szorzó mellett is arányosan fussanak le a számítások.
+            </p>
+            <p>
+                <b>Csoportok és naplózás</b>: Ellenőrizni kell a tanárok és diákok közötti együttműködési funckciókat; csoportok létrehozása, meghívókódok generálása és azok érvényességi idejének kezelése, valamint az elvégzett gondozási események automatikus bejegyzése a közös naplóba. A naplónak pontosan kell rögzítenie a végrehajtó azonosítóját, a felhasznált víz vagy tápanyag mennyiségét.
+            </p>
+            <p>
+                <b>Jutalmazás</b>: A siekres gondozási napok után járó xp pontok számítását és jóváírását is vizsgálni kell. Meg kell vizsgálni, hogy szintlépéshez szükséges ponthatárok elérésekor az alkalmazásos feloldja-e az új dekorációs elemeket vagy növényfajtákat.
+            </p>
+        </section>
+
+        <section id="teljesitmenyteszt">
+            <h2>3. Teljesítménytesztelés</h2>
+            <p>
+                <b>Eszközkompatibilitás és kijelzők</b>: A tesztek során ellenőrizni kell az alkalmazás működését a minimális követelményként meghatározott rendszerektől kezdve a legújabb verziókig. Külön figyelmet kell fordítnai az eltérő képernyőméretekre. Biztosítani kell a különböző felbontású képernyőkön megjelenő szövegek és gombok láthatóságát.
+            </p>
+            <p>
+                <b>Memória- és akkumulátorhasználat</b>: Az alkalmazás 2D felületet és egyszerű szimulációs számításokat használ, ezért a futás közbeni memóriahasználatnak ~200MB alatt kell maradnia. Az akkumulátorfogyasztást tartós használat és a háttérben futó állapot mellet is ellenőrizni kell, biztosítva, hogy a felesleges háttérfolyamatok ne merítség a készüléket.
+            </p>
+            <p>
+                <b>Futási sebesség</b>: A felületnek folyamnatos, akadásmentes megjelenítést kell nyújtania a menük közötti navigáció során, a gondozási eszközök használata során és az animációk során.
+            </p>
+        </section>
+        
+        <section id="felhfelulet">
+            <h2>4. Felhasználó felület és élmény tesztelése</h2>
+            <p>
+                <b>A kezelőfelület egyszerűsége</b>: Ellenőrizni kell, hogy egyetlen képernyőn egyszerre legfeljebb 4-5 jól elkülöníthető, egyértelmű feliratú, vagy képpel ellátott gomb kapjon helyet. A gombok elrendezésének követnie kell a megszokott mobilhasználati szokásokat, hogy a kezelés akár fél órán belül könnyen elsajátítható legyen.
+            </p>
+            <p>
+                <b>Vizuális visszajelzések és hibaüzenetek</b>: A növény állapotának romlását nem csak szöveges formában, hanem világos képi jelekkel is szemléltetni kell. Hibás műveletek esetén egy könnyen értelmehető magyar nyelvű tájékoztatásnak kell megjelennie.
+            </p>
+            <p>
+                <b>Bevezető útmutató és segítség</b>: Meg kell vizsgálni, hogy az első indításkor megjelenő interaktív bemutató folyamatát, amely lépésről lépésre vezeti végig a felhasználót a növényültetés és gondozás alapjain. Továbbá meg kell vizsgálni a menükből elérhető beépített súgó működését.
+            </p>
+        </section>
+        
+        <section id="haloteszt">
+            <h2>5. Hálózati tesztelés</h2>
+            <p>
+                <b>Hálózati kapcsolatok</b>: Tesztelni kell a rendszer viselkedését különböző sebességű és minőségű hálozatokon keresztül. Mivel kis méretű szöveges és szám adatok cserélődnek, az elfogadható válaszidő 1-2 másodperc között mozoghat anélkül, hogy zavarná a felhasználói élményt.
+            </p>
+            <p>
+                <b>Kapcsolat megszakadása és helyreállítása</b>: Külön szimulálni kell az internetkapcsolat váratlan elvesztését. Az alkalmazásnak egyértelműen jelezni kell, hogy jelenleg offline állapotban van. A helyben végzett műveleteket ideiglenesen el kell tárolni, majd a kapcsolat helyreállításakor automatikusan, adatvesztés nélkül szinkronizálni kell.
+            </p>
+            <p>
+                <b>Egyidejű szinkronizáció</b>: Meg kell vizsgálni, hogyan reagál az adatbázis, ha egy csoporton belül egyszerre több felhasználó próbál gondozási műveletet végezni vagy naplót olvasni. Az adatoknak nem szabad felülírniuk vagy összekeverniük egymást.
+            </p>
+        </section>
+        
+        <section id="biztonsagteszt">
+            <h2>6. Biztonsági tesztelés</h2>
+            <p>
+                <b>Adatvédelem</b>: Az alkalmazás kialakítása során szigorúan figyelmbe kell venni az adatvédelmi előírásokat. A rendszer kizárólag a működéshez feltétlenül szükséges adatokat kérheti el és tárolhatja. A felhasználói fiók törlése esetén biztosítani kell, hogy a felhasználóhoz tartozó profil, beállítások és személyes adatok véglegesen és visszaállíthatatlanul törlődjenek a felhőből.
+            </p>
+            <p>
+                <b>Hozzáférési szabályok és integritás</b>: Az adatbázis biztonsági szabályait alaposan tesztelni kell annak érdekében, hogy egy adott csoport és növény adatait kizálólag az arra jogosult diákok és a hozzájuk rendelt pedagógus érhesse el és módosíthassa. Meg kell akadályozni, hogy egy felhasználó külső kérésekkel illetéktelenül átírhassa más csoportok növényeinek adatait vagy a saját pontszámát.
+            </p>
+        </section>
+
+        <section id="manteszt">
+            <h2>7. Manuális tesztelés</h2>
+            <table>
+                <thead>
+                    <th>Funckió</th>
+                    <th>Előfeltétel</th>
+                    <th>Végrehajtott műveletek</th>
+                    <th>Elvárt eredmény</th>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Felhasználó fiók regisztrációja</td>
+                        <td>Az alkalmazás meg van nyitva, internetkapcsolat van</td>
+                        <td>A regisztráció felületének megnyítása, érvényes adatok megadása</td>
+                        <td>A fiók létrejön a rendszerben</td>
+                    </tr>
+                    <tr>
+                        <td>Hibás jelszóval történő belépés</td>
+                        <td>A bejelentkezés képernyő meg van nyitva</td>
+                        <td>Helytelen jelszó megadása egy létező felhasználói fióknak</td>
+                        <td>A rendszer megtagadja a belépést, egyértelmű hibaüzenetet ad</td>
+                    </tr>
+                    <tr>
+                        <td>Új csoport létrehozása</td>
+                        <td>A felhasználó sikeresen bejelentkezett a főmenübe</td>
+                        <td>A csoport létrehozása, nevének megadása, létrehozásának jóváhagyása</td>
+                        <td>Létrejön az új csoport, a készítő tulajdonosi jogot kap, megívó kód létrejön</td>
+                    </tr>
+                    <tr>
+                        <td>Csatlakozás meglévő csoporthoz</td>
+                        <td>Bejelentkezett állapot, létezik egy aktív csoport</td>
+                        <td>A kapott, érvényes megívókód megadása</td>
+                        <td>A felhasználó rögzítésre kerül a csoport tagjai között</td>
+                    </tr>
+                    <tr>
+                        <td>Új növény ültetése</td>
+                        <td>A felhasználó tagja a csoportnak</td>
+                        <td>Ületés megkezdése, növény kiválasztása a katalógusból</td>
+                        <td>A növény bekerül az adatbázisba helyes kezdőértékekkel és megjelenik a képernyőn</td>
+                    </tr>
+                    <tr>
+                        <td>Növény öntözése</td>
+                        <td>Élő növény látható a képernyőn</td>
+                        <td>Az öntözőkanna kiválasztása majd a kijelző nyomvatartása</td>
+                        <td>A talajnedvesség arányosan megemelkedik, öntözés hangja hallható</td>
+                    </tr>
+                    <tr>
+                        <td>Műszerek leolvasása</td>
+                        <td>Élő növény látható a képernyőn</td>
+                        <td>A műszer kiválasztása</td>
+                        <td>A képernyőn megjelenik a pontos mérési érték</td>
+                    </tr>
+                    <tr>
+                        <td>Idősebesség módosítása</td>
+                        <td>Csoportvezetői jogosultság</td>
+                        <td>A csoportbeállítások megnyitása, sebességi csúszka állítása</td>
+                        <td>Az adatbázisban frissül a szoró, a növény állapotváltozása helyesen tükrözi</td>
+                    </tr>
+                    <tr>
+                        <td>Napi xp és szintlépés</td>
+                        <td>A felhasználó közel van a szintlépéshez</td>
+                        <td>A napi gondozás helyes elvégzése, majd a profil megnyitása</td>
+                        <td>A pontok jóváíródnak, megjelenik a szintlépés értesítés, és feloldódnak a helyes tárgyak</td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+
+        <section id="autteszt">
+            <h2>8. Automatizált tesztelés</h2>
+            <table>
+                <thead>
+                    <th>Funckió</th>
+                    <th>Kiinduló állapot</th>
+                    <th>Bemenő adat</th>
+                    <th>Elvárt eredmény</th>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Növény egészségének számítása</td>
+                        <td>A növény optimális talajnedvesség igénye 70%</td>
+                        <td>A talaj nedvességtartalma csökken 10%-al és eltelik 24 szimulált óra</td>
+                        <td>A növény egészségi állapota a száradási formula alapján arányosan csökken</td>
+                    </tr>
+                    <tr>
+                        <td>Időgyorsítási szorzó működése</td>
+                        <td>A szimulációs időzítő aktív</td>
+                        <td>A szorzó értéke 6.0, 10 perc telik el</td>
+                        <td>A belső óra 60 percnek megfelelő állapotfrissítést hajt végre</td>
+                    </tr>
+                    <tr>
+                        <td>Xp és szintszámítás</td>
+                        <td>A felhasználó profilja létezik</td>
+                        <td>Egy sikeres gondozási ciklus pontjainak átadása</td>
+                        <td>A pontok pontosan hozzáadódnak a profilhoz, ha eléri a szintlépési küszöböt a szint értéke növekszik 1-el</td>
+                    </tr>
+                    <tr>
+                        <td>Email cím formátumának ellenőrzése</td>
+                        <td>A regisztrácis űrlap szövegbeviteli mezője aktív</td>
+                        <td>Helytelen formátumú bemenetek megadása</td>
+                        <td>A program hibát jelez a mező alatt, a regisztrációs kérés nem indul el</td>
+                    </tr>
+                    <tr>
+                        <td>Jogosultságok vizsgálata</td>
+                        <td>A felhasználó nincs benne az adott csoportban</td>
+                        <td>Módosítási kérés küldése a csoport egyik növényének adataira</td>
+                        <td>Az adatbázis hozzáférési hiba miatt elutasítja a kérést, a tárolt adatok változatlanok maradnak</td>
+                    </tr>
+                    <tr>
+                        <td>Gondozási bejegyzés mentése</td>
+                        <td>Sikeres gondozási művelet zajlott le a csoportban</td>
+                        <td>Új tevékenység mentése az adatbázis napló kollekciójába</td>
+                        <td>A bejegyzés létrejön az adatbázisban a felhasználó és a csoport azonosítójával és időbélyegével</td>
+                    </tr>
+                    <tr>
+                        <td>Meghívókód érvényességének vizsgálata</td>
+                        <td>A csoport rendelkezik egy meghívókóddal</td>
+                        <td>A csoportcsatlakozás funkciójának meghívása egy már lejárt kóddal</td>
+                        <td>A visszatérési érték hamis és visszaadja a megfelelő csoport azonosítóját</td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+    </main>
+</body>
+</html>
