@@ -111,8 +111,8 @@
                 <li><a href="#bevezetes">Bevezetés</a>
                     <ol>
                         <li><a href="#alfateszt">Alfa teszt</a></li>
-                        <li><a href="#zbetateszt">Nyílt béta teszt</a></li>
-                        <li><a href="#nybetateszt">Zárt béta teszt</a></li>
+                        <li><a href="#zbetateszt">Zárt béta teszt</a></li>
+                        <li><a href="#nyetateszt">Nyílt béta teszt</a></li>
                     </ol>
                 </li>
                 <li><a href="#funkteszt">Funkcionális tesztelés</a></li>
@@ -128,7 +128,7 @@
         <section id="bevezetes">
             <h2>1. Bevezetés</h2>
             <p>
-                Az alkalmáz célja a növények fejlődésének és a gondozási műveletek hatásainak valósághű, de mégis egyszerűsített bemutatása oktatási környezetben, kiemelt fontossággal bír az alkalmazás megbízható működése. A tesztelés során A tesztelés során a funkciókat, a több felhasználó közötti szinkronizációt, a helyes és jól működő kapcsolatokat az adatbázissal, valamint a különböző méretű eszközökön való helyes megjelenítést és átfogóan kell vizsgálni. 
+                Az alkalmáz célja a növények fejlődésének és a gondozási műveletek hatásainak valósághű, de mégis egyszerűsített bemutatása oktatási környezetben, ezért kiemelt fontossággal bír az alkalmazás megbízható működése. A tesztelés során a funkciókat, a több felhasználó közötti szinkronizációt, a helyes és jól működő kapcsolatokat az adatbázissal, valamint a különböző méretű eszközökön való helyes megjelenítést és átfogóan kell vizsgálni. 
             </p>
 
             <section id="alfateszt">
@@ -156,7 +156,7 @@
         <section id="funkteszt">
             <h2>2. Funkcionális tesztelés</h2>
             <p>
-                A tesztelés során fontos ellenőrizni, hogy az alkalmazás üzleti logikája és a felhasználói műveletek a követelményekben leírtak szerint mennek-e végbe. Kiemelt figyelmet kell fordítani a növények életciklusára, talajállapotára és a környezeti tényezők matematikai összefüggéseira, valamint a csoportok heyles működésére.
+                A tesztelés során fontos ellenőrizni, hogy az alkalmazás üzleti logikája és a felhasználói műveletek a követelményekben leírtak szerint mennek-e végbe. Kiemelt figyelmet kell fordítani a növények életciklusára, talajállapotára és a környezeti tényezők matematikai összefüggéseira, valamint a csoportok helyes működésére.
             </p>
             <p>
                 <b>Szimuláció és gondozás</b>: Meg kell vizsgálni, hogy a növény öntözése, tápoldatozása és a fényviszonyok módosításai milyen hatással vannak a növény egészségi állapotára. A tesztelésnek igazolni kell, hogy a növény állapota kizárólag a megadott biológiai igényeknek megfelelően változik. Szintén ellenőrizni kell a szimuláció gyorsításának helyes működését, hogy magasabb szorzó mellett is arányosan fussanak le a számítások.
@@ -165,20 +165,20 @@
                 <b>Csoportok és naplózás</b>: Ellenőrizni kell a tanárok és diákok közötti együttműködési funckciókat; csoportok létrehozása, meghívókódok generálása és azok érvényességi idejének kezelése, valamint az elvégzett gondozási események automatikus bejegyzése a közös naplóba. A naplónak pontosan kell rögzítenie a végrehajtó azonosítóját, a felhasznált víz vagy tápanyag mennyiségét.
             </p>
             <p>
-                <b>Jutalmazás</b>: A siekres gondozási napok után járó xp pontok számítását és jóváírását is vizsgálni kell. Meg kell vizsgálni, hogy szintlépéshez szükséges ponthatárok elérésekor az alkalmazásos feloldja-e az új dekorációs elemeket vagy növényfajtákat.
+                <b>Jutalmazás</b>: A sikeres gondozási napok után járó xp pontok számítását és jóváírását is vizsgálni kell. Meg kell vizsgálni, hogy szintlépéshez szükséges ponthatárok elérésekor az alkalmazásos feloldja-e az új dekorációs elemeket vagy növényfajtákat.
             </p>
         </section>
 
         <section id="teljesitmenyteszt">
             <h2>3. Teljesítménytesztelés</h2>
             <p>
-                <b>Eszközkompatibilitás és kijelzők</b>: A tesztek során ellenőrizni kell az alkalmazás működését a minimális követelményként meghatározott rendszerektől kezdve a legújabb verziókig. Külön figyelmet kell fordítnai az eltérő képernyőméretekre. Biztosítani kell a különböző felbontású képernyőkön megjelenő szövegek és gombok láthatóságát.
+                <b>Eszközkompatibilitás és kijelzők</b>: A tesztek során ellenőrizni kell az alkalmazás működését a minimális követelményként meghatározott rendszerektől kezdve a legújabb verziókig. Külön figyelmet kell fordítani az eltérő képernyőméretekre. Biztosítani kell a különböző felbontású képernyőkön megjelenő szövegek és gombok láthatóságát.
             </p>
             <p>
-                <b>Memória- és akkumulátorhasználat</b>: Az alkalmazás 2D felületet és egyszerű szimulációs számításokat használ, ezért a futás közbeni memóriahasználatnak ~200MB alatt kell maradnia. Az akkumulátorfogyasztást tartós használat és a háttérben futó állapot mellet is ellenőrizni kell, biztosítva, hogy a felesleges háttérfolyamatok ne merítség a készüléket.
+                <b>Memória- és akkumulátorhasználat</b>: Az alkalmazás 2D felületet és egyszerű szimulációs számításokat használ, ezért a futás közbeni memóriahasználatnak ~200MB alatt kell maradnia. Az akkumulátorfogyasztást tartós használat és a háttérben futó állapot mellet is ellenőrizni kell, biztosítva, hogy a felesleges háttérfolyamatok ne merítsék a készüléket.
             </p>
             <p>
-                <b>Futási sebesség</b>: A felületnek folyamnatos, akadásmentes megjelenítést kell nyújtania a menük közötti navigáció során, a gondozási eszközök használata során és az animációk során.
+                <b>Futási sebesség</b>: A felületnek folyamatos, akadásmentes megjelenítést kell nyújtania a menük közötti navigáció során, a gondozási eszközök használata során és az animációk során.
             </p>
         </section>
         
@@ -211,10 +211,10 @@
         <section id="biztonsagteszt">
             <h2>6. Biztonsági tesztelés</h2>
             <p>
-                <b>Adatvédelem</b>: Az alkalmazás kialakítása során szigorúan figyelmbe kell venni az adatvédelmi előírásokat. A rendszer kizárólag a működéshez feltétlenül szükséges adatokat kérheti el és tárolhatja. A felhasználói fiók törlése esetén biztosítani kell, hogy a felhasználóhoz tartozó profil, beállítások és személyes adatok véglegesen és visszaállíthatatlanul törlődjenek a felhőből.
+                <b>Adatvédelem</b>: Az alkalmazás kialakítása során szigorúan figyelembe kell venni az adatvédelmi előírásokat. A rendszer kizárólag a működéshez feltétlenül szükséges adatokat kérheti el és tárolhatja. A felhasználói fiók törlése esetén biztosítani kell, hogy a felhasználóhoz tartozó profil, beállítások és személyes adatok véglegesen és visszaállíthatatlanul törlődjenek a felhőből.
             </p>
             <p>
-                <b>Hozzáférési szabályok és integritás</b>: Az adatbázis biztonsági szabályait alaposan tesztelni kell annak érdekében, hogy egy adott csoport és növény adatait kizálólag az arra jogosult diákok és a hozzájuk rendelt pedagógus érhesse el és módosíthassa. Meg kell akadályozni, hogy egy felhasználó külső kérésekkel illetéktelenül átírhassa más csoportok növényeinek adatait vagy a saját pontszámát.
+                <b>Hozzáférési szabályok és integritás</b>: Az adatbázis biztonsági szabályait alaposan tesztelni kell annak érdekében, hogy egy adott csoport és növény adatait kizárólag az arra jogosult diákok és a hozzájuk rendelt pedagógus érhesse el és módosíthassa. Meg kell akadályozni, hogy egy felhasználó külső kérésekkel illetéktelenül átírhassa más csoportok növényeinek adatait vagy a saját pontszámát.
             </p>
         </section>
 
@@ -222,7 +222,7 @@
             <h2>7. Manuális tesztelés</h2>
             <table>
                 <thead>
-                    <th>Funckió</th>
+                    <th>Funkció</th>
                     <th>Előfeltétel</th>
                     <th>Végrehajtott műveletek</th>
                     <th>Elvárt eredmény</th>
@@ -244,7 +244,7 @@
                         <td>Új csoport létrehozása</td>
                         <td>A felhasználó sikeresen bejelentkezett a főmenübe</td>
                         <td>A csoport létrehozása, nevének megadása, létrehozásának jóváhagyása</td>
-                        <td>Létrejön az új csoport, a készítő tulajdonosi jogot kap, megívó kód létrejön</td>
+                        <td>Létrejön az új csoport, a készítő tulajdonosi jogot kap, meghívókód létrejön</td>
                     </tr>
                     <tr>
                         <td>Csatlakozás meglévő csoporthoz</td>
@@ -255,7 +255,7 @@
                     <tr>
                         <td>Új növény ültetése</td>
                         <td>A felhasználó tagja a csoportnak</td>
-                        <td>Ületés megkezdése, növény kiválasztása a katalógusból</td>
+                        <td>Ültetés megkezdése, növény kiválasztása a katalógusból</td>
                         <td>A növény bekerül az adatbázisba helyes kezdőértékekkel és megjelenik a képernyőn</td>
                     </tr>
                     <tr>
@@ -290,7 +290,7 @@
             <h2>8. Automatizált tesztelés</h2>
             <table>
                 <thead>
-                    <th>Funckió</th>
+                    <th>Funkció</th>
                     <th>Kiinduló állapot</th>
                     <th>Bemenő adat</th>
                     <th>Elvárt eredmény</th>
